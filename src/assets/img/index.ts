@@ -1,0 +1,1 @@
+export const logo = require('./Static/banana-logo.png');

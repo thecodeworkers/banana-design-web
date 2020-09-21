@@ -1,9 +1,10 @@
 import React from 'react'
+import { logo } from './../../assets/img';
 
 const NavBar: React.FC<{}> = () => {
   return (
     <div className="navigation">
-      Navbar
+      <img src={ logo } alt="Logo"/>
     </div>
   )
 }
