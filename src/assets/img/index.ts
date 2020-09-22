@@ -1,3 +1,2 @@
-export const
-  logo = require('./Static/banana-logo.png'),
-  toggleButton = require('./Static/toggle-button.png');
+export { default as Logo } from './Components/Logo';
+export { default as ToggleButton } from './Components/ToggleButton';
