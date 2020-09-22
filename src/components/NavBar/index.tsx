@@ -5,9 +5,9 @@ import './styles.scss';
 const NavBar: React.FC<{}> = () => {
   return (
     <div className="_navBar">
-      <Logo />
+      <Logo width={"160"}/>
 
-      <ToggleButton />
+      <ToggleButton className="_navBarToggle" />
     </div>
   )
 }
