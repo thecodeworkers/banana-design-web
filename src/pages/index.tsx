@@ -1,10 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
+import {Menu} from "../components"
 
 const IndexPage = () => (
-  <div>
-    <h1>Banana</h1>
-  </div>
+
+  <Menu />
+
 )
 
 export default IndexPage

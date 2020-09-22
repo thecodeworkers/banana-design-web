@@ -1,0 +1,27 @@
+@import '../../../assets/styles/index.scss';
+
+._menuContainer{
+  height: 100vh;
+  width: 100%;
+  display: inline-flex;
+}
+._sectionWhite{
+  width: 35%;
+}
+._sectionBlack{
+  background-color: $black;
+  width: 65%;
+}
+._blackHeader{
+  display: flex;
+  justify-content: space-between;
+}
+._address{
+  line-height: 1;
+}
+._addressText{
+  font-size: 1rem;
+  color: $white;
+  margin: 0;
+  line-height: 1.2;
+}
