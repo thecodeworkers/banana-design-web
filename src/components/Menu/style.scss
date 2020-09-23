@@ -9,7 +9,7 @@
   width: 30%;
 }
 ._sectionBlack{
-  background-color: $black;
+  background-color: $blackie;
   width: 70%;
 }
 ._blackHeader{
@@ -17,7 +17,7 @@
   justify-content: space-between;
 }
 ._addressContainer{
- margin-left: 50px;
+ margin-left: 45px;
 }
 
 ._addressText{
@@ -35,10 +35,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  color: $white;
 }
 ._blackBodyText{
   font-size: 4rem;
-  color: white;
   font-weight: 800;
   margin: 0;
   font-family: "Univers-lts-td";
@@ -49,23 +49,33 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-right: 30px;
+  margin-right: 45px;
+  margin-bottom: 20px;
+  color: $white;
 }
-._blackFooterText{
-  font-size: 0.875rem;
-  color: white;
+._blackBodyFooterText{
+  font-size: 1rem;
   font-weight: 400;
 }
 
 ._blackFooter{
   height: 20%;
   width: 90%;
- 
+  margin-left: auto;
+  margin-right: auto;
 }
 ._blackFooterLine{
-  height: 5px;
+  height: 1px;
   background-color: $white;
-  
+}
+
+._blackFooterContainer{
+  display: flex;
+  justify-content: space-between;
+  color: $dirtyWhite;
+}
+._blackFooterText{
+  font-size: 1rem;
 }
 
 
