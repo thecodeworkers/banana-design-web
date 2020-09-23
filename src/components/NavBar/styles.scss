@@ -4,13 +4,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 40px;
-  background-color: #ffffff;
+  padding: 40px 30px 10px;
+  transition: all .5s linear;
 
   border: 1px solid #ff22ff;
 
+  &._light { 
+    background-color: #ffffff;
+    
+    ._navBarLogo,
+    ._navBarToggle { fill: #111111; }
+  }
+
+  &._dark {
+    background-color: #111111;
+
+    ._navBarLogo,
+    ._navBarToggle { fill: #ffffff; }
+  }
+
   ._navBarToggle {
-    width: 30px;
+    width: 34px;
     cursor: pointer;
   }
 }
