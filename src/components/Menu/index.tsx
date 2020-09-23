@@ -34,19 +34,19 @@ const Menu = () => (
       <div className={'_blackFooter'}>
         <div className='_blackFooterLine'></div>
         <div className={'_blackFooterContainer'}>
-          <div >
+        <div className={'_lh'} >
             <p className={'_blackFooterText'}>Contacto</p>
-            <p className={'_blackFooterText'}>contact@bananadsg.com</p>
-            <p className={'_blackFooterText'}>+58 412 222 2222</p>
+            <p className={'_blackFooterText _mb-0'}>contact@bananadsg.com</p>
+            <p className={'_blackFooterText _mt-0'}>+58 412 222 2222</p>
           </div>
-          <div >
-            <p className={'_blackFooterText'}>Buscas trabajar con nosotros?</p>
-            <p className={'_blackFooterText'}>Escríbenos a:</p>
+          <div className={'_lh'} >
+            <p className={'_blackFooterText _mb-0'}>Buscas trabajar con nosotros?</p>
+            <p className={'_blackFooterText _mt-0'}>Escríbenos a:</p>
             <p className={'_blackFooterText'}>work@bananadsg.com</p>
           </div >
-          <div>
-            <p className={'_blackFooterText '}>No te pierdas de nada,</p>
-            <p className={'_blackFooterText'}>síguenos en:</p>
+          <div className={'_lh'} >
+            <p className={'_blackFooterText _mb-0'}>No te pierdas de nada,</p>
+            <p className={'_blackFooterText _mt-0 '}>síguenos en:</p>
             <p className={'_blackFooterText'}>@bananadesign_</p>
           </div>
         </div>
