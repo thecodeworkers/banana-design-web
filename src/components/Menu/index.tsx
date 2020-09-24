@@ -4,7 +4,28 @@ import './style.scss';
 const Menu = () => (
   <div className={'_menuContainer'}>
     <div className={'_sectionWhite'}>
-      <p>blanco</p>
+    <div className={'_whiteBody'}>
+    <p className={'_whiteBodyText'}>+Concepto</p>
+    <p className={'_whiteBodyText'}>+Propósito</p>
+    <p className={'_whiteBodyText'}>+Belleza</p>
+    <p className={'_whiteBodyText'}> +Función</p>
+    <p className={'_whiteBodyText'}>+Creación</p>
+    <p className={'_whiteBodyText'}>+Innovación</p>
+   </div>
+   
+   <div className={'_whiteFooter'}>
+   <div className={'_whiteBodyFooter'}>
+   <p className={'_whiteFooterLineText'}>BRANDING, UI - UX, ANIMACIÓN & 3D, SOCIAL MEDIA</p>
+   <div className={'_whiteFooterLine'}></div>
+   </div>
+   <div className={'_whiteFooterText'}>
+  <p>Somos un estudio creativo enfocado en ofrecer soluciones </p>
+  <p>de diseño a nivel de Branding, Diseño Web, Modelado 3D</p>
+  <p>y Social Media. Trabajamos con innovadores que buscan</p>
+  <p>mejorar el mundo a través de sus ideas y servicios.</p>
+   </div>
+    
+  </div>
     </div>
     <div className={'_sectionBlack'}>
       <div className={'_blackHeader'}>
@@ -35,19 +56,19 @@ const Menu = () => (
         <div className='_blackFooterLine'></div>
         <div className={'_blackFooterContainer'}>
         <div className={'_lh'} >
-            <p className={'_blackFooterText'}>Contacto</p>
-            <p className={'_blackFooterText _mb-0'}>contact@bananadsg.com</p>
-            <p className={'_blackFooterText _mt-0'}>+58 412 222 2222</p>
+            <p className={'_blackFooterText'}>Contacto:</p>
+            <p className={'_blackFooterText _mt '}>contact@bananadsg.com</p>
+            <p className={'_blackFooterText '}>+58 412 222 2222</p>
           </div>
           <div className={'_lh'} >
-            <p className={'_blackFooterText _mb-0'}>Buscas trabajar con nosotros?</p>
-            <p className={'_blackFooterText _mt-0'}>Escríbenos a:</p>
-            <p className={'_blackFooterText'}>work@bananadsg.com</p>
+            <p className={'_blackFooterText '}>Buscas trabajar con nosotros?</p>
+            <p className={'_blackFooterText _mb'}>Escríbenos a:</p>
+            <p className={'_blackFooterText _mt'}>work@bananadsg.com</p>
           </div >
           <div className={'_lh'} >
-            <p className={'_blackFooterText _mb-0'}>No te pierdas de nada,</p>
-            <p className={'_blackFooterText _mt-0 '}>síguenos en:</p>
-            <p className={'_blackFooterText'}>@bananadesign_</p>
+            <p className={'_blackFooterText '}>No te pierdas de nada,</p>
+            <p className={'_blackFooterText _mb '}>síguenos en:</p>
+            <p className={'_blackFooterText _mt'}>@bananadesign_</p>
           </div>
         </div>
       </div>
