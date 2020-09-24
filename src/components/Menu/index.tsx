@@ -11,13 +11,14 @@ const Menu = () => (
     <p className={'_whiteBodyText'}> +Función</p>
     <p className={'_whiteBodyText'}>+Creación</p>
     <p className={'_whiteBodyText'}>+Innovación</p>
-   </div>
-   
-   <div className={'_whiteFooter'}>
-   <div className={'_whiteBodyFooter'}>
+    <div className={'_whiteBodyFooter'}>
    <p className={'_whiteFooterLineText'}>BRANDING, UI - UX, ANIMACIÓN & 3D, SOCIAL MEDIA</p>
    <div className={'_whiteFooterLine'}></div>
    </div>
+   </div>
+   
+    <div className={'_whiteFooter'}>
+  
    <div className={'_whiteFooterText'}>
   <p>Somos un estudio creativo enfocado en ofrecer soluciones </p>
   <p>de diseño a nivel de Branding, Diseño Web, Modelado 3D</p>
@@ -25,7 +26,7 @@ const Menu = () => (
   <p>mejorar el mundo a través de sus ideas y servicios.</p>
    </div>
     
-  </div>
+  </div>  
     </div>
     <div className={'_sectionBlack'}>
       <div className={'_blackHeader'}>
@@ -35,7 +36,7 @@ const Menu = () => (
           <p className={'_addressText'}>Módulo 5 / Oficina 53</p>
           <p className={'_addressText'}>Caracas 1073</p>
         </div>
-        <div>
+        <div className='_iconContainer'>
           <p className={'_addressText'}>menu</p>
         </div>
 
