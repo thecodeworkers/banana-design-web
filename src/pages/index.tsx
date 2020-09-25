@@ -1,10 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
-import {Menu} from "../components"
+import {Menu , Product} from "../components"
 
 const IndexPage = () => (
-
-  <Menu />
+<div>
+<Product />
+<Menu />
+ 
+</div>
 
 )
 
