@@ -1,0 +1,58 @@
+@import '../../../assets/styles/index.scss';
+
+._main {
+  background-color: $littleBlack;
+  width: 100%;
+  height: 100vh;
+}
+
+._featuredContent {
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+._leftFeaturedContent {
+  width: 50%;
+}
+
+._rightFeaturedContent {
+  width: 70%;
+  cursor: url('../../../assets/images/curson.svg'), 10 10 auto;
+
+}
+
+._keywords {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+
+  & p {
+    font-family: $montserrat;
+    color: $white;
+  }
+}
+
+._caseOfStudy {
+  font-size: 1.1rem;
+}
+
+
+._textDay, ._keywordText{
+  font-size: 0.9rem;
+}
+
+._leftDescription {
+  width: 75%;
+}
+
+._loremText {
+  color: $lightPurple;
+  font-size: 1.3rem;
+  font-family: $montserrat;
+}
