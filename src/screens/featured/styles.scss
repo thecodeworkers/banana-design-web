@@ -1,5 +1,16 @@
 @import '../../../assets/styles/index.scss';
 
+@mixin minerals {
+  color: $white;
+  font-family: $montserrat;
+  font-weight: bold;
+  font-size: 3.8rem;
+}
+
+@mixin opacity {
+  opacity: 0;
+}
+
 ._main {
   background-color: $littleBlack;
   width: 100%;
@@ -23,6 +34,7 @@
 ._rightFeaturedContent {
   width: 70%;
   cursor: url('../../../assets/images/curson.svg'), 10 10 auto;
+  position: relative;
 
 }
 
@@ -30,7 +42,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0.5rem;
+  margin-top: 0.7rem;
 
   & p {
     font-family: $montserrat;
@@ -53,6 +65,45 @@
 
 ._loremText {
   color: $lightPurple;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-family: $montserrat;
+}
+
+.test {
+  transform: rotate(-180deg);
+  writing-mode: vertical-lr;
+  right: -2.2rem;
+  bottom: 2.3rem;
+  position: absolute;
+
+  & p {
+    font-family: $montserrat;
+    color: $white; 
+    font-weight: bold;
+  }
+}
+
+._zeroOne {
+  font-family: $montserrat;
+  color: $lightPurple;
+  font-size: 1.7rem;
+  font-weight: bold;
+  @include opacity;
+} 
+
+
+._mineralsTitle {
+  @include minerals;
+  @include opacity;
+}
+
+._mineralsSubTitle {
+  @include minerals;
+  margin-left: 20%;
+  margin-top: -0.8rem;
+  @include opacity;
+}
+
+._text1, ._text2, ._text3 {
+  @include opacity;
 }

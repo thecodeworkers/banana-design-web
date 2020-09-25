@@ -1,38 +1,55 @@
 import React, { useState } from 'react';
 import './styles.scss';
-import { FeaturedOne } from '../../components/Svg';
+import { FeaturedOne, DistortionOne } from '../../components/Svg';
+import { TimelineMax } from 'gsap/all';
 
 const Featured = () => {
-
   const [show, setShow] = useState(false);
 
+  const texts: Array<any> = [
+    { class: '._text1', duration: 0.3, delay: 0.5 },
+    { class: '._text2', duration: 0.3, delay: 0.7 },
+    { class: '._text3', duration: 0.3, delay: 0.9 },
+  ]
+  const timeline = new TimelineMax();
+
   const imageChange = (param: string) => {
+    inAnimation();
     param == 'in' ? setShow(true) : setShow(false);
   }
 
-  // const imageOut = () => {
-  //   setShow(false);
-  // }
+  const inAnimation = () => {
+    const play = timeline.play();
+
+    if (!show) {
+      play
+        .to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 1 }, 0.3);
+      texts.map(res => { play.to(res.class, res.duration, { opacity: 1 }, res.delay) })
+      return
+    }
+    play
+      .to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 0 }, 0);
+    texts.map(res => {
+      timeline.to(res.class, { opacity: 0 }, 0);
+    })
+  }
 
   return (
     <div className='_main'>
-
       <div className='_featuredContent'>
         <div className='_leftFeaturedContent'>
 
           <div className='_leftDescription'>
-
-            {
-              show ?
-                <div>
-                  <p className='_loremText'>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores,eveniet autem itaque quisquam consectetur,
-                    corporis, rerum provident optio molestiae quae amet officia tempora reiciendis
-                    fuga deserunt excepturi sequi vitae.
-                  </p>
-                </div> : null
-            }
-
+            <div>
+              <p className='_zeroOne'> 01 -</p>
+              <p className='_mineralsTitle'>Banana</p>
+              <p className='_mineralsSubTitle'>Minerals</p>
+              <p className='_loremText'>
+                <p className='_text1'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores,eveniet autem itaque quisquam consectetur</p>
+                <p className='_text2'>corporis, rerum provident optio molestiae quae amet officia tempora reiciendis</p>
+                <p className='_text3'>fuga deserunt excepturi sequi vitae.</p>
+              </p>
+            </div>
           </div>
 
         </div>
@@ -40,12 +57,22 @@ const Featured = () => {
         <div className='_rightFeaturedContent'>
 
           <div onMouseEnter={() => imageChange('in')} onMouseLeave={() => imageChange('out')}>
-            <FeaturedOne />
+            {
+              !show ? <FeaturedOne /> : <DistortionOne />
+            }
+
             <div className='_keywords'>
               <p className='_caseOfStudy'>Caso de estudio</p>
               <p className='_textDay'> Marzo 20'</p>
               <p className='_keywordText'> keyword1, keyword2</p>
             </div>
+          </div>
+
+          <div className='test'>
+            <p>Destacados</p>
+          </div>
+          <div>
+
           </div>
         </div>
       </div>
