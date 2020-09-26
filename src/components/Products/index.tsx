@@ -1,9 +1,6 @@
-import React from "react"
+import React from "react";
 import './style.scss';
-import {gsapStart} from './gsap'
-
-
-
+import {gsapStart} from './gsap';
 
 const Product = () => {
   
@@ -16,4 +13,4 @@ const Product = () => {
 }
 
 
-export default Product
+export default Product;
