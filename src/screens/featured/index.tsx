@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import './styles.scss';
 import { FeaturedOne, DistortionOne } from '../../components/Svg';
+import { saveTest } from '../../store/actions';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { TimelineMax } from 'gsap/all';
 
-const Featured = () => {
+const Featured = (props: any) => {
   const [show, setShow] = useState(false);
 
+
+  console.log(props);
   const texts: Array<any> = [
     { class: '._text1', duration: 0.3, delay: 0.5 },
     { class: '._text2', duration: 0.3, delay: 0.7 },
@@ -18,7 +23,7 @@ const Featured = () => {
     param == 'in' ? setShow(true) : setShow(false);
   }
 
-  const inAnimation = () => {
+  const inAnimation = () => { 
     const play = timeline.play();
 
     if (!show) {
@@ -72,7 +77,6 @@ const Featured = () => {
             <p>Destacados</p>
           </div>
           <div>
-
           </div>
         </div>
       </div>
@@ -81,4 +85,18 @@ const Featured = () => {
   )
 }
 
-export default Featured;
+const mapStateToProps = ({ test }) => ({ test });
+
+const mapDispatchToProps = dispatch => {
+  const actions = {
+    saveTest
+  }
+
+  return {
+    action: bindActionCreators(actions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Featured);
+
+
