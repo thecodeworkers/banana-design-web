@@ -1,0 +1,195 @@
+@import '../../../assets/styles/index.scss';
+
+._menuContainer{
+  height: 100vh;
+  width: 100%;
+  display: inline-flex;
+}
+._sectionWhite{
+  width: 35%;
+  margin-left: 30px;
+  height: 100%;
+}
+._whiteBody{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 75%;
+
+}
+._whiteBodyFooter{
+  margin-top: 10%;
+width: 90%;
+margin-right: auto;
+
+}
+._whiteBodyText{
+  color: $blue;
+  font-size: 1.5rem;
+  font-family: $monumentExtended-Regular;
+  line-height: 1.5;
+  opacity: 0;
+}
+._whiteFooter{
+  margin-top: 8.9%
+}
+._whiteFooterLineText{
+font-size: 0.75rem;
+color: $pureBlack;
+font-family: $universLtsTd;
+}
+._whiteFooterLine{
+  height: 1.5px;
+  background-color: $pureBlack;
+}
+._whiteFooterText{
+  font-size: 0.875rem;
+  font-family: $universLtsTd;
+  color: $gray;
+  
+}
+._sectionBlack{
+  background-color: $blackie;
+  width: 65%;
+  height: 100%;
+}
+._blackHeader{
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+}
+._addressContainer{
+ margin-left: 45px;
+ margin-top: 2%;
+}
+
+._iconContainer{
+  margin-top: 2%;
+}
+
+._addressText{
+  font-size: 0.65rem;
+  color: $white;
+  margin: 0;
+  line-height: 1.2;
+  font-family: $universLtsTd;
+}
+
+._blackBody{
+  height: 50%;
+/*   margin-top: 30px; */
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  color: $white;
+}
+
+._blackBodyFooter{
+  height: 14.8%;
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 45px;
+/*   margin-bottom: 20px; */
+  color: $white;
+}
+._blackBodyFooterText{
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: $universLtsTd;
+  margin-bottom: 20px;
+  cursor: pointer;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    bottom: -1px;
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: $white;
+    transition: all 0.4s;
+    left:50%;
+}}
+
+._blackBodyFooterText:hover:before{
+  width: 100%;
+  left: 0;
+}
+
+._blackFooter{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+._blackFooterLine{
+  height: 1.5px;
+  background-color: $white;
+}
+
+._blackFooterContainer{
+  display: flex;
+  justify-content: space-between;
+  color: $dirtyWhite;
+  margin-top: 5%;
+}
+._blackFooterText{
+  font-size: 0.875rem;
+  font-family: $universLtsTd;
+}
+
+._mt{
+ margin-top: 15px !important; 
+}
+._mb{
+margin-bottom: 15px !important; 
+}
+._mb-60{
+margin-bottom: 60px;
+}
+._lh{
+  line-height: 1.5;
+}
+
+._blackLateral{
+  background-color: $blackie;
+  display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+._textYellowUnivers{
+  color: $goldYellow;
+  font-family: $montserrat;
+  transform: rotate(-180deg);
+  writing-mode: vertical-lr;
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
+
+._blackBodyText{
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: $ribes;
+  line-height: 1.2;
+  transition: all .8s cubic-bezier(0,0,.23,1);
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg,#FFD400,#FFD400 50%,#ffffff 0);
+  background-size: 100% 200%;
+  background-position: 100%;
+
+  &:hover {
+    background-position: 0;
+
+}
+}
+
+
+

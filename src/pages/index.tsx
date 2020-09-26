@@ -1,10 +1,14 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
+import {Menu , Product} from "../components";
 
 const IndexPage = () => (
-  <div>
-    <h1>Banana</h1>
-  </div>
+<div>
+<Product />
+<Menu />
+ 
+</div>
+
 )
 
 export default IndexPage
