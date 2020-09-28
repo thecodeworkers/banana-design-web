@@ -10,7 +10,7 @@ const Menu = () => {
   <div className={'_menuContainer'}>
 	 	<div className={'_sectionWhite'}>
 	 		<div className={'_whiteBody'}>
-	 			<p className={'_whiteBodyText'} onMouseEnter={gsapStart}>+Concepto</p>
+	 			<p className={'_whiteBodyText'} >+Concepto</p>
 				<p className={'_whiteBodyText'}>+Propósito</p>
 				<p className={'_whiteBodyText'}>+Belleza</p>
 				<p className={'_whiteBodyText'}>+Función</p>
@@ -46,11 +46,12 @@ const Menu = () => {
 			</div>
 
 			<div className={'_blackBody'}>
-				<p className={'_blackBodyText'}>Estudio</p>
-				<p className={'_blackBodyText'}>Creativos</p>
-				<p className={'_blackBodyText'}>Folio</p>
+			<span className={'vertical'}> 	<p data-hover="Estudio" className={'_blackBodyText'}>Estudio</p> </span>
+			<span className={'vertical'}> 	<p data-hover="Creativos" className={'_blackBodyText'}>Creativos</p> </span>
+			<span className={'vertical'}> 	<p data-hover="Folio" className={'_blackBodyText'}>Folio</p> </span>
+			
 			</div>
-			<div className={'_blackBodyFooter'}>
+			<div className={'_blackBodyFooter'} onMouseEnter={gsapStart}>
 				<p className={'_blackBodyFooterText'}>Proyectos Destacados</p>
 				<p className={'_blackBodyFooterText'}>Marcas Asociadas</p>
 				<p className={'_blackBodyFooterText _mb-60'}>Classroom</p>
