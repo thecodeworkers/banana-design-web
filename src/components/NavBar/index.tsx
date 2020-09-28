@@ -35,7 +35,7 @@ const NavBar: React.FC<navBarProps> = ({ reference }) => {
 
   return (
     <div className={`_navBar ${ isDark ? '_dark' : '_light'}`}>
-      <Logo className="_navBarLogo" width={"160"}/>
+      <Logo className="_navBarLogo"/>
       <ToggleButton className="_navBarToggle" />
     </div>
   )
