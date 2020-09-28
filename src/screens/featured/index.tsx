@@ -1,22 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import './styles.scss';
 import { FeaturedOne, DistortionOne } from '../../components/Svg';
 import { saveTest } from '../../store/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { TimelineMax } from 'gsap/all';
+import { TimelineMax, gsap, ScrollTrigger} from 'gsap/all';
 
 const Featured = (props: any) => {
   const [show, setShow] = useState(false);
+  gsap.registerPlugin(ScrollTrigger);
+  const timeline = new TimelineMax();
 
-
-  console.log(props);
   const texts: Array<any> = [
     { class: '._text1', duration: 0.3, delay: 0.5 },
     { class: '._text2', duration: 0.3, delay: 0.7 },
     { class: '._text3', duration: 0.3, delay: 0.9 },
   ]
-  const timeline = new TimelineMax();
+
+  
+  gsap.to('._main', { scrollTrigger: { trigger: '._main', onEnter: () => console.log('enter trigger'), markers: true} , backgroundColor: 'blue' })
 
   const imageChange = (param: string) => {
     inAnimation();
@@ -29,7 +31,7 @@ const Featured = (props: any) => {
     if (!show) {
       play
         .to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 1 }, 0.3);
-      texts.map(res => { play.to(res.class, res.duration, { opacity: 1 }, res.delay) })
+      texts.map(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay)})
       return
     }
     play
@@ -38,6 +40,8 @@ const Featured = (props: any) => {
       timeline.to(res.class, { opacity: 0 }, 0);
     })
   }
+  
+ 
 
   return (
     <div className='_main'>

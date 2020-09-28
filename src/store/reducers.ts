@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import testReducer from './test/reducer';
+import themeReducer from './theme/reducer';
 
 const reducers = combineReducers({
-  test: testReducer
+  theme: themeReducer
 })
 
 export default reducers;

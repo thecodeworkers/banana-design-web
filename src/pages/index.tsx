@@ -6,7 +6,18 @@ import { Featured } from '../screens';
 const IndexPage = () => (
 
   // <Menu />
-  <Featured />
+
+  <div>
+    <div style={{height: '100vh'}}>
+
+    </div>
+<Featured />
+
+<div style={{height: '100vh'}}>
+
+</div>
+  </div>
+
   
 )
 

@@ -1,3 +1,4 @@
+export { default as wrapRootElement } from './src/store';
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
  *

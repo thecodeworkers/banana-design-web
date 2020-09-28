@@ -1,4 +1,4 @@
-import { SET_TEST } from "./action-types";
+import { CHANGE_THEME } from "./action-types";
 
 const initialState = {
   test: null
@@ -6,7 +6,7 @@ const initialState = {
 
 export default (state = initialState, { type, payload }) => {
   switch(type) {
-    case SET_TEST:
+    case CHANGE_THEME:
     return { test: payload }
 
     default:
