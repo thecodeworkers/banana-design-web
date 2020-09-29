@@ -1,33 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import './style.scss';
-import { gsapStart, gsapEnd } from './gsap';
-import { ToggleButton } from '../../assets/img'
 
 const Menu = () => {
-	const	[open, SetOpen] = useState(true)
-
-	const activeMenu= () => {
-if (open === true){
-console.log("true");
-/*  */
-SetOpen(false)
-gsapStart()
-}
-if (open === false){
-	console.log("false");
-	gsapEnd()
- SetOpen(true)
-}
-	}
 
 	return (
-		<div>
-		<div className={'_sectionWhite'}>
-				<p onClick={() => activeMenu()}>HLAAAAAAAAA</p>
+
 			<div className={'_sectionBlack'}>
-			
+
 				<div className={'_blackHeader'}>
-		
+
 				<div className={'_blackHeaderHover'}></div>
 					<div className={'_addressContainer'}>
 						<p className={'_addressText'}>Centro de Artes Integradas,</p>
@@ -35,10 +16,10 @@ if (open === false){
 						<p className={'_addressText'}>Módulo 5 / Oficina 53</p>
 						<p className={'_addressText'}>Caracas 1073</p>
 					</div>
-					<div className='_iconContainer'>
-					<div className={'_icon'} > <ToggleButton color={'#fff'} /></div>
-					</div>
-				
+				{/* 	<div className='_iconContainer'>
+					<div className={'_icon'} > <ToggleButton fill={'#fff'} /></div>
+					</div> */}
+
 				</div>
 
 				<div className={'_blackBody'}>
@@ -55,9 +36,9 @@ if (open === false){
 					<p className={'_blackBodyFooterText _mb-60'}>Classroom</p>
 					</div>
 				</div>
-		
+
 				<div className={'_blackFooter'}>
-				
+
 					<div className='_blackFooterLine'> </div>
 					<div className={'_blackFooterContainer'}>
 					<div className={'_blackFooterHover'}>	</div>
@@ -76,12 +57,9 @@ if (open === false){
 							<p className={'_blackFooterText _mb '}>síguenos en:</p>
 							<p className={'_blackFooterText _mt'}>@bananadesign_</p>
 						</div>
-				
-				</div>
-				</div>
-			</div>
 
-			</div>
+				</div>
+				</div>
 			</div>
 	)
 }

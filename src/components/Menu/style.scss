@@ -17,7 +17,7 @@
 margin-top: 10%;
 width: 90%;
 margin-right: auto;
- height: 30%; 
+ height: 30%;
 
 }
 ._whiteBodyText{
@@ -50,7 +50,8 @@ font-family: $universLtsTd;
   width: 0%;
   height: 100vh;
   position: absolute;
-  right: 0;
+	right: 0;
+	top: 0;
 }
 ._blackHeader{
   display: flex;
@@ -104,7 +105,7 @@ height: 10%;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-   margin-right: 45px; 
+   margin-right: 45px;
   color: $white;
   display: flex;
 }
@@ -181,10 +182,10 @@ z-index: 1;
 }
 
 ._mt{
- margin-top: 15px !important; 
+ margin-top: 15px !important;
 }
 ._mb{
-margin-bottom: 15px !important; 
+margin-bottom: 15px !important;
 }
 ._mb-60{
 margin-bottom: 60px;
@@ -238,4 +239,4 @@ margin-bottom: 60px;
       }
     }
   }
-  
+

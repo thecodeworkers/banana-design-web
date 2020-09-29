@@ -23,3 +23,4 @@ const ToggleButton: React.FC<toggleProps> = ({width, fill, className, style}) =>
 )
 
 export default ToggleButton;
+
