@@ -70,24 +70,25 @@
 ._mineralsTwoTitle {
   @include minerals;
   
-  // @include opacity;
+  @include opacity;
 }
 
 ._mineralsTwoSubTitle {
   @include minerals;
   margin-left: 20%;
   margin-top: -0.8rem;
-  // @include opacity;
+  @include opacity;
 }
 
-// ._textOne, ._textTwo, ._textThree {
-//   // @include opacity;
-// }
+._textOne, ._textTwo, ._textThree {
+  @include opacity;
+}
 
 ._loremTextTwo {
   color: $aquaGreen;
   font-size: 1.2rem;
   font-family: $montserrat;
+  // @include opacity;
 }
 
 ._zeroTwo {

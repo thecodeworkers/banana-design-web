@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.scss';
-import { FeaturedImageTwo } from '../../components/Svg';
+import { DistortionTwo, FeaturedImageTwo } from '../../components/Svg';
+import { gsap } from 'gsap/all';
 
 const FeaturedTwo = () => {
 
-  const imageChange = (value: string) => {
-    console.log(value);
+  const [show, setShow ] = useState(false);
+
+  const texts: Array<any> = [
+    { class: '._textOne', duration: 0.3, delay: 0.5 },
+    { class: '._textTwo', duration: 0.3, delay: 0.7 },
+    { class: '._textThree', duration: 0.3, delay: 0.9 },
+  ]
+
+  const timeline = gsap.timeline();
+
+  const imageChange = (param: string) => {
+    inAnimation();
+    param == 'in' ? setShow(true) : setShow(false);
+  }
+
+  const inAnimation = () => { 
+    const play = timeline.play();
+    if (!show) {
+      play
+        .to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 1 }, 0.3);
+      texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay)})
+      return
+    }
+    play
+      .to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 0 }, 0);
+    texts.forEach(res => { timeline.to(res.class, { opacity: 0 }, 0);})
   }
 
   return (
@@ -14,7 +39,7 @@ const FeaturedTwo = () => {
         <div className='_leftDivFeatured'>
           <div onMouseEnter={() => imageChange('in')} onMouseLeave={() => imageChange('out')} className='_imageDad'>
             {
-              true ? <FeaturedImageTwo /> : null
+              !show ? <FeaturedImageTwo /> : <DistortionTwo />
             }
 
             <div className='_keywordsTwo'>

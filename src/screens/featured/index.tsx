@@ -4,13 +4,13 @@ import { FeaturedOne, DistortionOne } from '../../components/Svg';
 import { saveTest } from '../../store/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { TimelineMax, gsap, ScrollTrigger} from 'gsap/all';
+import { gsap, ScrollTrigger } from 'gsap/all';
 
 const Featured = (props: any) => {
   const [show, setShow] = useState(false);
 
   gsap.registerPlugin(ScrollTrigger);
-  const timeline = new TimelineMax();
+  const timeline = gsap.timeline();
 
   const texts: Array<any> = [
     { class: '._text1', duration: 0.3, delay: 0.5 },
