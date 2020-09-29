@@ -4,7 +4,7 @@ import {Menu , Product} from "../components";
 
 const IndexPage = () => (
 <div>
-<Product />
+{/* <Product /> */}
 <Menu />
  
 </div>
