@@ -39,7 +39,7 @@ const FeaturedTwo = () => {
         <div className='_leftDivFeatured'>
           <div onMouseEnter={() => imageChange('in')} onMouseLeave={() => imageChange('out')} className='_imageDad'>
             {
-              !show ? <FeaturedImageTwo /> : <DistortionTwo />
+              true ? <FeaturedImageTwo /> : <DistortionTwo />
             }
 
             <div className='_keywordsTwo'>

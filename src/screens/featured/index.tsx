@@ -75,7 +75,7 @@ const Featured = (props: any) => {
 
           <div onMouseEnter={() => imageChange('in')} onMouseLeave={() => imageChange('out')} className='_imgParent'>
             {
-              !show ? <FeaturedOne /> : <DistortionOne />
+              true ? <FeaturedOne /> : <DistortionOne />
             }
 
             <div className='_keywords'>
