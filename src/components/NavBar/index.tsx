@@ -1,19 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Logo, ToggleButton } from './../../assets/img';
 import navBarProps from './interface';
+import { gsapMenuStart } from '../../components/Menu/gsap';
 import './styles.scss';
 
 
 const NavBar: React.FC<navBarProps> = ({ reference }) => {
-   
+
   const [isDark, setIsDark] = useState( false );
 
   const defaultChangeColorsPoint = window.innerHeight * 0.7;
-    
-  
+
+
   const changeColors = () => {
 
-    const changeColorsPoint = reference 
+    const changeColorsPoint = reference
       ? reference.current.clientHeight
       : defaultChangeColorsPoint;
 
@@ -30,13 +31,19 @@ const NavBar: React.FC<navBarProps> = ({ reference }) => {
 
     return () => {
       window.removeEventListener( 'scroll', changeColors );
-    } 
-  }, [])
+    }
+	}, [])
+
+
 
   return (
-    <div className={`_navBar ${ isDark ? '_dark' : '_light'}`}>
+    <div onClick={gsapMenuStart} className={`_navBar ${ isDark ? '_dark' : '_light'}`}>
       <Logo className="_navBarLogo"/>
-      <ToggleButton className="_navBarToggle" />
+
+<div className="_navBarToggle" >
+<ToggleButton/>
+</div>
+
     </div>
   )
 }

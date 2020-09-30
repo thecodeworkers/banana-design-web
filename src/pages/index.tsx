@@ -5,9 +5,8 @@ import {Menu , Product, NavBar} from "../components";
 const IndexPage = () => (
 <div>
 <NavBar />
-<Product />
 <Menu />
- 
+
 </div>
 )
 

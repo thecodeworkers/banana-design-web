@@ -3,7 +3,7 @@ import React from 'react';
 interface toggleProps {
   width?: string,
   fill?: string,
-  className?: string, 
+  className?: string,
   style?: object
 }
 
@@ -23,3 +23,4 @@ const ToggleButton: React.FC<toggleProps> = ({width, fill, className, style}) =>
 )
 
 export default ToggleButton;
+
