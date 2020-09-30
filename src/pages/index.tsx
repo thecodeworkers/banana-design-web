@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
-import {Menu , Product, NavBar} from "../components";
+import {Menu , Product, NavBar ,VerticalBreadcrumb} from "../components";
 
 const IndexPage = () => (
 <div>
 <NavBar />
-<Product />
-<Menu />
- 
+<VerticalBreadcrumb  text={''} />
+{/* <Product />
+<Menu /> */}
+
 </div>
 )
 
