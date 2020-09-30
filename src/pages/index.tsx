@@ -6,10 +6,7 @@ import { Featured, FeaturedTwo } from '../screens';
 const IndexPage = () => (
 <div>
 <NavBar />
-{/* <Product /> */}
-{/* <Menu /> */}
-<Featured />
-<FeaturedTwo />
+<Menu />
 
 </div>
 )
