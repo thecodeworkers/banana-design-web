@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Logo, ToggleButton } from './../../assets/img';
 import navBarProps from './interface';
-import { gsapMenuStart } from '../../components/Menu/gsap';
+import { gsapMenuStart} from '../../components/Menu/gsap';
 import './styles.scss';
 
 
@@ -34,15 +34,13 @@ const NavBar: React.FC<navBarProps> = ({ reference }) => {
     }
 	}, [])
 
-
-
   return (
-    <div onClick={gsapMenuStart} className={`_navBar ${ isDark ? '_dark' : '_light'}`}>
+    <div className={`_navBar ${ isDark ? '_dark' : '_light'}`}>
       <Logo className="_navBarLogo"/>
 
-<div className="_navBarToggle" >
-<ToggleButton/>
-</div>
+			<div className="_navBarToggle" onClick={gsapMenuStart} >
+	<ToggleButton />
+			</div>
 
     </div>
   )
