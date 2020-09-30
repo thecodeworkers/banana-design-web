@@ -71,7 +71,7 @@
 
 ._mineralsTwoTitle {
   @include minerals;
-  
+
   @include opacity;
 }
 
@@ -98,5 +98,5 @@
   color: $aquaGreen;
   font-size: 1.7rem;
   // font-weight: bold;
-  // @include opacity;
-} 
+  @include opacity;
+}

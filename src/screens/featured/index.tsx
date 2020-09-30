@@ -19,15 +19,15 @@ const Featured = (props: any) => {
   ]
 
   const imageChange = (param: string) => {
-    inAnimation();
-    param == 'in' ? setShow(true) : setShow(false);
+		param == 'in' ? setShow(true) : setShow(false);
+		inAnimation();
   }
 
   useEffect(() => {
     triggerAction();
   }, [])
 
-  const inAnimation = () => { 
+  const inAnimation = () => {
     const play = timeline.play();
     if (!show) {
       play
@@ -39,7 +39,7 @@ const Featured = (props: any) => {
       .to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 0 }, 0);
     texts.forEach(res => { timeline.to(res.class, { opacity: 0 }, 0);})
   }
-  
+
   const triggerAction = () => {
     const tl = gsap.timeline({
       scrollTrigger: {

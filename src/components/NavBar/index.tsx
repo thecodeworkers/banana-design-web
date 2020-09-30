@@ -5,15 +5,15 @@ import './styles.scss';
 
 
 const NavBar: React.FC<navBarProps> = ({ reference }) => {
-   
+
   const [isDark, setIsDark] = useState( false );
 
   const defaultChangeColorsPoint = window.innerHeight * 0.7;
-    
-  
+
+
   const changeColors = () => {
 
-    const changeColorsPoint = reference 
+    const changeColorsPoint = reference
       ? reference.current.clientHeight
       : defaultChangeColorsPoint;
 
@@ -30,7 +30,7 @@ const NavBar: React.FC<navBarProps> = ({ reference }) => {
 
     return () => {
       window.removeEventListener( 'scroll', changeColors );
-    } 
+    }
   }, [])
 
   return (

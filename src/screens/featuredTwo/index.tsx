@@ -16,11 +16,11 @@ const FeaturedTwo = () => {
   const timeline = gsap.timeline();
 
   const imageChange = (param: string) => {
-    inAnimation();
-    param == 'in' ? setShow(true) : setShow(false);
+		param == 'in' ? setShow(true) : setShow(false);
+		inAnimation();
   }
 
-  const inAnimation = () => { 
+  const inAnimation = () => {
     const play = timeline.play();
     if (!show) {
       play
@@ -30,14 +30,14 @@ const FeaturedTwo = () => {
     }
     play
       .to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 0 }, 0);
-    texts.forEach(res => { timeline.to(res.class, { opacity: 0 }, 0);})
+   		 texts.forEach(res => { timeline.to(res.class, { opacity: 0 }, 0);})
   }
 
   return (
     <div className='_principal'>
       <div className='_featuredTwoChild'>
         <div className='_leftDivFeatured'>
-          <div onMouseEnter={() => imageChange('in')} onMouseLeave={() => imageChange('out')} className='_imageDad'>
+          <div onMouseOver={() => imageChange('in')} onMouseOut={() => imageChange('out')} className='_imageDad'>
             {
               true ? <FeaturedImageTwo /> : <DistortionTwo />
             }

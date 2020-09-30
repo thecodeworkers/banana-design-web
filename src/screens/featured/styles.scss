@@ -80,7 +80,7 @@
 
   & p {
     font-family: $montserrat;
-    color: $white; 
+    color: $white;
     font-weight: bold;
   }
 }
@@ -91,7 +91,7 @@
   font-size: 1.7rem;
   // font-weight: bold;
   @include opacity;
-} 
+}
 
 
 ._mineralsTitle {
@@ -111,5 +111,5 @@
 }
 
 ._imgParent {
-  padding-right: 2.5%;
+	padding-right: 2.5%;
 }
