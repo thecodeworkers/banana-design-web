@@ -1,3 +1,4 @@
+
 ._navBar {
   box-sizing: border-box;
   position: sticky;
@@ -10,7 +11,7 @@
   justify-content: space-between;
   align-items: flex-end;
   transition: all .5s linear;
-
+	z-index: 999;
 
   &._light {
     background-color: #ffffff;
@@ -20,7 +21,7 @@
   }
 
   &._dark {
-    background-color: #111111;
+    background-color: #2C292A;
 
     ._navBarLogo,
     ._navBarToggle { fill: #ffffff; }
