@@ -6,8 +6,9 @@ import { Featured, FeaturedTwo } from '../screens';
 const IndexPage = () => (
 	<div>
 		<NavBar />
-		<VerticalBreadcrumb />
+
 		<Menu />
+		<VerticalBreadcrumb />
 
 	</div>
 )
