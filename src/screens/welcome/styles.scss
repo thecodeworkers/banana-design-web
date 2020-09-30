@@ -1,0 +1,86 @@
+@import '../../../assets/styles/index.scss';
+
+._principalContainer {
+  padding: 10vh 2.5% 5vh 2.5%;
+  height: 85vh;
+}
+
+._container {
+  // background-color: pink;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+._concept {
+  // background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 45%;
+}
+
+._intermediate {
+  // background-color: purple;
+  width: 100%;
+  height: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  // border-bottom: 1px solid black;
+
+  ._target {
+    font-family: $universLtsTd;
+    width: 50%;
+  }
+
+  ._targetRightContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+
+    ._targetRight {
+      font-family: $universLTSTD-Light;
+      color: #929497;
+    }
+  }
+
+  ._separator {
+    width: 100%; 
+    border: 0;
+    background-color: #929497; 
+    height: 3px;
+  }
+}
+
+._contact {
+  // background-color: yellow;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+
+  ._contactText {
+    font-family: $universLtsTd;
+    font-size: 14px;
+  }
+}
+
+._description {
+  // background-color: green;
+  width: 50%; 
+  height: 50%;
+  font-family: $universLTSTD-Light;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #000000;
+}
+
+._whiteBodyText{
+  color: $blue;
+  font-size: 3rem;
+  font-family: $monumentExtended-Regular;
+  line-height: 1.2;
+  opacity: 1;
+}

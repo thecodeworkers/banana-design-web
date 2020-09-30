@@ -8,7 +8,7 @@ const Menu = () => {
 
   return(
   <div className={'_menuContainer'}>
-	 	<div className={'_sectionWhite'}>
+	 	{/* <div className={'_sectionWhite'}>
 	 		<div className={'_whiteBody'}>
 	 			<p className={'_whiteBodyText'} onMouseEnter={gsapStart}>+Concepto</p>
 				<p className={'_whiteBodyText'}>+Propósito</p>
@@ -31,7 +31,7 @@ const Menu = () => {
 				</div>
 			</div>  
 		</div>
-	
+	 */}
 	 	<div className={'_sectionBlack'}>
 			<div className={'_blackHeader'}>
 		  	<div className={'_addressContainer'}>

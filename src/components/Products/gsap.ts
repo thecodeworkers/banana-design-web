@@ -6,5 +6,5 @@ export const  gsapStart = () => {
 
   timeline
     .play()
-    .to("._hola", 0.2, { x: 0, opacity: 1 },  0.4)
+    .to("._hola", 0.2, { x: 1, opacity: 0},  0.4)
 }
