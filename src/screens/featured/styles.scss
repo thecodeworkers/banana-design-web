@@ -2,9 +2,9 @@
 
 @mixin minerals {
   color: $white;
-  font-family: $montserrat;
+  font-family: $monumentExtended-Regular;
   font-weight: bold;
-  font-size: 3.8rem;
+  font-size: 4rem;
 }
 
 @mixin opacity {
@@ -12,30 +12,30 @@
 }
 
 ._main {
-  background-color: $littleBlack;
+  background-color: $white;
   width: 100%;
   height: 100vh;
+  box-sizing: border-box;
 }
 
 ._featuredContent {
-  width: 90%;
+  width: 95%;
   height: 100vh;
-  margin: auto;
-  margin: auto;
+  margin: 0% 2.5%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-top: 10vh;
+  box-sizing: border-box;
 }
 
 ._leftFeaturedContent {
-  width: 50%;
+  width: 45%;
 }
 
 ._rightFeaturedContent {
-  width: 70%;
-  cursor: url('../../../assets/images/curson.svg'), 10 10 auto;
+  width: 55%;
   position: relative;
-
 }
 
 ._keywords {
@@ -61,6 +61,8 @@
 
 ._leftDescription {
   width: 75%;
+  padding-left: 2.5%;
+  // background-color: blue;
 }
 
 ._loremText {
@@ -78,18 +80,18 @@
 
   & p {
     font-family: $montserrat;
-    color: $white; 
+    color: $white;
     font-weight: bold;
   }
 }
 
 ._zeroOne {
-  font-family: $montserrat;
+  font-family: $monumentExtended-Regular;
   color: $lightPurple;
   font-size: 1.7rem;
-  font-weight: bold;
+  // font-weight: bold;
   @include opacity;
-} 
+}
 
 
 ._mineralsTitle {
@@ -99,11 +101,15 @@
 
 ._mineralsSubTitle {
   @include minerals;
-  margin-left: 20%;
+  margin-left: 23.5%;
   margin-top: -0.8rem;
   @include opacity;
 }
 
 ._text1, ._text2, ._text3 {
   @include opacity;
+}
+
+._imgParent {
+	padding-right: 2.5%;
 }
