@@ -10,7 +10,7 @@ const VerticalBreadcrumb: React.FC<verticalBreadcrumbProps> = ({ text }) => {
   return(
 
 		<div className={`_breadCrumbContainer ${ isDark ? '_darkBreadcrumb' : '_lightBreadcrumb'}`}>
-		<p className={'__breadCrumbtext'}>{text}</p>
+		<p className={'__breadCrumbtext'}>Menu</p>
 	</div>
   )}
 
