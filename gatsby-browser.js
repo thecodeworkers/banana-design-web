@@ -1,5 +1,5 @@
 import "./src/global.scss"
-
+export { default as wrapRootElement } from './src/store';
 /**
  * Implement Gatsby's Browser APIs in this file.
  *
