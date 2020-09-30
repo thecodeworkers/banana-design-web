@@ -1,4 +1,6 @@
 import React from "react";
+import { ToggleButton } from './../../assets/img';
+import { gsapMenuEnd } from './gsap'
 import './style.scss';
 
 const Menu = () => {
@@ -16,10 +18,9 @@ const Menu = () => {
 						<p className={'_addressText'}>Módulo 5 / Oficina 53</p>
 						<p className={'_addressText'}>Caracas 1073</p>
 					</div>
-				{/* 	<div className='_iconContainer'>
-					<div className={'_icon'} > <ToggleButton fill={'#fff'} /></div>
-					</div> */}
-
+					<div className='_iconContainer'>
+					<div className={'_icon'} onClick={gsapMenuEnd} > <ToggleButton fill={'#fff'} /></div>
+					</div>
 				</div>
 
 				<div className={'_blackBody'}>

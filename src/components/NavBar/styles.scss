@@ -12,9 +12,9 @@
   transition: all .5s linear;
 
 
-  &._light { 
+  &._light {
     background-color: #ffffff;
-    
+
     ._navBarLogo,
     ._navBarToggle { fill: #111111; }
   }
@@ -32,6 +32,8 @@
 
   ._navBarToggle {
     width: 2.2%;
-    cursor: pointer;
+		cursor: pointer;
+		position: absolute;
+		right: 30px;
   }
 }

@@ -1,6 +1,6 @@
 import { TimelineMax } from 'gsap/all';
 
-export const gsapStart = () => {
+export const gsapMenuStart = () => {
 
   const timeline = new TimelineMax({ paused: true });
 
@@ -14,11 +14,11 @@ export const gsapStart = () => {
     .to("._blackBody", 0.1, { opacity:1, }, 2)
 }
 
-export const gsapEnd = () => {
+export const gsapMenuEnd = () => {
 
   const timeline = new TimelineMax({ paused: true });
 
   timeline
     .play()
-     .to("._sectionBlack", 1, {right:'-60%',display:'none'}, 0.4)
+		 .to("._sectionBlack", 1, {right:'-60%'}, 0.4)
 }

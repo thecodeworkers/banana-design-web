@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Logo, ToggleButton } from './../../assets/img';
 import navBarProps from './interface';
-import { gsapStart, gsapEnd } from '../../components/Menu/gsap';
+import { gsapMenuStart } from '../../components/Menu/gsap';
 import './styles.scss';
 
 
@@ -34,26 +34,16 @@ const NavBar: React.FC<navBarProps> = ({ reference }) => {
     }
 	}, [])
 
-	const	[open, SetOpen] = useState(true)
-	const activeMenu= () => {
-		if (open === true){
-		console.log("true");
-		/*  */
-		SetOpen(false)
-		gsapStart()
-		}
-		if (open === false){
-			console.log("false");
-			gsapEnd()
-		 SetOpen(true)
-		}
-			}
+
 
   return (
-    <div className={`_navBar ${ isDark ? '_dark' : '_light'}`}>
+    <div onClick={gsapMenuStart} className={`_navBar ${ isDark ? '_dark' : '_light'}`}>
       <Logo className="_navBarLogo"/>
 
-			<ToggleButton className="_navBarToggle" fill={open === true ? '#162935' : '#fff' }/>
+<div className="_navBarToggle" >
+<ToggleButton/>
+</div>
+
     </div>
   )
 }
