@@ -10,7 +10,7 @@ interface logoProps {
 const Logo: React.FC<logoProps> = ({width, fill, className, style}) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 194.011 27.358"
     width={ width || "100%" }
-    fill={ fill || '#162935' }
+    fill={ fill || "#2C292A" }
     className={ className || "" }
     style={ style || {} }
   >

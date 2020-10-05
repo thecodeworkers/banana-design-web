@@ -10,7 +10,7 @@ interface toggleProps {
 const ToggleButton: React.FC<toggleProps> = ({width, fill, className, style}) => (
   <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.000000 139.000000" preserveAspectRatio="xMidYMid meet"
     width={ width || "100%" }
-    fill={ fill || '#162935' }
+    fill={ fill || "#162935" }
     className={ className || "" }
     style={ style || {} }
   >
