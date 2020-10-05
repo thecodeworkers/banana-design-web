@@ -1,27 +1,28 @@
 @import '../../../assets/styles/index.scss';
 
+$paddingLeft: 4.16%;
 
 ._sectionBlack{
   background-color: $blackie;
 	width: 60%;
 	transform: translateX(100%);
   height: 100vh;
-  position: absolute;
+  position: fixed;
 	right: 0;
 	top: 0;
 	z-index: 999;
 }
 ._blackHeader{
+  @include navBarPaddingTop;
 	box-sizing: border-box;
-  position: sticky;
-  top: 0;
   width: 100%;
-  height: 10vh;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
+  padding-left: $paddingLeft;
+  padding-right: 4.17%;
+  padding-bottom: .5vh;
+  padding-bottom: .5vh;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 ._blackHeaderHover{
   position: absolute;
@@ -48,7 +49,8 @@
 ._blackBody{
   height: 50%;
 	margin-top: 50px;
-	margin-bottom: -50px;
+  margin-bottom: -50px;
+  padding-right: 8.2%;
   flex-direction: column;
   display: flex;
   justify-content: flex-start;
@@ -90,7 +92,7 @@
 
 ._blackBodyFooter{
   height: 14.8%;
-	padding-left: 2.5%;
+	padding-left: $paddingLeft;
 	padding-right: 2.5%;
   color: $white;
 	text-align: right;
@@ -131,8 +133,8 @@
 }
 
 ._blackFooter{
+	padding-left: $paddingLeft;
 	padding-right: 2.5%;
-	padding-left: 2.5%;
 }
 ._blackFooterLine{
   height: 1.5px;

@@ -9,7 +9,9 @@ const IndexPage = () => (
 
 		<Menu />
 		<VerticalBreadcrumb />
-
+    <div style={{height: "100vh", backgroundColor: "#ffffff"}} ></div>
+    <div style={{height: "100vh", backgroundColor: "#444444"}} ></div>
+    <div style={{height: "100vh", backgroundColor: "#ffffff"}} ></div>
 	</div>
 )
 

@@ -2,17 +2,17 @@
 
 
 ._navBar {
+  @include navBarPaddingTop;
   box-sizing: border-box;
   position: sticky;
   top: 0;
   width: 100%;
-  height: 10vh;
   padding-left: 2.5%;
   padding-right: 2.5%;
   padding-bottom: .5vh;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   transition: all .5s linear;
 	z-index: 999;
 
@@ -32,5 +32,8 @@
 
   ._navBarLogo { width: 9%; }
 
-  ._navBarToggleWrapper { width: 2.2%; }
+  ._navBarToggleWrapper {
+    width: 2.2%;
+    cursor: pointer;
+  }
 }
