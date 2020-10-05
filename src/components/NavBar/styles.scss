@@ -1,3 +1,5 @@
+@import '../../../assets/styles/index.scss';
+
 
 ._navBar {
   box-sizing: border-box;
@@ -14,24 +16,24 @@
 	z-index: 999;
 
   &._light {
-    background-color: #ffffff;
+    background-color: $white;
 
     ._navBarLogo,
-    ._navBarToggle { fill: #111111; }
+    ._navBarToggle { fill: $blackie; }
   }
 
   &._dark {
-    background-color: #2C292A;
+    background-color: $blackie;
 
     ._navBarLogo,
-    ._navBarToggle { fill: #ffffff; }
+    ._navBarToggle { fill: $white; }
   }
 
   ._navBarLogo {
     width: 10%;
   }
 
-  ._navBarToggle {
+  ._navBarToggleWrapper {
     width: 2.2%;
 		cursor: pointer;
 		position: absolute;

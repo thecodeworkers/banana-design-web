@@ -38,8 +38,8 @@ const NavBar: React.FC<navBarProps> = ({ reference }) => {
     <div className={`_navBar ${ isDark ? '_dark' : '_light'}`}>
       <Logo className="_navBarLogo"/>
 
-			<div className="_navBarToggle" onClick={gsapMenuStart} >
-	<ToggleButton />
+			<div className="_navBarToggleWrapper" onClick={gsapMenuStart} >
+	      <ToggleButton className="_navBarToggle"/>
 			</div>
 
     </div>
