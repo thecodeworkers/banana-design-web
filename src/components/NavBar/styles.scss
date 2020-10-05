@@ -9,6 +9,7 @@
   height: 10vh;
   padding-left: 2.5%;
   padding-right: 2.5%;
+  padding-bottom: .5vh;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -29,14 +30,7 @@
     ._navBarToggle { fill: $white; }
   }
 
-  ._navBarLogo {
-    width: 10%;
-  }
+  ._navBarLogo { width: 9%; }
 
-  ._navBarToggleWrapper {
-    width: 2.2%;
-		cursor: pointer;
-		position: absolute;
-		right: 30px;
-  }
+  ._navBarToggleWrapper { width: 2.2%; }
 }
