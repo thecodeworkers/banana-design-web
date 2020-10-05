@@ -1,6 +1,5 @@
 @import '../../../assets/styles/index.scss';
 
-
 ._navBar {
   @include navBarPaddingTop;
   box-sizing: border-box;
@@ -33,6 +32,7 @@
   ._navBarLogo { width: 9%; }
 
   ._navBarToggleWrapper {
+    padding-top: 1vh;
     width: 2.2%;
     cursor: pointer;
   }

@@ -1,6 +1,6 @@
 @import '../../../assets/styles/index.scss';
 
-$paddingLeft: 4.16%;
+$paddingMenu: 4.16%;
 
 ._sectionBlack{
   background-color: $blackie;
@@ -16,10 +16,8 @@ $paddingLeft: 4.16%;
   @include navBarPaddingTop;
 	box-sizing: border-box;
   width: 100%;
-  padding-left: $paddingLeft;
-  padding-right: 4.17%;
-  padding-bottom: .5vh;
-  padding-bottom: .5vh;
+  padding-left: $paddingMenu;
+  padding-right: $paddingMenu;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -50,7 +48,7 @@ $paddingLeft: 4.16%;
   height: 50%;
 	margin-top: 50px;
   margin-bottom: -50px;
-  padding-right: 8.2%;
+  padding-right: $paddingMenu * 2;
   flex-direction: column;
   display: flex;
   justify-content: flex-start;
@@ -92,8 +90,8 @@ $paddingLeft: 4.16%;
 
 ._blackBodyFooter{
   height: 14.8%;
-	padding-left: $paddingLeft;
-	padding-right: 2.5%;
+	padding-left: $paddingMenu;
+	padding-right: $paddingMenu * 2;
   color: $white;
 	text-align: right;
 	display: flex;
@@ -133,9 +131,11 @@ $paddingLeft: 4.16%;
 }
 
 ._blackFooter{
-	padding-left: $paddingLeft;
-	padding-right: 2.5%;
+  padding-left: $paddingMenu;
+  padding-right: $paddingMenu * 2;
+  padding-bottom: $paddingMenu;
 }
+
 ._blackFooterLine{
   height: 1.5px;
   background-color: $white;
@@ -160,7 +160,8 @@ z-index: 1;
   position: relative;
 }
 ._blackFooterText{
-  font-size: 0.875rem;
+  // font-size: 0.875rem;
+  font-size: 0.75rem;
   font-family: $universLtsTd;
 }
 
