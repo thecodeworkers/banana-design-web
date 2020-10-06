@@ -6,6 +6,8 @@ import { gsap } from 'gsap/all';
 const FeaturedTwo = () => {
 
   const [show, setShow ] = useState(false);
+	const [flag, setFlag] = useState(false);
+
 
   const texts: Array<any> = [
     { class: '._textOne', duration: 0.3, delay: 0.5 },
@@ -22,15 +24,20 @@ const FeaturedTwo = () => {
 
   const inAnimation = () => {
     const play = timeline.play();
-    if (!show) {
+    if (!show && !flag) {
       play
         .to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 1 }, 0.3);
-      texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay)})
+			texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay)})
+			timeline.eventCallback("onComplete", () => setFlag(true));
       return
-    }
-    play
-      .to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 0 }, 0);
-   		 texts.forEach(res => { timeline.to(res.class, { opacity: 0 }, 0);})
+		}
+
+		if(flag) {
+			play
+			.to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle', '._textOne', '._textTwo', '._textThree'], { opacity: 0 }, 0);
+			timeline.eventCallback("onComplete", () => setFlag(false));
+		}
+
   }
 
   return (
