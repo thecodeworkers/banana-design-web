@@ -1,12 +1,14 @@
 import React, { useState, useEffect} from 'react';
 import './styles.scss';
 import { FeaturedOne, DistortionOne } from '../../components/Svg';
-import { saveTest } from '../../store/actions';
+import { changeBreadcrumb } from '../../store/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { gsap, ScrollTrigger } from 'gsap/all';
 
 const Featured = (props: any) => {
+
+	const { action, breadcrumb } = props;
   const [show, setShow] = useState(false);
 
   gsap.registerPlugin(ScrollTrigger);
@@ -25,7 +27,33 @@ const Featured = (props: any) => {
 
   useEffect(() => {
     triggerAction();
-  }, [])
+	}, [])
+
+
+	const enterSection = (tl: any) => {
+		tl.to('._main', {backgroundColor: '#2C292A'});
+
+		setTimeout(() => {
+			action.changeBreadcrumb({
+				color: '#FFFFFF',
+				text: 'Destacados',
+			});
+		}, 200);
+
+	}
+
+	const outSection = (tl: any) => {
+		tl.to('._main', {backgroundColor: '#FFFFFF'})
+
+		setTimeout(() => {
+			action.changeBreadcrumb({
+				color: '#0853DC',
+				text: 'Welcome',
+			});
+		}, 200);
+
+	}
+
 
   const inAnimation = () => {
     const play = timeline.play();
@@ -36,8 +64,7 @@ const Featured = (props: any) => {
       return
     }
     play
-      .to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 0 }, 0);
-    texts.forEach(res => { timeline.to(res.class, { opacity: 0 }, 0);})
+      .to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle', '._text1', '._text2', '._text3'], { opacity: 0 }, 0);
   }
 
   const triggerAction = () => {
@@ -46,9 +73,9 @@ const Featured = (props: any) => {
         trigger: '._main',
         start: '-=350',
         end: 'bottom',
-        onEnter: () => tl.to('._main', {backgroundColor: '#2C292A'}),
+        onEnter: () => enterSection(tl),
         onEnterBack: () => tl.to('._main', {backgroundColor: '#2C292A'}),
-        onLeaveBack: () =>  tl.to('._main', {backgroundColor: '#FFFFFF'}),
+        onLeaveBack: () => outSection(tl)
       }
     })
   }
@@ -62,11 +89,11 @@ const Featured = (props: any) => {
               <p className='_zeroOne'> 01 -</p>
               <p className='_mineralsTitle'>Banana</p>
               <p className='_mineralsSubTitle'>Minerals</p>
-              <p className='_loremText'>
+              <div className='_loremText'>
                 <p className='_text1'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores</p>
                 <p className='_text2'>corporis, rerum provident optio molestiae quae amet officia tempora reiciendis</p>
                 <p className='_text3'>fuga deserunt excepturi sequi vitae tempora reiciendis officia.</p>
-              </p>
+              </div>
             </div>
           </div>
         </div>
@@ -97,11 +124,11 @@ const Featured = (props: any) => {
   )
 }
 
-const mapStateToProps = ({ test }) => ({ test });
+const mapStateToProps = ({ breadcrumb }) => ({ breadcrumb });
 
 const mapDispatchToProps = dispatch => {
   const actions = {
-    saveTest
+    changeBreadcrumb
   }
 
   return {

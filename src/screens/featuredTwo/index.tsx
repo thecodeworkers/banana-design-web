@@ -57,11 +57,11 @@ const FeaturedTwo = () => {
             <div>
               <p className='_zeroTwo'> 02 -</p>
               <p className='_mineralsTwoTitle'>STAY UP</p>
-              <p className='_loremTextTwo'>
+              <div className='_loremTextTwo'>
                 <p className='_textOne'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores</p>
                 <p className='_textTwo'>corporis, rerum provident optio molestiae quae amet officia tempora reiciendis</p>
                 <p className='_textThree'>fuga deserunt excepturi sequi vitae tempora reiciendis officia.</p>
-              </p>
+              </div>
             </div>
           </div>
         </div>

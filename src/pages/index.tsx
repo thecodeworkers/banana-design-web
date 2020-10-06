@@ -10,6 +10,10 @@ const IndexPage = () => (
 		<Menu />
 		<VerticalBreadcrumb />
 
+		<div style={{height: '100vh'}}></div>
+		<Featured />
+		<FeaturedTwo />
+
 	</div>
 )
 
