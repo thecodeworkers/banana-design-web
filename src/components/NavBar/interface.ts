@@ -1,3 +1,4 @@
 export default interface navBarProps {
-  reference?: any;
+	reference?: any;
+	action: any
 }

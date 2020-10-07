@@ -47,15 +47,14 @@
   }
 
   ._separator {
-    width: 100%; 
+    width: 100%;
     border: 0;
-    background-color: #929497; 
+    background-color: #929497;
     height: 3px;
   }
 }
 
 ._contact {
-  // background-color: yellow;
   width: 50%;
   height: 50%;
   display: flex;
@@ -63,13 +62,25 @@
 
   ._contactText {
     font-family: $universLtsTd;
-    font-size: 14px;
-  }
+		font-size: 14px;
+
+		&::after {
+			display: block;
+			content: '';
+			border-bottom: solid 1px #000000;
+			transform: scaleX(0);
+			transition: transform 250ms ease-in-out;
+		}
+
+		&:hover::after {
+			transform: scaleX(1);
+		}
+	}
 }
 
 ._description {
   // background-color: green;
-  width: 50%; 
+  width: 50%;
   height: 50%;
   font-family: $universLTSTD-Light;
   font-size: 20px;
