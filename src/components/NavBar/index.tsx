@@ -37,7 +37,7 @@ const NavBar: React.FC<navBarProps> = ( props ) => {
     }
 	}, [])
 
-	const lol = () => {
+	const openMenu = () => {
 		action.openMenu()
 	}
 
@@ -45,7 +45,7 @@ const NavBar: React.FC<navBarProps> = ( props ) => {
     <div className={`_navBar ${ isDark ? '_dark' : '_light'}`}>
       <Logo className="_navBarLogo"/>
 
-			<div className="_navBarToggle" onClick={lol} >
+			<div className="_navBarToggle" onClick={openMenu} >
 				<ToggleButton/>
 			</div>
 

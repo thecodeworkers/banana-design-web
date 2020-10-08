@@ -7,8 +7,6 @@ const initialState = {
 export default (state = initialState, { type }) => {
 	switch (type) {
 		case OPEN_MENU:
-			console.log('openmenu in reducer');
-
 			return { opened: true }
 
 		case CLOSE_MENU:
