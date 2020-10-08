@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import './styles.scss';
-import { gsapStart } from './gsap'; 
+import { gsapStart } from './gsap';
+import { connect } from 'react-redux';
 
-const Welcome = () => {
+const Welcome = (props) => {
+
+	const { loader } = props;
 
   useEffect(() => {
-    gsapStart();
-  }, []);
+		if(loader) gsapStart();
+  }, [loader]);
 
   return (
     <div className='_principalContainer'>
@@ -30,7 +33,7 @@ const Welcome = () => {
         </section>
         <section className='_description'>
           <div style={{padding: '20% 0 10% 15%'}}>
-            BananaDesign es un studio creative enfocado en generar soluciones de diseño lorem ipsum dolor sit amet, 
+            BananaDesign es un studio creative enfocado en generar soluciones de diseño lorem ipsum dolor sit amet,
             con sectetuer adipiscing elit. Aenean ligula eget dolor pretium, dolor sit.
           </div>
         </section>
@@ -39,4 +42,6 @@ const Welcome = () => {
   );
 }
 
-export default Welcome;
+const mapStateToProps = ({ loader }) => ({ loader });
+
+export default connect(mapStateToProps, null)(Welcome);

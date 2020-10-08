@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Menu, NavBar, VerticalBreadcrumb } from "../components";
-import { Featured, FeaturedTwo } from '../screens';
+import { Featured, FeaturedTwo, Welcome } from '../screens';
 import { bigCursor, smallCursor, whiteCursor, smallWhiteCursor } from '../utils/cursor';
 import { rgb2hex } from '../utils/hexadecimal';
 
@@ -51,7 +51,7 @@ const Home = () => {
 			<NavBar />
 			<Menu />
 			<VerticalBreadcrumb />
-			<div style={{ height: '100vh', backgroundColor: '#ffffff'}}></div>
+			<Welcome />
 			<Featured />
 			<FeaturedTwo />
 
