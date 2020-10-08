@@ -32,7 +32,7 @@ const Featured = (props: any) => {
 
 
 	const enterSection = (tl: any) => {
-		tl.to('._main', {backgroundColor: '#2C292A'});
+		tl.to(['._main', '._featuredContent'], {backgroundColor: '#2C292A'});
 
 		setTimeout(() => {
 			action.changeBreadcrumb({
@@ -44,7 +44,7 @@ const Featured = (props: any) => {
 	}
 
 	const outSection = (tl: any) => {
-		tl.to('._main', {backgroundColor: '#FFFFFF'})
+		tl.to(['._main', '._featuredContent'], {backgroundColor: '#FFFFFF'})
 
 		setTimeout(() => {
 			action.changeBreadcrumb({
@@ -52,13 +52,11 @@ const Featured = (props: any) => {
 				text: 'Welcome',
 			});
 		}, 200);
-
 	}
-
 
   const inAnimation = () => {
     const play = timeline.play();
-    if (!show && !flag) {
+    if (!show && !flag	) {
       play
         .to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 1 }, 0.3);
 			texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay)})
@@ -71,7 +69,6 @@ const Featured = (props: any) => {
 			.to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle', '._text1', '._text2', '._text3'], { opacity: 0 }, 0);
 			timeline.eventCallback("onComplete", () => setFlag(false));
 		}
-
   }
 
   const triggerAction = () => {
@@ -81,7 +78,7 @@ const Featured = (props: any) => {
         start: '-=350',
         end: 'bottom',
         onEnter: () => enterSection(tl),
-        onEnterBack: () => tl.to('._main', {backgroundColor: '#2C292A'}),
+        onEnterBack: () => tl.to(['._main', '._featuredContent'], {backgroundColor: '#2C292A'}),
         onLeaveBack: () => outSection(tl)
       }
     })

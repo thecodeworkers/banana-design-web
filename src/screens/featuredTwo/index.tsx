@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './styles.scss';
 import { DistortionTwo, FeaturedImageTwo } from '../../components/Svg';
+import { bigCursor, smallCursor } from '../../utils/cursor';
 import { gsap } from 'gsap/all';
 
 const FeaturedTwo = () => {
 
   const [show, setShow ] = useState(false);
 	const [flag, setFlag] = useState(false);
-
 
   const texts: Array<any> = [
     { class: '._textOne', duration: 0.3, delay: 0.5 },
@@ -41,6 +41,7 @@ const FeaturedTwo = () => {
   }
 
   return (
+
     <div className='_principal'>
       <div className='_featuredTwoChild'>
         <div className='_leftDivFeatured'>
