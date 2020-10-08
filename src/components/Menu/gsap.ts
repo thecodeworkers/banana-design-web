@@ -6,12 +6,14 @@ export const gsapMenuStart = () => {
 
   timeline
     .play()
-    .to("._sectionBlack", 1,{ x: '0%'}, 0.4)
+		.to("._sectionBlack", 1,{ x: '-5%', }, 0.4)
+		.to("._breadCrumbContainerOne", 0.1, { x: '0%' }, 1.3)
     .to("._blackFooterLine", 1.5, { width: '100%', }, 1.2)
     .to("._blackFooterHover", 1.5, { width: '0%', }, 1.2)
     .to("._blackHeaderHover", 1.5, { width: '0%', }, 1.2)
     .to("._blackBodyFooterHover", 0.6, { width: '0%'}, 1.2)
 		.to("._blackBody", 0.1, { opacity:1, }, 2.5)
+
 		.eventCallback("onComplete", () => console.log("abierto")
 		);
 }
@@ -23,6 +25,7 @@ export const gsapMenuEnd = () => {
   timeline
     .play()
 		 .to("._sectionBlack", 1, { x: '100%'}, 0.4)
+		 .to("._breadCrumbContainerOne", 0.1, { x: '105%' }, 0.5)
 		 .to("._blackFooterLine", 1.5, { width: '0%', }, 1.2)
     .to("._blackFooterHover", 1.5, { width: '100%', }, 1.2)
     .to("._blackHeaderHover", 1.5, { width: '100%', }, 1.2)

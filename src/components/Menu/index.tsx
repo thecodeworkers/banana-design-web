@@ -6,7 +6,7 @@ import './style.scss';
 const Menu = () => {
 
 	return (
-
+		<div >
 		<div className={'_sectionBlack'}>
 			<div className={'_blackHeader'}>
 				<div className={'_blackHeaderHover'}></div>
@@ -62,7 +62,13 @@ const Menu = () => {
 
 				</div>
 			</div>
+
+
 		</div>
+			<div className={'_breadCrumbContainerOne'}>
+			<p className='_breadCrumbtextOne'>Menu</p>
+			</div>
+			</div>
 	)
 }
 
