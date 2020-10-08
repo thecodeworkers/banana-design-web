@@ -2,13 +2,17 @@ import React, { useEffect, createRef, useState } from 'react';
 import './style.scss';
 import lottie from 'lottie-web';
 import animation from '../../../assets/animations/beer.json';
+import { setLoader } from '../../store/actions';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { Props } from './type';
 
-const Loader = ({ children }: any) => {
+const Loader = ({ children, loader, action }: Props) => {
 
-	const animationContainer: any = createRef()
+	const animationContainer: any = createRef();
 
 	const [show, setShow ] = useState(false);
-	const [loaderClass, setloaderClass ] = useState('_showLoader')
+	const [loaderClass, setloaderClass ] = useState('_showLoader');
 
 	useEffect(() => {
 		const anim = lottie.loadAnimation({
@@ -26,6 +30,7 @@ const Loader = ({ children }: any) => {
 	const showContent = () => {
 		setShow(true);
 		setloaderClass('_hiddenLoader');
+		action.setLoader(true);
 	}
 
 	return (
@@ -40,4 +45,18 @@ const Loader = ({ children }: any) => {
 	)
 }
 
-export default Loader;
+const mapStateToProps = ({ loader }) => ({ loader });
+
+const mapDispatchToProps = dispatch => {
+  const actions = {
+    setLoader
+  }
+
+  return {
+    action: bindActionCreators(actions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Loader);
+
+

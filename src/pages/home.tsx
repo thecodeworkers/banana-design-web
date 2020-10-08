@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, memo} from "react";
 import { Link } from "gatsby";
 import { Menu, NavBar, VerticalBreadcrumb } from "../components";
 import { Featured, FeaturedTwo } from '../screens';
 import { bigCursor, smallCursor, whiteCursor, smallWhiteCursor } from '../utils/cursor';
 import { rgb2hex } from '../utils/hexadecimal';
+import { Cursor } from "../components/Svg";
 
 const Home = () => {
 
