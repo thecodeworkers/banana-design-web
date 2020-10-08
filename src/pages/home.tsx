@@ -1,10 +1,8 @@
-import React, {useState, useEffect, memo} from "react";
-import { Link } from "gatsby";
+import React, {useState, useEffect} from "react";
 import { Menu, NavBar, VerticalBreadcrumb } from "../components";
 import { Featured, FeaturedTwo } from '../screens';
 import { bigCursor, smallCursor, whiteCursor, smallWhiteCursor } from '../utils/cursor';
 import { rgb2hex } from '../utils/hexadecimal';
-import { Cursor } from "../components/Svg";
 
 const Home = () => {
 
@@ -22,7 +20,6 @@ const Home = () => {
 	}, [cursor]);
 
 	const changeCursorStyles = () => {
-		console.log(cursor)
 		cursor === 1 ? document.body.style.cursor = smallCursor : document.body.style.cursor = smallWhiteCursor
 
 		setTimeout(() => {
