@@ -1,15 +1,21 @@
 import React, { useEffect } from 'react';
 import './styles.scss';
-import { gsapStart } from './gsap';
+import { gsapStart, gsapRetract } from './gsap';
 import { connect } from 'react-redux';
 
 const Welcome = (props) => {
 
-	const { loader } = props;
+	const { loader, menu } = props;
 
   useEffect(() => {
-		if(loader) gsapStart();
-  }, [loader]);
+		console.log(loader.loader);
+		if(loader.loader) gsapStart();
+
+	}, [loader]);
+
+	useEffect(() => {
+		if(menu.opened) gsapRetract();
+  }, [menu]);
 
   return (
     <div className='_principalContainer'>
@@ -28,6 +34,14 @@ const Welcome = (props) => {
           <div className='_separator'></div>
         </section>
         <section className='_contact'>
+					<ul className='_list'>
+						<li className='_smallBodyText' id='text-1'>+Concepto</li>
+						<li className='_smallBodyText' id='text-2'>+Propósito</li>
+						<li className='_smallBodyText' id='text-3'>+Belleza</li>
+						<li className='_smallBodyText' id='text-4'>+Función</li>
+						<li className='_smallBodyText' id='text-5'>+Creación</li>
+						<li className='_smallBodyText' id='text-6'>+Innovación</li>
+					</ul>
           <div className='_contactText' style={{marginRight: '25%'}}>contact@bananadsg.com</div>
           <div className='_contactText'>+58 412 222 2222</div>
         </section>
@@ -42,6 +56,6 @@ const Welcome = (props) => {
   );
 }
 
-const mapStateToProps = ({ loader }) => ({ loader });
+const mapStateToProps = ({ loader, menu }) => ({ loader, menu });
 
 export default connect(mapStateToProps, null)(Welcome);

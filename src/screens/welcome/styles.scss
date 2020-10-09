@@ -1,5 +1,29 @@
 @import '../../../assets/styles/index.scss';
 
+$textHeight: 0px;
+
+@mixin blueText {
+	color: $blue;
+  font-family: $monumentExtended-Regular;
+  line-height: 1.2;
+  opacity: 1;
+}
+
+@mixin printHeight($prefix, $num) {
+	@for $i from 1 through $num {
+		#{$prefix}-#{$i} {
+			top: space();
+		}
+	}
+}
+
+@function space() {
+	$textHeight: $textHeight + 20px !global;
+	$top: $textHeight;
+
+	@return $top;
+}
+
 ._principalContainer {
   padding: 10vh 2.5% 5vh 2.5%;
   height: 85vh;
@@ -58,7 +82,8 @@
   width: 50%;
   height: 50%;
   display: flex;
-  align-items: flex-end;
+	align-items: flex-end;
+	position: relative;
 
   ._contactText {
     font-family: $universLtsTd;
@@ -89,9 +114,21 @@
 }
 
 ._whiteBodyText{
-  color: $blue;
+	@include blueText;
   font-size: 3rem;
-  font-family: $monumentExtended-Regular;
-  line-height: 1.2;
-  opacity: 1;
 }
+
+._list {
+	list-style: none;
+	@include printHeight('#text', 6);
+
+	._smallBodyText {
+		@include blueText;
+		opacity: 0;
+		font-size: 1.2rem;
+		position: absolute;
+		top: 0;
+	}
+
+}
+
