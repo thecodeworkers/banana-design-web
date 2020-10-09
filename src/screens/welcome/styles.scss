@@ -18,7 +18,7 @@ $textHeight: 0px;
 }
 
 @function space() {
-	$textHeight: $textHeight + 20px !global;
+	$textHeight: $textHeight + 30px !global;
 	$top: $textHeight;
 
 	@return $top;
@@ -30,11 +30,11 @@ $textHeight: 0px;
 }
 
 ._container {
-  // background-color: pink;
   width: 100%;
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
+	flex-wrap: wrap;
+	position: relative;
 }
 
 ._concept {
@@ -101,6 +101,14 @@ $textHeight: 0px;
 			transform: scaleX(1);
 		}
 	}
+
+	._moreInfo {
+		opacity: 0;
+		position: absolute;
+		bottom: 10%;
+		color: $gray;
+		width: 70%;
+	}
 }
 
 ._description {
@@ -120,6 +128,8 @@ $textHeight: 0px;
 
 ._list {
 	list-style: none;
+	position: absolute;
+	top: 30%;
 	@include printHeight('#text', 6);
 
 	._smallBodyText {
@@ -129,6 +139,5 @@ $textHeight: 0px;
 		position: absolute;
 		top: 0;
 	}
-
 }
 
