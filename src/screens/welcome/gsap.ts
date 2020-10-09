@@ -12,7 +12,7 @@ export const gsapStart = () => {
 export const gsapRetract = () => {
 	gsap.timeline()
 	.to("#one", {opacity: 0, y: 10, duration: 0.1})
-	.to("._separator", { width: '35%', duration: 0.4, height: 6})
+	.to("._separator", { width: '35%', duration: 0.4, height: 1.5})
 	.to("#two", {opacity: 0, y: 10, duration: 0.1})
 	.to("#three", {opacity: 0, y: 10, duration: 0.1})
 	.to("._description, ._targetRightContainer, ._contactText", { opacity: 0, duration: 0.2 })
