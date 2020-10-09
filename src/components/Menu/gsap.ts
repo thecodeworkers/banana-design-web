@@ -1,13 +1,13 @@
-import { TimelineMax } from 'gsap/all';
+import { gsap } from 'gsap/all';
 
 export const gsapMenuStart = () => {
 
-  const timeline = new TimelineMax({ paused: true });
+  const timeline = gsap.timeline({ paused: true });
 
   timeline
     .play()
-		.to("._sectionBlack", 1,{ x: '-5%', }, 0.4)
-		.to("._breadCrumbContainerOne", 0.1, { x: '0%' }, 1.3)
+		.to("._sectionBlack", 1,{ x: '0%'}, 0.4)
+		.to("._breadCrumbtextOne", 0.5, { x: '0%', opacity: 1 }, 2.4)
     .to("._blackFooterLine", 1.5, { width: '100%', }, 1.2)
     .to("._blackFooterHover", 1.5, { width: '0%', }, 1.2)
     .to("._blackHeaderHover", 1.5, { width: '0%', }, 1.2)
@@ -20,12 +20,12 @@ export const gsapMenuStart = () => {
 
 export const gsapMenuEnd = () => {
 
-  const timeline = new TimelineMax({ paused: true });
+  const timeline = gsap.timeline({ paused: true });
 
   timeline
     .play()
 		 .to("._sectionBlack", 1, { x: '100%'}, 0.4)
-		 .to("._breadCrumbContainerOne", 0.1, { x: '105%' }, 0.5)
+		 .to("._breadCrumbtextOne", 0.1, { opacity: 0, x: 30 }, 0.5)
 		 .to("._blackFooterLine", 1.5, { width: '0%', }, 1.2)
     .to("._blackFooterHover", 1.5, { width: '100%', }, 1.2)
     .to("._blackHeaderHover", 1.5, { width: '100%', }, 1.2)
