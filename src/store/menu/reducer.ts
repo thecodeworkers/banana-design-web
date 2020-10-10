@@ -1,16 +1,13 @@
-import { CLOSE_MENU, OPEN_MENU } from './action-types';
+import { TOGGLE_MENU } from './action-types';
 
 const initialState = {
 	opened: false
 }
 
-export default (state = initialState, { type }) => {
+export default (state = initialState, { type, payload }) => {
 	switch (type) {
-		case OPEN_MENU:
-			return { opened: true }
-
-		case CLOSE_MENU:
-			return { opened: false }
+		case TOGGLE_MENU:
+			return { opened: payload }
 
 		default:
 			return state;

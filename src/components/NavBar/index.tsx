@@ -6,7 +6,7 @@ import './styles.scss';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { openMenu } from '../../store/actions';
+import { unfoldMenu } from '../../store/actions';
 
 
 const NavBar: React.FC<navBarProps> = ( props ) => {
@@ -38,7 +38,7 @@ const NavBar: React.FC<navBarProps> = ( props ) => {
 	}, [])
 
 	const openMenu = () => {
-		action.openMenu()
+		action.unfoldMenu(true)
 	}
 
   return (
@@ -57,7 +57,7 @@ const mapStateToProps = ({ menu }) => ({ menu });
 
 const mapDispatchToProps = dispatch => {
 	const actions = {
-		openMenu
+		unfoldMenu
 	}
 
 	return {

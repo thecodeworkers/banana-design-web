@@ -37,12 +37,13 @@
 	box-sizing: border-box;
   top: 0;
   width: 100%;
-  height: 10vh;
+  // height: 10vh;
   padding-left: 2.5%;
   padding-right: 2.5%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+	align-items: flex-end;
+	margin: 20px 0;
 }
 
 ._blackHeaderHover {
@@ -56,6 +57,7 @@
 ._icon {
   transform: rotate(180deg);
 	width: 3.8%;
+	align-self: start;
 }
 
 ._addressText {

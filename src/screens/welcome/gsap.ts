@@ -2,11 +2,12 @@ import { gsap } from 'gsap/all';
 
 export const gsapStart = () => {
   gsap.timeline()
-		.from("._description, ._target, ._targetRightContainer, ._contact", {opacity: 0, ease: "back", duration: 2.5})
-		.from("#one", {opacity: 0, y: 10, duration: 0.2}, "-=1")
-		.from("#two", {opacity: 0, y: 10, duration: 0.2}, ">")
-		.from("#three", {opacity: 0, y: 10, duration: 0.2}, ">")
-		.from("._separator", {scale: 0, duration: 0.8, height: 6}, "<");
+		.from("._description, ._target, ._targetRightContainer, ._contact", { opacity: 0, ease: "back", duration: 2.5 })
+		.from("#one", { opacity: 0, y: 10, duration: 0.2 }, "-=1")
+		.from("#two", { opacity: 0, y: 10, duration: 0.2 }, ">")
+		.from("#three", { opacity: 0, y: 10, duration: 0.2 }, ">")
+		.from("._separator", { scale: 0, duration: 0.8, height: 1.5 }, "<")
+		.from("._arrow", { y: 100, duration: 0.5 });
 }
 
 export const gsapRetract = () => {
@@ -37,7 +38,7 @@ export const gsapExpand = () => {
 	.to("#text-3", { opacity: 0, duration: 0.05 }, ">")
 	.to("#text-2", { opacity: 0, duration: 0.05 }, ">")
 	.to("#text-1", { opacity: 0, duration: 0.05 }, ">")
-	.to("._separator", { width: '100%', duration: 1.5, height: 6 })
+	.to("._separator", { width: '100%', duration: 1.5, height: 1.5 })
 	.to("._description, ._targetRightContainer, ._contactText", { opacity: 1, duration: 0.6})
 	.to("#one", {opacity: 1, y: 10, duration: 0.2}, "-=1")
 	.to("#two", {opacity: 1, y: 10, duration: 0.2}, ">")

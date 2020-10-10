@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './styles.scss';
 import { gsapStart, gsapRetract, gsapExpand } from './gsap';
+import { Arrow } from '../../components/Svg';
 import { connect } from 'react-redux';
 
 const Welcome = (props) => {
@@ -52,6 +53,9 @@ const Welcome = (props) => {
 						Modelado 3D y Social Media. Trabajamos con innovadores que buscan mejorar el mundo a través de sus ideas y servicios.
 					</p>
         </section>
+				<div className='_arrow'>
+					<Arrow />
+				</div>
         <section className='_description'>
           <div style={{padding: '20% 0 10% 15%'}}>
             BananaDesign es un studio creative enfocado en generar soluciones de diseño lorem ipsum dolor sit amet,

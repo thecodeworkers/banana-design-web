@@ -5,7 +5,7 @@ import './style.scss';
 
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
-import { closeMenu } from '../../store/actions';
+import { unfoldMenu } from '../../store/actions';
 
 const Menu = (props) => {
 
@@ -17,7 +17,7 @@ const Menu = (props) => {
 
 	const closeMenu = () => {
 		gsapMenuEnd();
-		action.closeMenu();
+		action.unfoldMenu(false);
 	}
 
 	return (
@@ -95,7 +95,7 @@ const mapStateToProps	= ({ menu }) => ({ menu });
 
 const mapDispatchToProps = dispatch => {
 	const actions = {
-		closeMenu
+		unfoldMenu
 	}
 
 	return {

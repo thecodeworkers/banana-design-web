@@ -1,13 +1,8 @@
-import { OPEN_MENU, CLOSE_MENU } from './action-types';
+import { TOGGLE_MENU } from './action-types';
 
-export const openMenu = () => {
+export const unfoldMenu = (param: boolean) => {
 	return {
-		type: OPEN_MENU
-	}
-}
-
-export const closeMenu = () => {
-	return {
-		type: CLOSE_MENU
+		type: TOGGLE_MENU,
+		payload: param
 	}
 }
