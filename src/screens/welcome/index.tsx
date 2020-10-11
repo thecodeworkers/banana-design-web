@@ -9,16 +9,20 @@ const Welcome = (props) => {
 	const { loader, menu } = props;
 
   useEffect(() => {
+		console.log('loader');
 		console.log(loader.loader);
 		if(loader.loader) gsapStart();
 
 	}, [loader]);
 
 	useEffect(() => {
-		console.log(menu.opened);
+		if(loader.loader) {
+			console.log('menu');
+			console.log(menu.opened);
+			if(menu.opened) gsapRetract();
+			if(menu.opened == false) gsapExpand();
+		}
 
-		if(menu.opened) gsapRetract();
-		if(menu.opened == false) gsapExpand();
   }, [menu]);
 
   return (
