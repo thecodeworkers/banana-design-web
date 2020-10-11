@@ -21,7 +21,6 @@ const Welcome = (props) => {
 
 	const scrollToNextSection = () => {
 		window.scrollTo(0, document.documentElement.clientHeight);
-		console.log(document.documentElement.clientHeight);
 	}
 
   return (
