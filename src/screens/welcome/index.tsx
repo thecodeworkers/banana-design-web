@@ -9,21 +9,20 @@ const Welcome = (props) => {
 	const { loader, menu } = props;
 
   useEffect(() => {
-		console.log('loader');
-		console.log(loader.loader);
 		if(loader.loader) gsapStart();
-
 	}, [loader]);
 
 	useEffect(() => {
 		if(loader.loader) {
-			console.log('menu');
-			console.log(menu.opened);
 			if(menu.opened) gsapRetract();
 			if(menu.opened == false) gsapExpand();
 		}
+	}, [menu]);
 
-  }, [menu]);
+	const scrollToNextSection = () => {
+		window.scrollTo(0, document.documentElement.clientHeight);
+		console.log(document.documentElement.clientHeight);
+	}
 
   return (
     <div className='_principalContainer'>
@@ -57,7 +56,7 @@ const Welcome = (props) => {
 						Modelado 3D y Social Media. Trabajamos con innovadores que buscan mejorar el mundo a través de sus ideas y servicios.
 					</p>
         </section>
-				<div className='_arrow'>
+				<div className='_arrow' onClick={scrollToNextSection}>
 					<Arrow />
 				</div>
         <section className='_description'>
