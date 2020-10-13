@@ -1,5 +1,6 @@
 @import '../../../assets/styles/index.scss';
 
+$paddingMenu: 4.16%;
 ._breadCrumbContainerOne{
 	display: flex;
 	justify-content: center;
@@ -71,7 +72,8 @@
 ._blackBody {
   height: 50%;
 	margin-top: 50px;
-	margin-bottom: -50px;
+  margin-bottom: -50px;
+  padding-right: $paddingMenu * 2;
   flex-direction: column;
   display: flex;
   justify-content: flex-start;

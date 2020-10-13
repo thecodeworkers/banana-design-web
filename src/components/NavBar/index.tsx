@@ -38,6 +38,7 @@ const NavBar: React.FC<navBarProps> = ( props ) => {
 	}, [])
 
 	const openMenu = () => {
+		gsapMenuStart();
 		action.unfoldMenu(true)
 	}
 
@@ -45,8 +46,8 @@ const NavBar: React.FC<navBarProps> = ( props ) => {
     <div className={`_navBar ${ isDark ? '_dark' : '_light'}`}>
       <Logo className="_navBarLogo"/>
 
-			<div className="_navBarToggle" onClick={openMenu} >
-				<ToggleButton/>
+			<div className="_navBarToggleWrapper" onClick={openMenu} >
+	      <ToggleButton className="_navBarToggle"/>
 			</div>
 
     </div>
