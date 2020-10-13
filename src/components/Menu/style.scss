@@ -32,18 +32,21 @@
 	display: flex;
 	flex-direction: row;
 }
-._blackHeader{
+
+._blackHeader {
 	box-sizing: border-box;
   top: 0;
   width: 100%;
-  height: 10vh;
+  // height: 10vh;
   padding-left: 2.5%;
   padding-right: 2.5%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+	align-items: flex-end;
+	margin: 20px 0;
 }
-._blackHeaderHover{
+
+._blackHeaderHover {
   position: absolute;
   background-color: $blackie;
   width: 100%;
@@ -51,12 +54,13 @@
   z-index: 1;
 }
 
-._icon{
+._icon {
   transform: rotate(180deg);
 	width: 3.8%;
+	align-self: start;
 }
 
-._addressText{
+._addressText {
   font-size: 0.65rem;
   color: $white;
   margin: 0;
@@ -64,7 +68,7 @@
   font-family: $universLtsTd;
 }
 
-._blackBody{
+._blackBody {
   height: 50%;
 	margin-top: 50px;
 	margin-bottom: -50px;
@@ -94,7 +98,8 @@
     overflow: hidden;
     transition: all 700ms ease-in-out;
     content: attr(data-hover);
-	} }
+	}
+}
 
   .vertical {
     ._blackBodyText {
@@ -108,7 +113,7 @@
     }
   }
 
-._blackBodyFooter{
+._blackBodyFooter {
   height: 14.8%;
 	padding-left: 2.5%;
 	padding-right: 6%;
@@ -117,15 +122,15 @@
 	display: flex;
 }
 
-._blackBodyFooterHover{
+._blackBodyFooterHover {
   position: absolute;
   background-color: $blackie;
   width: 100%;
   height: 100%;
   z-index: 1;
-  }
+}
 
-._blackBodyFooterText{
+._blackBodyFooterText {
   font-size: 0.75rem;
   font-weight: 400;
   font-family: $universLtsTd;
@@ -134,18 +139,19 @@
   position: relative;
 
 	&:before {
-    position: absolute;
-    bottom: -1px;
-    content: "";
-    display: block;
-    width: 0%;
-    height: 1px;
-    background-color: $white;
-    transition: all 0.4s;
-    left:50%;
-}}
+		position: absolute;
+		bottom: -1px;
+		content: "";
+		display: block;
+		width: 0%;
+		height: 1px;
+		background-color: $white;
+		transition: all 0.4s;
+		left:50%;
+	}
+}
 
-._blackBodyFooterText:hover:before{
+._blackBodyFooterText:hover:before {
   width: 100%;
   left: 0;
 }
@@ -154,7 +160,8 @@
 	padding-right: 6%;
 	padding-left: 2.5%;
 }
-._blackFooterLine{
+
+._blackFooterLine {
   height: 1.5px;
   background-color: $white;
   width: 0;
@@ -162,36 +169,36 @@
   margin-left: auto;
 }
 
-._blackFooterHover{
-position: absolute;
-background-color: $blackie;
-width: 100%;
-height: 100%;
-z-index: 1;
+._blackFooterHover {
+	position: absolute;
+	background-color: $blackie;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
 }
 
-._blackFooterContainer{
+._blackFooterContainer {
   display: flex;
   justify-content: space-between;
   color: $dirtyWhite;
   margin-top: 5%;
   position: relative;
 }
-._blackFooterText{
+._blackFooterText {
   font-size: 0.875rem;
   font-family: $universLtsTd;
 }
 
-._mt{
+._mt {
  margin-top: 15px !important;
 }
-._mb{
+._mb {
 margin-bottom: 15px !important;
 }
-._mb-60{
+._mb-60 {
 margin-bottom: 60px;
 }
-._lh{
+._lh {
   line-height: 1.5;
 }
 

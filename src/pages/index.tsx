@@ -8,8 +8,5 @@ const IndexPage = () => (
 	</Loader>
 )
 
-
-
-
 export default IndexPage
 
