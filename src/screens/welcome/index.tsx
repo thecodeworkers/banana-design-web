@@ -20,7 +20,12 @@ const Welcome = (props) => {
 	}, [menu]);
 
 	const scrollToNextSection = () => {
-		window.scrollTo(0, document.documentElement.clientHeight);
+		var i = 10;
+		var int = setInterval(function() {
+			window.scrollTo(0, i);
+			i +=10;
+			if (i >= document.documentElement.clientHeight) clearInterval(int);
+		}, 20);
 	}
 
   return (

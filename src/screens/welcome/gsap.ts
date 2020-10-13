@@ -29,7 +29,7 @@ export const gsapExpand = () => {
 	.to("._separator", { width: '100%', duration: 1.5, height: 1.5 })
 	.to("._description, ._targetRightContainer, ._contactText", { opacity: 1, duration: 0.6})
 	.to("._arrow", { opacity: 1, ease: "back", duration: 2.5, y: -150 })
-	.to("#one", { opacity: 1, y: 10, duration: 0.2 }, "-=1")
+	.to("#one", { opacity: 1, y: 10, duration: 0.2 }, "-=1.5")
 	.to("#two", { opacity: 1, y: 10, duration: 0.2 }, ">")
 	.to("#three", { opacity: 1, y: 10, duration: 0.2 }, ">")
 	.from("._arrow", { ease: "bounce.out", y: -150, duration: 1 }, ">");
