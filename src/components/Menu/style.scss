@@ -1,6 +1,25 @@
 @import '../../../assets/styles/index.scss';
 
 $paddingMenu: 4.16%;
+._breadCrumbContainerOne{
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+._breadCrumbtextOne{
+  font-family: $montserrat;
+  writing-mode: vertical-lr;
+  margin-bottom: 30px;
+	margin-right: 30px;
+	color: $goldYellow;
+	opacity: 0;
+	transform: translate(30px) rotate(-180deg);
+}
+
+._mainDivContainer {
+	width: 95%;
+}
 
 ._sectionBlack{
   background-color: $blackie;
@@ -11,18 +30,24 @@ $paddingMenu: 4.16%;
 	right: 0;
 	top: 0;
 	z-index: 999;
+	display: flex;
+	flex-direction: row;
 }
-._blackHeader{
-  @include navBarPaddingTop;
+
+._blackHeader {
 	box-sizing: border-box;
+  top: 0;
   width: 100%;
-  padding-left: $paddingMenu;
-  padding-right: $paddingMenu;
+  // height: 10vh;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+	align-items: flex-end;
+	margin: 20px 0;
 }
-._blackHeaderHover{
+
+._blackHeaderHover {
   position: absolute;
   background-color: $blackie;
   width: 100%;
@@ -30,13 +55,13 @@ $paddingMenu: 4.16%;
   z-index: 1;
 }
 
-._icon{
+._icon {
   transform: rotate(180deg);
 	width: 3.8%;
-	cursor: pointer;
+	align-self: start;
 }
 
-._addressText{
+._addressText {
   font-size: 0.65rem;
   color: $white;
   margin: 0;
@@ -44,7 +69,7 @@ $paddingMenu: 4.16%;
   font-family: $universLtsTd;
 }
 
-._blackBody{
+._blackBody {
   height: 50%;
 	margin-top: 50px;
   margin-bottom: -50px;
@@ -54,11 +79,12 @@ $paddingMenu: 4.16%;
   justify-content: flex-start;
   align-items: flex-end;
   color: $white;
-  opacity: 0;
+	opacity: 0;
+	margin-right: 5%;
 }
 
 ._blackBodyText{
-  font-size: 2.6rem;
+  font-size: 3.5rem;
   font-weight: 800;
   font-family: $ribes;
   line-height: 1.2;
@@ -74,7 +100,8 @@ $paddingMenu: 4.16%;
     overflow: hidden;
     transition: all 700ms ease-in-out;
     content: attr(data-hover);
-	} }
+	}
+}
 
   .vertical {
     ._blackBodyText {
@@ -88,24 +115,24 @@ $paddingMenu: 4.16%;
     }
   }
 
-._blackBodyFooter{
+._blackBodyFooter {
   height: 14.8%;
-	padding-left: $paddingMenu;
-	padding-right: $paddingMenu * 2;
+	padding-left: 2.5%;
+	padding-right: 6%;
   color: $white;
 	text-align: right;
 	display: flex;
 }
 
-._blackBodyFooterHover{
+._blackBodyFooterHover {
   position: absolute;
   background-color: $blackie;
   width: 100%;
   height: 100%;
   z-index: 1;
-  }
+}
 
-._blackBodyFooterText{
+._blackBodyFooterText {
   font-size: 0.75rem;
   font-weight: 400;
   font-family: $universLtsTd;
@@ -114,29 +141,29 @@ $paddingMenu: 4.16%;
   position: relative;
 
 	&:before {
-    position: absolute;
-    bottom: -1px;
-    content: "";
-    display: block;
-    width: 0%;
-    height: 1px;
-    background-color: $white;
-    transition: all 0.4s;
-    left:50%;
-}}
+		position: absolute;
+		bottom: -1px;
+		content: "";
+		display: block;
+		width: 0%;
+		height: 1px;
+		background-color: $white;
+		transition: all 0.4s;
+		left:50%;
+	}
+}
 
-._blackBodyFooterText:hover:before{
+._blackBodyFooterText:hover:before {
   width: 100%;
   left: 0;
 }
 
 ._blackFooter{
-  padding-left: $paddingMenu;
-  padding-right: $paddingMenu * 2;
-  padding-bottom: $paddingMenu;
+	padding-right: 6%;
+	padding-left: 2.5%;
 }
 
-._blackFooterLine{
+._blackFooterLine {
   height: 1.5px;
   background-color: $white;
   width: 0;
@@ -144,37 +171,36 @@ $paddingMenu: 4.16%;
   margin-left: auto;
 }
 
-._blackFooterHover{
-position: absolute;
-background-color: $blackie;
-width: 100%;
-height: 100%;
-z-index: 1;
+._blackFooterHover {
+	position: absolute;
+	background-color: $blackie;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
 }
 
-._blackFooterContainer{
+._blackFooterContainer {
   display: flex;
   justify-content: space-between;
   color: $dirtyWhite;
   margin-top: 5%;
   position: relative;
 }
-._blackFooterText{
-  // font-size: 0.875rem;
-  font-size: 0.75rem;
+._blackFooterText {
+  font-size: 0.875rem;
   font-family: $universLtsTd;
 }
 
-._mt{
+._mt {
  margin-top: 15px !important;
 }
-._mb{
+._mb {
 margin-bottom: 15px !important;
 }
-._mb-60{
+._mb-60 {
 margin-bottom: 60px;
 }
-._lh{
+._lh {
   line-height: 1.5;
 }
 

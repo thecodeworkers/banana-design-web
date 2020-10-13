@@ -1,0 +1,151 @@
+@import '../../../assets/styles/index.scss';
+
+$textHeight: 0px;
+
+@mixin blueText {
+	color: $blue;
+  font-family: $monumentExtended-Regular;
+  line-height: 1.2;
+  opacity: 1;
+}
+
+@mixin printHeight($prefix, $num) {
+	@for $i from 1 through $num {
+		#{$prefix}-#{$i} {
+			top: space();
+		}
+	}
+}
+
+@function space() {
+	$textHeight: $textHeight + 30px !global;
+	$top: $textHeight;
+
+	@return $top;
+}
+
+._principalContainer {
+  padding: 10vh 2.5% 5vh 2.5%;
+  height: 85vh;
+}
+
+._container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+._concept {
+  // background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 40%;
+}
+
+._intermediate {
+  // background-color: purple;
+	width: 100%;
+	/* height: 5%; */
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 1.4%;
+
+  // border-bottom: 1px solid black;
+
+  ._target {
+    font-family: $universLtsTd;
+    width: 50%;
+  }
+
+  ._targetRightContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+
+    ._targetRight {
+      font-family: $universLTSTD-Light;
+      color: #929497;
+    }
+  }
+
+  ._separator {
+    width: 100%;
+    border: 0;
+    background-color: #929497;
+    height: 3px;
+  }
+}
+
+._contact {
+  width: 50%;
+  height: 50%;
+  display: flex;
+	align-items: flex-end;
+	position: relative;
+
+  ._contactText {
+    font-family: $universLtsTd;
+		font-size: 14px;
+
+		&::after {
+			display: block;
+			content: '';
+			border-bottom: solid 1px #000000;
+			transform: scaleX(0);
+			transition: transform 250ms ease-in-out;
+		}
+
+		&:hover::after {
+			transform: scaleX(1);
+		}
+	}
+
+	._moreInfo {
+		opacity: 0;
+		position: absolute;
+		bottom: 10%;
+		color: $gray;
+		width: 70%;
+	}
+}
+
+._description {
+  // background-color: green;
+  width: 50%;
+  height: 50%;
+  font-family: $universLTSTD-Light;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #000000;
+}
+
+._whiteBodyText{
+	@include blueText;
+  font-size: 3rem;
+}
+
+._list {
+	list-style: none;
+	position: absolute;
+	top: 30%;
+	@include printHeight('#text', 6);
+
+	._smallBodyText {
+		@include blueText;
+		opacity: 0;
+		font-size: 1.2rem;
+		position: absolute;
+		top: 0;
+	}
+}
+
+._arrow {
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+}
+

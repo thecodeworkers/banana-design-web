@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './styles.scss';
 import { DistortionTwo, FeaturedImageTwo } from '../../components/Svg';
+import { bigCursor, smallCursor } from '../../utils/cursor';
 import { gsap } from 'gsap/all';
 
 const FeaturedTwo = () => {
 
   const [show, setShow ] = useState(false);
+	const [flag, setFlag] = useState(false);
 
   const texts: Array<any> = [
     { class: '._textOne', duration: 0.3, delay: 0.5 },
@@ -22,18 +24,24 @@ const FeaturedTwo = () => {
 
   const inAnimation = () => {
     const play = timeline.play();
-    if (!show) {
+    if (!show && !flag) {
       play
         .to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 1 }, 0.3);
-      texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay)})
+			texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay)})
+			timeline.eventCallback("onComplete", () => setFlag(true));
       return
-    }
-    play
-      .to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 0 }, 0);
-   		 texts.forEach(res => { timeline.to(res.class, { opacity: 0 }, 0);})
+		}
+
+		if(flag) {
+			play
+			.to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle', '._textOne', '._textTwo', '._textThree'], { opacity: 0 }, 0);
+			timeline.eventCallback("onComplete", () => setFlag(false));
+		}
+
   }
 
   return (
+
     <div className='_principal'>
       <div className='_featuredTwoChild'>
         <div className='_leftDivFeatured'>
@@ -57,11 +65,11 @@ const FeaturedTwo = () => {
             <div>
               <p className='_zeroTwo'> 02 -</p>
               <p className='_mineralsTwoTitle'>STAY UP</p>
-              <p className='_loremTextTwo'>
+              <div className='_loremTextTwo'>
                 <p className='_textOne'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores</p>
                 <p className='_textTwo'>corporis, rerum provident optio molestiae quae amet officia tempora reiciendis</p>
                 <p className='_textThree'>fuga deserunt excepturi sequi vitae tempora reiciendis officia.</p>
-              </p>
+              </div>
             </div>
           </div>
         </div>

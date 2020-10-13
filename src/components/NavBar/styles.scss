@@ -3,27 +3,27 @@
 ._navBar {
   @include navBarPaddingTop;
   box-sizing: border-box;
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  padding-bottom: .5vh;
+  padding-bottom: 1.5vh;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   transition: all .5s linear;
 	z-index: 999;
 
   &._light {
-    background-color: $white;
+		background-color: $white;
 
     ._navBarLogo,
-    ._navBarToggle { fill: $blackie; }
+    ._navBarToggle { fill: $littleBlack; }
   }
 
   &._dark {
-    background-color: $blackie;
+    background-color: $littleBlack;
 
     ._navBarLogo,
     ._navBarToggle { fill: $white; }
@@ -34,6 +34,5 @@
   ._navBarToggleWrapper {
     padding-top: 1vh;
     width: 2.2%;
-    cursor: pointer;
   }
 }

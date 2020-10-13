@@ -1,14 +1,12 @@
-import React from "react";
-import { Link } from "gatsby";
-import {Menu , NavBar, VerticalBreadcrumb} from "../components";
-import { Featured, FeaturedTwo } from '../screens';
+import React, { useEffect, useRef} from "react";
+import Home from './home';
+import { Loader } from '../components';
 
 const IndexPage = () => (
-	<div>
-		<NavBar />
-		<Menu />
-		<VerticalBreadcrumb />
-	</div>
+	<Loader>
+		<Home />
+	</Loader>
 )
 
 export default IndexPage
+

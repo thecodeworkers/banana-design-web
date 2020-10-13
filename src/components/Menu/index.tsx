@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ToggleButton } from './../../assets/img';
-import { gsapMenuEnd } from './gsap'
+import { gsapMenuStart, gsapMenuEnd } from './gsap'
 import './style.scss';
 
-const Menu = () => {
+import { bindActionCreators } from "redux";
+import { connect } from 'react-redux';
+import { unfoldMenu } from '../../store/actions';
+
+const Menu = (props) => {
+
+	const { menu, action } = props;
+
+	useEffect(() => {
+		if(menu.opened) gsapMenuStart();
+	}, [menu]);
+
+	const closeMenu = () => {
+		gsapMenuEnd();
+		action.unfoldMenu(false);
+	}
 
 	return (
-
+		<div >
 		<div className={'_sectionBlack'}>
+
+			<div className='_mainDivContainer'>
 			<div className={'_blackHeader'}>
 				<div className={'_blackHeaderHover'}></div>
 				<div >
@@ -17,7 +34,7 @@ const Menu = () => {
 					<p className={'_addressText'}>Caracas 1073</p>
 				</div>
 
-				<div className={'_icon'} onClick={gsapMenuEnd}>
+				<div className={'_icon'} onClick={closeMenu}>
 					<ToggleButton fill={'#fff'} />
 				</div>
 			</div>
@@ -62,8 +79,28 @@ const Menu = () => {
 
 				</div>
 			</div>
+
+			</div>
+
+			<div className={'_breadCrumbContainerOne'}>
+			<p className='_breadCrumbtextOne'>Menu</p>
+			</div>
 		</div>
+
+			</div>
 	)
 }
 
-export default Menu;
+const mapStateToProps	= ({ menu }) => ({ menu });
+
+const mapDispatchToProps = dispatch => {
+	const actions = {
+		unfoldMenu
+	}
+
+	return {
+		action: bindActionCreators(actions, dispatch)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);
