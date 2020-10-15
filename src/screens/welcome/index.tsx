@@ -18,8 +18,7 @@ const Welcome = (props) => {
 
 	useEffect(() => {
 		if (loader.loader) {
-			if (menu.opened) gsapRetract();
-			if (menu.opened == false) gsapExpand();
+			menu.opened ? gsapRetract() : gsapExpand();
 		}
 	}, [menu]);
 
@@ -42,30 +41,31 @@ const Welcome = (props) => {
 		<div className='_principalContainer'>
 			<div className='_container'>
 				<section className='_concept'>
-					<div className='_whiteBodyText' id='one'>Concepto + Propósito</div>
-					<div className='_whiteBodyText' id='two'>Belleza + Función</div>
-					<div className='_whiteBodyText' id='three'>Creación + Innovación</div>
+					<div className='_whiteBodyText' id='one'> {t("concept&purpose")} </div>
+					<div className='_whiteBodyText' id='two'> {t("beauty&function")} </div>
+					<div className='_whiteBodyText' id='three'> {t("creation&innovation")} </div>
 				</section>
 				<ul className='_list'>
-					<li className='_smallBodyText' id='text-1'>+Concepto</li>
-					<li className='_smallBodyText' id='text-2'>+Propósito</li>
-					<li className='_smallBodyText' id='text-3'>+Belleza</li>
-					<li className='_smallBodyText' id='text-4'>+Función</li>
-					<li className='_smallBodyText' id='text-5'>+Creación</li>
-					<li className='_smallBodyText' id='text-6'>+Innovación</li>
+					<li className='_smallBodyText' id='text-1'>{t("concept")} </li>
+					<li className='_smallBodyText' id='text-2'>{t("purpose")}</li>
+					<li className='_smallBodyText' id='text-3'>{t("beauty")}</li>
+					<li className='_smallBodyText' id='text-4'>{t("function")}</li>
+					<li className='_smallBodyText' id='text-5'>{t("creation")}</li>
+					<li className='_smallBodyText' id='text-6'>{t("innovation")}</li>
 				</ul>
 				<section className='_intermediate'>
 					<div className='_target'>BRANDING, UI - UX, ANIMACIÓN & 3D, SOCIAL MEDIA</div>
 					<div className='_targetRightContainer'>
-						<div className='_targetRight' style={{ paddingLeft: '15%' }}>Lorem ipsum serif avec iditium</div>
+						<div className='_targetRight'>Lorem ipsum serif avec iditium</div>
 						<div className='_targetRight'>est. 17’</div>
 					</div>
 					<div className='_separator'></div>
 				</section>
 				<section className='_contact'>
-					<button onClick={changeLang} value={language} >{language.toUpperCase()}</button>
-						<p>{t("language")}</p>
-					<div className='_contactText' style={{ marginRight: '25%' }}>contact@bananadsg.com</div>
+					<button className='_languageButton' onClick={changeLang} value={language} >
+						{ (language == 'es' ? 'Español' : 'English') }
+					</button>
+					<div className='_contactText'>contact@bananadsg.com</div>
 					<div className='_contactText'>+58 412 222 2222</div>
 					<p className='_moreInfo'>
 						Somos un estudio creativo enfocado en ofrecer soluciones de diseño a nivel de Branding, Diseño Web,
@@ -76,7 +76,7 @@ const Welcome = (props) => {
 					<Arrow />
 				</div>
 				<section className='_description'>
-					<div style={{ padding: '20% 0 10% 15%' }}>
+					<div className='_descriptionText'>
 						BananaDesign es un studio creative enfocado en generar soluciones de diseño lorem ipsum dolor sit amet,
 						con sectetuer adipiscing elit. Aenean ligula eget dolor pretium, dolor sit.
           </div>

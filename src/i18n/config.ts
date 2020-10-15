@@ -4,22 +4,22 @@ i18next.init({
     fallbackLng: 'en',
     lng: 'es',
     resources: {
-        es: {
-            translations: require('../../assets/lang/es.json')
-        },
-        en: {
-            translations: require('../../assets/lang/en.json')
-        }
+			es: {
+				translations: require('../../assets/lang/es.json')
+			},
+			en: {
+				translations: require('../../assets/lang/en.json')
+			}
     },
     ns: ['translations'],
     defaultNS: 'translations',
     returnObjects: true,
     debug: process.env.NODE_ENV === 'development',
     interpolation: {
-        escapeValue: false, // not needed for react!!
+      escapeValue: false, // not needed for react!!
     },
     react: {
-        wait: true,
+      wait: true,
     },
 });
 
