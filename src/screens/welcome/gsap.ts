@@ -21,7 +21,7 @@ export const gsapRetract = () => {
 	.to("._moreInfo", { opacity: 1, ease: "back", duration: 0.5 }, ">");
 }
 
-export const gsapExpand = () => {
+export const gsapExpand = (toggle) => {
 	gsap.timeline().delay(1.5)
 	.to("._intermediate", { duration: 1, y: 0 }, ">")
 	.to("._moreInfo", { opacity: 0, ease: "back", duration: 1 }, "-=1")
@@ -32,5 +32,7 @@ export const gsapExpand = () => {
 	.to("#one", { opacity: 1, y: 10, duration: 0.2 }, "-=1.5")
 	.to("#two", { opacity: 1, y: 10, duration: 0.2 }, ">")
 	.to("#three", { opacity: 1, y: 10, duration: 0.2 }, ">")
-	.from("._arrow", { ease: "bounce.out", y: -150, duration: 1 }, ">");
+	.from("._arrow", { ease: "bounce.out", y: -150, duration: 1 }, ">")
+	.eventCallback("onComplete", () => toggle());
 }
+

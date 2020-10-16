@@ -2,15 +2,17 @@ import React, { useEffect, useState } from 'react';
 import './styles.scss';
 import { gsapStart, gsapRetract, gsapExpand } from './gsap';
 import { Arrow } from '../../components/Svg';
+import { changeToggle } from '../../store/actions';
 import { useTranslation } from 'react-i18next';
 import { withTrans } from '../../i18n/withTrans';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 const Welcome = (props) => {
 
 	const { i18n } = useTranslation();
 	const [language, setLanguage] = useState('en');
-	const { loader, menu, t} = props;
+	const { loader, menu, t, action } = props;
 
 	useEffect(() => {
 		if (loader.loader) gsapStart();
@@ -18,9 +20,11 @@ const Welcome = (props) => {
 
 	useEffect(() => {
 		if (loader.loader) {
-			menu.opened ? gsapRetract() : gsapExpand();
+			menu.opened ? gsapRetract() : gsapExpand(toggleDispatch);
 		}
 	}, [menu]);
+
+	const toggleDispatch = () => action.changeToggle(2)
 
 	const scrollToNextSection = () => {
 		var i = 10;
@@ -88,4 +92,14 @@ const Welcome = (props) => {
 
 const mapStateToProps = ({ loader, menu }) => ({ loader, menu });
 
-export default connect(mapStateToProps, null)(withTrans(Welcome));
+const mapDispatchToProps = dispatch => {
+	const actions = {
+		changeToggle
+	}
+
+	return {
+		action: bindActionCreators(actions, dispatch)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withTrans(Welcome));

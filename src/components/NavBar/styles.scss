@@ -8,12 +8,13 @@
   width: 100%;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  padding-bottom: 1.5vh;
+  padding-bottom: 2vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all .5s linear;
 	z-index: 999;
+	background-color: blue;
 
   &._light {
 		background-color: $white;
@@ -33,6 +34,25 @@
 
   ._navBarToggleWrapper {
     padding-top: 1vh;
-    width: 2.2%;
-  }
+		width: 30px;
+		height: 30px;
+		// height: 20px;
+	}
+
+
+}
+
+// #svg > g > path:nth-of-type(1){
+// 	transform: scaleX(0.5);
+// }
+
+._toggleChild {
+		// background-color: blueviolet;
+		height: 80%;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		// background-color: chocolate;
+
 }
