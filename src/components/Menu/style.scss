@@ -19,6 +19,7 @@ $paddingMenu: 4.16%;
 
 ._mainDivContainer {
 	width: 95%;
+	padding-left: 5%;
 }
 
 ._sectionBlack{
@@ -73,7 +74,6 @@ $paddingMenu: 4.16%;
   height: 50%;
 	margin-top: 50px;
   margin-bottom: -50px;
-  padding-right: $paddingMenu * 2;
   flex-direction: column;
   display: flex;
   justify-content: flex-start;
