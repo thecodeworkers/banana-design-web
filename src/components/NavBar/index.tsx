@@ -45,7 +45,7 @@ const NavBar: React.FC<navBarProps> = ( props ) => {
 	useEffect(() => {
 		if(toggle.toggle === 1) {
 			gsap.timeline()
-			.to(['#svg > g > path:nth-of-type(3)', '#svg > g > path:nth-of-type(2)', '#svg > g > path:nth-of-type(1)'], 0.3, {transform: 'scaleX(0)'})
+			.to(['#svg > g > path:nth-of-type(3)', '#svg > g > path:nth-of-type(2)', '#svg > g > path:nth-of-type(1)'], 0.5, {transform: 'scaleX(0)'})
 		}
 
 		if(toggle.toggle === 2) {
