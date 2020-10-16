@@ -17,13 +17,11 @@ const Welcome = (props) => {
 	useEffect(() => {
 		if(loader.loader) {
 			if(menu.opened) gsapRetract();
-			if(menu.opened == false) gsapExpand(testFunction);
+			if(menu.opened == false) gsapExpand(toggleDispatch);
 		}
 	}, [menu]);
 
-	const testFunction = () => {
-		action.changeToggle(2);
-	}
+	const toggleDispatch = () => action.changeToggle(2)
 
 	const scrollToNextSection = () => {
 		var i = 10;
