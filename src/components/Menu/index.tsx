@@ -5,7 +5,7 @@ import './style.scss';
 
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
-import { unfoldMenu } from '../../store/actions';
+import { unfoldMenu, changeToggle } from '../../store/actions';
 
 const Menu = (props) => {
 
@@ -18,6 +18,7 @@ const Menu = (props) => {
 	const closeMenu = () => {
 		gsapMenuEnd();
 		action.unfoldMenu(false);
+		action.changeToggle(1);
 	}
 
 	return (
@@ -79,7 +80,6 @@ const Menu = (props) => {
 
 				</div>
 			</div>
-
 			</div>
 
 			<div className={'_breadCrumbContainerOne'}>
@@ -95,7 +95,8 @@ const mapStateToProps	= ({ menu }) => ({ menu });
 
 const mapDispatchToProps = dispatch => {
 	const actions = {
-		unfoldMenu
+		unfoldMenu,
+		changeToggle
 	}
 
 	return {

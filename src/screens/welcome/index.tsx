@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import './styles.scss';
 import { gsapStart, gsapRetract, gsapExpand } from './gsap';
 import { Arrow } from '../../components/Svg';
+import { changeToggle } from '../../store/actions';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 const Welcome = (props) => {
 
-	const { loader, menu } = props;
+	const { loader, menu, action } = props;
 
   useEffect(() => {
 		if(loader.loader) gsapStart();
@@ -15,9 +17,13 @@ const Welcome = (props) => {
 	useEffect(() => {
 		if(loader.loader) {
 			if(menu.opened) gsapRetract();
-			if(menu.opened == false) gsapExpand();
+			if(menu.opened == false) gsapExpand(testFunction);
 		}
 	}, [menu]);
+
+	const testFunction = () => {
+		action.changeToggle(2);
+	}
 
 	const scrollToNextSection = () => {
 		var i = 10;
@@ -76,4 +82,14 @@ const Welcome = (props) => {
 
 const mapStateToProps = ({ loader, menu }) => ({ loader, menu });
 
-export default connect(mapStateToProps, null)(Welcome);
+const mapDispatchToProps = dispatch => {
+	const actions = {
+		changeToggle
+	}
+
+	return {
+		action: bindActionCreators(actions, dispatch)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Welcome);
