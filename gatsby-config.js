@@ -26,7 +26,7 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
-        pathPrefix: "/banana-design-web",
+        // pathPrefix: "/banana-design-web",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
