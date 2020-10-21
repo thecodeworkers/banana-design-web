@@ -14,27 +14,27 @@ const NavBar: React.FC<navBarProps> = ( props ) => {
 	const { reference, action, toggle } = props;
 	const [isDark, setIsDark] = useState( false );
 
-	const defaultChangeColorsPoint = window.innerHeight * 0.7;
+	// const defaultChangeColorsPoint = window.innerHeight * 0.7;
 	const timeline = gsap.timeline();
 
-  const changeColors = () => {
-    const changeColorsPoint = reference
-      ? reference.current.clientHeight
-			: defaultChangeColorsPoint;
+  // const changeColors = () => {
+  //   const changeColorsPoint = reference
+  //     ? reference.current.clientHeight
+	// 		: defaultChangeColorsPoint;
 
-    if ( window.scrollY > changeColorsPoint ) {
-      setIsDark( true );
-    } else {
-      setIsDark( false );
-    }
-	}
+  //   if ( window.scrollY > changeColorsPoint ) {
+  //     setIsDark( true );
+  //   } else {
+  //     setIsDark( false );
+  //   }
+	// }
 
-  useEffect(() => {
-		window.addEventListener( 'scroll', changeColors );
-    return () => {
-      window.removeEventListener( 'scroll', changeColors );
-		}
-	}, [])
+  // useEffect(() => {
+	// 	window.addEventListener( 'scroll', changeColors );
+  //   return () => {
+  //     window.removeEventListener( 'scroll', changeColors );
+	// 	}
+	// }, [])
 
 	const openMenu = () => {
 		intToggle();
