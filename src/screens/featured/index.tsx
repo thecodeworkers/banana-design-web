@@ -30,7 +30,6 @@ const Featured = (props: any) => {
     triggerAction();
 	}, [])
 
-
 	const enterSection = (tl: any) => {
 		tl.to(['._main', '._featuredContent'], {backgroundColor: '#2C292A'});
 
