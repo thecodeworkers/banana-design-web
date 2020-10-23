@@ -11,7 +11,7 @@ import { gsap } from 'gsap/all';
 
 const NavBar: React.FC<navBarProps> = ( props ) => {
 
-	const { reference, action, toggle } = props;
+	const { reference, action, toggle, theme } = props;
 	const [isDark, setIsDark] = useState( false );
 
 	// const defaultChangeColorsPoint = window.innerHeight * 0.7;
@@ -39,7 +39,7 @@ const NavBar: React.FC<navBarProps> = ( props ) => {
 	const openMenu = () => {
 		intToggle();
 		gsapMenuStart();
-		action.unfoldMenu(true)
+		action.unfoldMenu(true);
 	}
 
 	useEffect(() => {
@@ -71,7 +71,7 @@ const NavBar: React.FC<navBarProps> = ( props ) => {
 	}
 
   return (
-    <div className={`_navBar ${ isDark ? '_dark' : '_light'}`}>
+    <div className={`_navBar ${ theme.theme ? '_dark' : '_light'}`}>
       <Logo className="_navBarLogo"/>
 
 			<div className="_navBarToggleWrapper" onClick={outToggle} >
@@ -82,7 +82,7 @@ const NavBar: React.FC<navBarProps> = ( props ) => {
   )
 }
 
-const mapStateToProps = ({ menu, toggle }) => ({ menu, toggle });
+const mapStateToProps = ({ menu, toggle, theme }) => ({ menu, toggle, theme });
 
 const mapDispatchToProps = dispatch => {
 	const actions = {
