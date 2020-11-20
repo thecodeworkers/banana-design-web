@@ -56,18 +56,19 @@ const Featured = (props: any) => {
 
   const inAnimation = () => {
     const play = timeline.play();
-    if (!show && !flag	) {
+    if (!show && !flag) {
       play
-        .to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 1 }, 0.3);
-			texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay)})
+			.to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle', '._text1', '._text2', '._text3'], { opacity: 0 }, 0);
 			timeline.eventCallback("onComplete", () => setFlag(true));
       return
 		}
 
 		if(flag) {
 			play
-			.to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle', '._text1', '._text2', '._text3'], { opacity: 0 }, 0);
+			.to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 1 }, 0.3);
+			texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay)})
 			timeline.eventCallback("onComplete", () => setFlag(false));
+			return
 		}
   }
 

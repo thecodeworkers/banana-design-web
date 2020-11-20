@@ -26,18 +26,17 @@ const FeaturedTwo = () => {
     const play = timeline.play();
     if (!show && !flag) {
       play
-        .to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 1 }, 0.3);
-			texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay)})
+			.to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle', '._textOne', '._textTwo', '._textThree'], { opacity: 0 }, 0);
 			timeline.eventCallback("onComplete", () => setFlag(true));
       return
 		}
 
 		if(flag) {
 			play
-			.to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle', '._textOne', '._textTwo', '._textThree'], { opacity: 0 }, 0);
+			.to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 1 }, 0.3);
+			texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay)})
 			timeline.eventCallback("onComplete", () => setFlag(false));
 		}
-
   }
 
   return (
