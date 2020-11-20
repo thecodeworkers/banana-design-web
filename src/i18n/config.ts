@@ -1,8 +1,8 @@
 import i18next from 'i18next';
 
 i18next.init({
-    fallbackLng: 'en',
-    lng: 'es',
+    fallbackLng: 'es',
+    lng: 'en',
     resources: {
 			es: {
 				translations: require('../../assets/lang/es.json')

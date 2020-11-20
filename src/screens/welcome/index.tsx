@@ -11,7 +11,7 @@ import { bindActionCreators } from 'redux';
 const Welcome = (props) => {
 
 	const { i18n } = useTranslation();
-	const [language, setLanguage] = useState('en');
+	const [language, setLanguage] = useState('es');
 	const { loader, menu, t, action } = props;
 
 	useEffect(() => {
