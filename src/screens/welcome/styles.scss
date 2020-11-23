@@ -57,7 +57,8 @@ $textHeight: 0px;
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 1.4%;
-	@include background();
+	// @include background();
+	z-index: 2;
 
   ._target {
     font-family: $universLtsTd;
@@ -75,6 +76,7 @@ $textHeight: 0px;
       font-family: $universLTSTD-Light;
 			color: $gray;
 			@include background();
+
 
 			&:first-child {
 				padding-left: 15%;
@@ -97,12 +99,14 @@ $textHeight: 0px;
 	align-items: flex-end;
 	position: relative;
 	@include background();
+	z-index: 1;
 
   ._contactText {
     font-family: $universLtsTd;
 		font-size: 14px;
 		margin-right: 15%;
 		@include background();
+
 
 		&::after {
 			display: block;
@@ -161,6 +165,7 @@ $textHeight: 0px;
 		font-size: 1.2rem;
 		position: absolute;
 		top: 0;
+		z-index: 2;
 	}
 }
 
@@ -168,6 +173,7 @@ $textHeight: 0px;
 	position: absolute;
 	bottom: 0;
 	right: 50%;
+	z-index: 2;
 }
 
 ._languageButton {
