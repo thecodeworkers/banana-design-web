@@ -28,7 +28,6 @@ const Home = () => {
 	}
 
 	const cursorColor = () => {
-
 		const elements = document.querySelectorAll(':hover');
 		const currentElement = elements.length - 1;
 		const styles = getComputedStyle(elements[currentElement]);

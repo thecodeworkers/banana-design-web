@@ -1,13 +1,13 @@
 @import '../../../assets/styles/index.scss';
 
-._breadCrumbContainer{
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
-	height: 90vh;
-	position: fixed;
-	right: 0;
-}
+// ._breadCrumbContainer{
+// 	display: flex;
+// 	justify-content: flex-end;
+// 	align-items: flex-end;
+// 	height: 90vh;
+// 	position: fixed;
+// 	right: 0;
+// }
 
 .__breadCrumbtext{
   font-family: $montserrat;
@@ -16,6 +16,11 @@
   margin-bottom: 30px;
 	margin-right: 30px;
 	color: $blue;
+	position: fixed;
+	position: fixed;
+	right: 0;
+	z-index: 999;
+	bottom: 1vh;
 }
 
 
