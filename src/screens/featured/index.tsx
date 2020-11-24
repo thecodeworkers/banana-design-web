@@ -1,25 +1,25 @@
 import React, { useState, useEffect} from 'react';
 import './styles.scss';
 import { FeaturedOne, DistortionOne } from '../../components/Svg';
-import { changeBreadcrumb } from '../../store/actions';
+import { changeBreadcrumb, setTheme} from '../../store/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { gsap, ScrollTrigger } from 'gsap/all';
-
-const Featured = (props: any) => {
-
-	const { action, breadcrumb } = props;
-	const [show, setShow] = useState(false);
-	const [flag, setFlag] = useState(false);
-
-  gsap.registerPlugin(ScrollTrigger);
-  const timeline = gsap.timeline();
 
   const texts: Array<any> = [
     { class: '._text1', duration: 0.3, delay: 0.5 },
     { class: '._text2', duration: 0.3, delay: 0.7 },
     { class: '._text3', duration: 0.3, delay: 0.9 },
-  ]
+  ];
+
+const Featured = (props: any) => {
+
+	const { action, theme } = props;
+	const [show, setShow] = useState(false);
+	const [flag, setFlag] = useState(false);
+
+  gsap.registerPlugin(ScrollTrigger);
+  const timeline = gsap.timeline();
 
   const imageChange = (param: string) => {
 		param == 'in' ? setShow(true) : setShow(false);
@@ -27,11 +27,11 @@ const Featured = (props: any) => {
   }
 
   useEffect(() => {
-    triggerAction();
-	}, [])
-
+		triggerAction();
+	}, []);
 
 	const enterSection = (tl: any) => {
+		action.setTheme(true);
 		tl.to(['._main', '._featuredContent'], {backgroundColor: '#2C292A'});
 
 		setTimeout(() => {
@@ -40,10 +40,10 @@ const Featured = (props: any) => {
 				text: 'Destacados',
 			});
 		}, 200);
-
 	}
 
 	const outSection = (tl: any) => {
+		action.setTheme(false);
 		tl.to(['._main', '._featuredContent'], {backgroundColor: '#FFFFFF'})
 
 		setTimeout(() => {
@@ -56,7 +56,7 @@ const Featured = (props: any) => {
 
   const inAnimation = () => {
     const play = timeline.play();
-    if (!show && !flag	) {
+    if (!show && !flag) {
       play
         .to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 1 }, 0.3);
 			texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay)})
@@ -75,7 +75,7 @@ const Featured = (props: any) => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '._main',
-        start: '-=350',
+        start: '-=300',
         end: 'bottom',
         onEnter: () => enterSection(tl),
         onEnterBack: () => tl.to(['._main', '._featuredContent'], {backgroundColor: '#2C292A'}),
@@ -116,9 +116,6 @@ const Featured = (props: any) => {
             </div>
           </div>
 
-          {/* <div className='test'>
-            <p>Destacados</p>
-          </div> */}
           <div>
           </div>
         </div>
@@ -128,11 +125,12 @@ const Featured = (props: any) => {
   )
 }
 
-const mapStateToProps = ({ breadcrumb }) => ({ breadcrumb });
+const mapStateToProps = ({ breadcrumb, theme }) => ({ breadcrumb, theme });
 
 const mapDispatchToProps = dispatch => {
   const actions = {
-    changeBreadcrumb
+		changeBreadcrumb,
+		setTheme
   }
 
   return {

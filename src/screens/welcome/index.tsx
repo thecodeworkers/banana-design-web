@@ -37,8 +37,9 @@ const Welcome = (props) => {
 
 	const changeLang = (event: any) => {
 		const lang = event.target.value;
-		i18n.changeLanguage(lang);
-		lang == 'es' ? setLanguage('en') : setLanguage('es');
+		console.log(lang);
+		lang == 'en' ? setLanguage('es') : setLanguage('en');
+		i18n.changeLanguage(language);
 	}
 
 	return (

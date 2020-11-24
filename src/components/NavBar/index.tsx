@@ -11,35 +11,35 @@ import { gsap } from 'gsap/all';
 
 const NavBar: React.FC<navBarProps> = ( props ) => {
 
-	const { reference, action, toggle } = props;
+	const { reference, action, toggle, theme } = props;
 	const [isDark, setIsDark] = useState( false );
 
-	const defaultChangeColorsPoint = window.innerHeight * 0.7;
+	// const defaultChangeColorsPoint = window.innerHeight * 0.7;
 	const timeline = gsap.timeline();
 
-  const changeColors = () => {
-    const changeColorsPoint = reference
-      ? reference.current.clientHeight
-			: defaultChangeColorsPoint;
+  // const changeColors = () => {
+  //   const changeColorsPoint = reference
+  //     ? reference.current.clientHeight
+	// 		: defaultChangeColorsPoint;
 
-    if ( window.scrollY > changeColorsPoint ) {
-      setIsDark( true );
-    } else {
-      setIsDark( false );
-    }
-	}
+  //   if ( window.scrollY > changeColorsPoint ) {
+  //     setIsDark( true );
+  //   } else {
+  //     setIsDark( false );
+  //   }
+	// }
 
-  useEffect(() => {
-		window.addEventListener( 'scroll', changeColors );
-    return () => {
-      window.removeEventListener( 'scroll', changeColors );
-		}
-	}, [])
+  // useEffect(() => {
+	// 	window.addEventListener( 'scroll', changeColors );
+  //   return () => {
+  //     window.removeEventListener( 'scroll', changeColors );
+	// 	}
+	// }, [])
 
 	const openMenu = () => {
 		intToggle();
 		gsapMenuStart();
-		action.unfoldMenu(true)
+		action.unfoldMenu(true);
 	}
 
 	useEffect(() => {
@@ -71,7 +71,7 @@ const NavBar: React.FC<navBarProps> = ( props ) => {
 	}
 
   return (
-    <div className={`_navBar ${ isDark ? '_dark' : '_light'}`}>
+    <div className={`_navBar ${ theme.theme ? '_dark' : '_light'}`}>
       <Logo className="_navBarLogo"/>
 
 			<div className="_navBarToggleWrapper" onClick={outToggle} >
@@ -82,7 +82,7 @@ const NavBar: React.FC<navBarProps> = ( props ) => {
   )
 }
 
-const mapStateToProps = ({ menu, toggle }) => ({ menu, toggle });
+const mapStateToProps = ({ menu, toggle, theme }) => ({ menu, toggle, theme });
 
 const mapDispatchToProps = dispatch => {
 	const actions = {
