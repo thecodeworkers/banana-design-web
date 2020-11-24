@@ -28,13 +28,7 @@ const Featured = (props: any) => {
 
   useEffect(() => {
 		triggerAction();
-		// action.setTheme(true);
 	}, []);
-
-	useEffect(() => {
-		console.log('THEMEEEEEEEEEEEEEE', theme);
-	}, [theme]);
-
 
 	const enterSection = (tl: any) => {
 		action.setTheme(true);

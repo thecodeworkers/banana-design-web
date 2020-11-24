@@ -11,7 +11,7 @@ import { bindActionCreators } from 'redux';
 const Welcome = (props) => {
 
 	const { i18n } = useTranslation();
-	const [language, setLanguage] = useState('es');
+	const [language, setLanguage] = useState('en');
 	const { loader, menu, t, action } = props;
 
 	useEffect(() => {
@@ -37,8 +37,9 @@ const Welcome = (props) => {
 
 	const changeLang = (event: any) => {
 		const lang = event.target.value;
-		i18n.changeLanguage(lang);
-		lang == 'es' ? setLanguage('en') : setLanguage('es');
+		console.log(lang);
+		lang == 'en' ? setLanguage('es') : setLanguage('en');
+		i18n.changeLanguage(language);
 	}
 
 	return (
