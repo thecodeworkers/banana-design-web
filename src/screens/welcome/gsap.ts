@@ -16,7 +16,7 @@ export const gsapRetract = () => {
 	.to("#three", { opacity: 0, y: 10, duration: 0.1 })
 	.to("._description, ._targetRightContainer, ._contactText, ._arrow, ._languageButton", { opacity: 0, duration: 0.2 })
 	.to("._intermediate", { duration: 0.4, y: -90 })
-	.to("._intermediate", { duration: 0.5, y: 150 })
+	.to("._intermediate", { duration: 0.5, y: 173 })
 	.to("._smallBodyText", { opacity: 1, stagger: { each: 0.05 } }, "-=0.2" )
 	.to("._moreInfo", { opacity: 1, ease: "back", duration: 0.5 }, ">");
 }
