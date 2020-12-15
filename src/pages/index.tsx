@@ -1,10 +1,11 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useEffect, useRef} from "react";
+import Home from './home';
+import { Loader } from '../components';
 
 const IndexPage = () => (
-  <div>
-    <h1>Banana</h1>
-  </div>
+	<Loader>
+		<Home />
+	</Loader>
 )
 
 export default IndexPage
