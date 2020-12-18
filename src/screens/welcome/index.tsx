@@ -37,9 +37,18 @@ const Welcome = (props) => {
 
 	const changeLang = (event: any) => {
 		const lang = event.target.value;
-		console.log(lang);
-		lang == 'en' ? setLanguage('es') : setLanguage('en');
-		i18n.changeLanguage(language);
+		let text = '';
+		if(lang == 'en') {
+			setLanguage('es');
+			text = 'es';
+		}
+
+		if(lang == 'es') {
+			setLanguage('en');
+			text = 'en';
+		}
+
+		i18n.changeLanguage(text);
 	}
 
 	return (
@@ -68,7 +77,7 @@ const Welcome = (props) => {
 				</section>
 				<section className='_contact'>
 					<button className='_languageButton' onClick={changeLang} value={language} >
-						{ (language == 'es' ? 'Español' : 'English') }
+						{ (language == 'en' ? 'Español' : 'English') }
 					</button>
 					<div className='_contactText'>contact@bananadsg.com</div>
 					<div className='_contactText'>+58 412 222 2222</div>
