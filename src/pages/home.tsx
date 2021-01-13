@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Menu, NavBar, VerticalBreadcrumb } from "../components";
+import { Menu, NavBar, VerticalBreadcrumb, Gallery } from "../components";
 import { Featured, FeaturedTwo, Welcome } from '../screens';
 import { bigCursor, smallCursor, whiteCursor, smallWhiteCursor } from '../utils/cursor';
 import { rgb2hex } from '../utils/hexadecimal';
@@ -53,7 +53,7 @@ const Home = () => {
 			<Welcome />
 			<Featured />
 			<FeaturedTwo />
-
+			<Gallery />
 		</div>
 	)
 
