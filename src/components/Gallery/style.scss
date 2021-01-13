@@ -13,15 +13,13 @@
 	margin: auto;
 	padding: 3% 0px 3% 0px;
 	display: flex;
-	flex-direction: row;
+	flex-flow: row wrap;
 	justify-content: space-between;
-	flex-wrap: wrap;
 }
 
 ._teamPhoto {
-	width: 400px;
-	height: 380px;
-	background-image: url('../../../assets/images/team/portrait.jpg');
+	width: calc(33% - 15px);
+	height: 500px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -29,6 +27,21 @@
 	justify-content: flex-end;
 	background-position: center;
 	margin: 2% 0px 2% 0px;
+	transition: all 0.6s;
+	-moz-transition: linear all 0.6s;
+}
+
+
+@media (max-width: 992px) {
+	._teamPhoto {
+		width: calc(50% - 30px)
+	}
+}
+
+@media (max-width: 768px) {
+	._teamPhoto {
+		width: 100%;
+	}
 }
 
 ._teamDescription {
