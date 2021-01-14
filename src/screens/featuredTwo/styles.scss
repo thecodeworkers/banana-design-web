@@ -2,7 +2,7 @@
 
 @mixin minerals {
   color: $white;
-  font-family: $monumentExtended-Regular;
+  font-family: $helvetica;
   font-weight: bold;
   font-size: 3.8rem;
 }
@@ -36,7 +36,7 @@
   margin-top: 0.7rem;
 
   & p {
-    font-family: $montserrat;
+    font-family: $helveticaBold;
     color: $white;
   }
 }
@@ -89,14 +89,16 @@
 ._loremTextTwo {
   color: $aquaGreen;
   font-size: 1.2rem;
-  font-family: $montserrat;
+  font-family: $helveticaBold;
+	font-weight: 600;
   // @include opacity;
 }
 
 ._zeroTwo {
-  font-family: $monumentExtended-Regular;
+  font-family: $helveticaBold;
   color: $aquaGreen;
   font-size: 1.7rem;
   // font-weight: bold;
-  @include opacity;
+	@include opacity;
+	font-weight: 600;
 }
