@@ -8,6 +8,14 @@
 	margin: 0px 4px 0px 4px;
 }
 
+@mixin text($bold, $size) {
+	font-size: $size;
+	color: $gray;
+	@if ($bold) {
+		font-weight: $bold;
+	}
+}
+
 ._generalGallery {
 	width: 90%;
 	margin: auto;
@@ -15,11 +23,12 @@
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
+	background-attachment: $white;
 }
 
 ._teamPhoto {
 	width: calc(33% - 15px);
-	height: 500px;
+	height: 480px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -28,9 +37,52 @@
 	background-position: center;
 	margin: 2% 0px 2% 0px;
 	transition: all 0.6s;
-	-moz-transition: linear all 0.6s;
+	border: solid 1.5px $mediumGray;
 }
 
+
+._teamDescription {
+	box-sizing: border-box;
+	padding:  2% 4% 2% 4%;
+}
+
+._teamList {
+	list-style: none;
+
+	& > li {
+		font-family: $helveticaNeue;
+	}
+}
+
+._teamName {
+	@include text(600, 0.9rem)
+}
+
+._teamPosition {
+	@include text('', 0.9rem)
+}
+._yellowCircle {
+	@include circle($yellow);
+}
+
+._redCircle {
+	@include circle($red);
+}
+
+._purpleCircle {
+	@include circle($purple);
+}
+
+._itemRow {
+	display: inline-flex;
+	@include text(600, 	1.15rem);
+}
+
+._circlesParent {
+	display: flex;
+	align-items: center;
+	margin-left: 10px;
+}
 
 @media (max-width: 992px) {
 	._teamPhoto {
@@ -43,35 +95,3 @@
 		width: 100%;
 	}
 }
-
-._teamDescription {
-	box-sizing: border-box;
-	padding:  2% 4% 2% 4%;
-}
-
-._teamList {
-	list-style: none;
-}
-
-._yellowCircle {
-	@include circle(#FFD400);
-}
-
-._redCircle {
-	@include circle(#FF004E);
-}
-
-._purpleCircle {
-	@include circle(#DC08C7);
-}
-
-._itemRow {
-	display: inline-flex;
-}
-
-._circlesParent {
-	display: flex;
-	align-items: center;
-	margin-left: 10px;
-}
-
