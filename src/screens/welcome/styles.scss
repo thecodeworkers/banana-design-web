@@ -27,7 +27,7 @@ $textHeight: 0px;
 }
 
 @function space() {
-	$textHeight: $textHeight + 30px !global;
+	$textHeight: $textHeight + 45px !global;
 	$top: $textHeight;
 
 	@return $top;
@@ -69,7 +69,7 @@ $textHeight: 0px;
     font-family: $helvetica;
 		width: 50%;
 		@include background();
-    font-size: 18px;
+    font-size: 1rem;
   }
 
   ._targetRightContainer {
@@ -131,7 +131,7 @@ $textHeight: 0px;
 		position: absolute;
 		bottom: var(--bottomMoreInfoPosition);
 		color: $gray;
-		width: 35%;
+		width: 30%;
 		@include background();
 		font-family: $helvetica;
 	}
@@ -169,7 +169,7 @@ $textHeight: 0px;
 	._smallBodyText {
 		@include blueText;
 		opacity: 0;
-		font-size: 1.2rem;
+		font-size: 2rem;
 		position: absolute;
 		top: 0;
 		z-index: 2;

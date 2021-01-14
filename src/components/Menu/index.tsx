@@ -38,10 +38,15 @@ const Menu = (props) => {
 					</div>
 				</div>
 				<div className={'_blackBody'}>
-					<span className={'vertical'}> <p data-hover="PORTFOLIO" className={'_blackBodyText'}>PORTFOLIO</p> </span>
-					<span className={'vertical'}> <p data-hover="ABOUT US" className={'_blackBodyText'}>ABOUT US</p> </span>
-					<span className={'vertical'}> <p data-hover="RECAP" className={'_blackBodyText'}>RECAP</p> </span>
+
+					<span style={{marginRight:150}} className={'vertical'}> <p data-hover="PORTFOLIO" className={'_blackBodyText'}>PORTFOLIO</p> </span>
+					<span style={{marginRight:100}} className={'vertical'}> <p data-hover="ABOUT US" className={'_blackBodyText'}>ABOUT US</p> </span>
+
+
+					<span style={{marginRight:50}} className={'vertical'}> <p data-hover="RECAP" className={'_blackBodyText'}>RECAP</p> </span>
 					<span className={'vertical'}> <p data-hover="RAW" className={'_blackBodyText'}>RAW</p> </span>
+
+
 				</div>
 				<div className={'_blackBodyFooter'} >
 					<div className={'_linksContainer'} style={{ display: 'block', marginLeft: 'auto', position: 'relative' }}>
