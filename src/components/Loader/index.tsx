@@ -1,7 +1,7 @@
 import React, { useEffect, createRef, useState } from 'react';
 import './style.scss';
 import lottie from 'lottie-web';
-import animation from '../../../assets/animations/Banana.json';
+import animation from '../../../assets/animations/BANANA_CREATIVE.json';
 import { setLoader } from '../../store/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
