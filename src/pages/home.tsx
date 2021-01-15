@@ -50,7 +50,7 @@ const Home = () => {
 			<NavBar />
 			<Menu />
 			<VerticalBreadcrumb />
-			<Welcome />
+			<Welcome title={"welcome_to"} />
 			<Featured />
 			<FeaturedTwo />
 
