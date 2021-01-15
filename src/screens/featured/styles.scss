@@ -36,7 +36,23 @@
 
 ._rightFeaturedContent {
   width: 55%;
-  position: relative;
+	position: relative;
+}
+
+._featuredTools {
+	position: absolute;
+	left: -6%;
+
+	& p {
+		text-align: center;
+		color: $white;
+	}
+}
+
+._toolsParent {
+	width: 2.2rem;
+	height: 2.2rem;
+	margin-top: 0.7rem;
 }
 
 ._keywords {
@@ -67,7 +83,7 @@
 }
 
 ._loremText {
-  color: $lightPurple;
+  color: $white;
   font-size: 1.2rem;
   font-family: $montserrat;
 }
@@ -88,12 +104,10 @@
 
 ._zeroOne {
   font-family: $monumentExtended-Regular;
-  color: $lightPurple;
+  color: $white;
   font-size: 1.7rem;
-  // font-weight: bold;
   @include opacity;
 }
-
 
 ._mineralsTitle {
   @include minerals;
