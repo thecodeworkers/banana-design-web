@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, FC} from 'react';
 import './styles.scss';
 import { DistortionTwo, FeaturedImageTwo, Ai } from '../../components/Svg';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { gsap, ScrollTrigger } from 'gsap/all';
+import { changeBreadcrumb, setTheme } from '../../store/actions';
 import { bigCursor, smallCursor } from '../../utils/cursor';
-import { gsap } from 'gsap/all';
+import { propsType } from './types';
 
-const FeaturedTwo = ({ imageDescription, date,	keywords, title, subtitle, description, number, image }: any) => {
+const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, subtitle, description, number, image, action, transition = false}) => {
 
 	const [show, setShow] = useState(false);
 	const [flag, setFlag] = useState(false);
@@ -13,7 +17,11 @@ const FeaturedTwo = ({ imageDescription, date,	keywords, title, subtitle, descri
 		{ class: '._textOne', duration: 0.3, delay: 0.5 },
 		{ class: '._textTwo', duration: 0.3, delay: 0.7 },
 		{ class: '._textThree', duration: 0.3, delay: 0.9 },
-	]
+	];
+
+	useEffect(() => {
+		triggerAction();
+	}, []);
 
 	const timeline = gsap.timeline();
 
@@ -37,6 +45,48 @@ const FeaturedTwo = ({ imageDescription, date,	keywords, title, subtitle, descri
 			texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay) })
 			timeline.eventCallback("onComplete", () => setFlag(false));
 		}
+	}
+
+	const enterSection = (tl: any) => {
+		if(transition) {
+			action.setTheme(true);
+			tl.to(['._principal', '._featuredTwoChild'], { backgroundColor: '#2C292A' });
+
+			setTimeout(() => {
+				action.changeBreadcrumb({
+					color: '#FFFFFF',
+					text: 'Destacados',
+				});
+			}, 200);
+		}
+	}
+
+	const outSection = (tl: any) => {
+
+		if(transition) {
+			action.setTheme(false);
+			tl.to(['._principal', '._featuredTwoChild'], { backgroundColor: '#FFFFFF' })
+
+			setTimeout(() => {
+				action.changeBreadcrumb({
+					color: '#0853DC',
+					text: 'Welcome',
+				});
+			}, 200);
+		}
+	}
+
+	const triggerAction = () => {
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: '._principal',
+				start: '-=300',
+				end: 'bottom',
+				onEnter: () => enterSection(tl),
+				onEnterBack: () => tl.to(['._principal', '._featuredTwoChild'], { backgroundColor: '#2C292A' }),
+				onLeaveBack: () => outSection(tl)
+			}
+		})
 	}
 
 	return (
@@ -84,7 +134,21 @@ const FeaturedTwo = ({ imageDescription, date,	keywords, title, subtitle, descri
 	)
 }
 
-export default FeaturedTwo;
+const mapStateToProps = ({ breadcrumb, theme }) => ({ breadcrumb, theme });
+
+const mapDispatchToProps = dispatch => {
+	const actions = {
+		changeBreadcrumb,
+		setTheme
+	}
+
+	return {
+		action: bindActionCreators(actions, dispatch)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FeaturedTwo);
+
 
 // onMouseOver={() => imageChange('in')} onMouseOut={() => imageChange('out')}
 {/* <div className='_loremTextTwo'>

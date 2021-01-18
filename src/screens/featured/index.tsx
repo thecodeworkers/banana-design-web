@@ -5,6 +5,7 @@ import { changeBreadcrumb, setTheme } from '../../store/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { gsap, ScrollTrigger } from 'gsap/all';
+import { propsType } from './types';
 
 const texts: Array<any> = [
 	{ class: '._text1', duration: 0.3, delay: 0.5 },
@@ -12,7 +13,7 @@ const texts: Array<any> = [
 	{ class: '._text3', duration: 0.3, delay: 0.9 },
 ];
 
-const Featured = (props: any) => {
+const Featured = (props: propsType) => {
 
 	const { action, theme, imageDescription, date,	keywords, title, subtitle, description, number, image } = props;
 	const [show, setShow] = useState(false);
@@ -24,34 +25,6 @@ const Featured = (props: any) => {
 	const imageChange = (param: string) => {
 		param == 'in' ? setShow(true) : setShow(false);
 		inAnimation();
-	}
-
-	useEffect(() => {
-		triggerAction();
-	}, []);
-
-	const enterSection = (tl: any) => {
-		action.setTheme(true);
-		tl.to(['._main', '._featuredContent'], { backgroundColor: '#2C292A' });
-
-		setTimeout(() => {
-			action.changeBreadcrumb({
-				color: '#FFFFFF',
-				text: 'Destacados',
-			});
-		}, 200);
-	}
-
-	const outSection = (tl: any) => {
-		action.setTheme(false);
-		tl.to(['._main', '._featuredContent'], { backgroundColor: '#FFFFFF' })
-
-		setTimeout(() => {
-			action.changeBreadcrumb({
-				color: '#0853DC',
-				text: 'Welcome',
-			});
-		}, 200);
 	}
 
 	const inAnimation = () => {
@@ -70,19 +43,6 @@ const Featured = (props: any) => {
 			timeline.eventCallback("onComplete", () => setFlag(false));
 			return
 		}
-	}
-
-	const triggerAction = () => {
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: '._main',
-				start: '-=300',
-				end: 'bottom',
-				onEnter: () => enterSection(tl),
-				onEnterBack: () => tl.to(['._main', '._featuredContent'], { backgroundColor: '#2C292A' }),
-				onLeaveBack: () => outSection(tl)
-			}
-		})
 	}
 
 	return (
