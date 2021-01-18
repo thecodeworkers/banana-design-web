@@ -7,7 +7,7 @@ const Footer = () => {
 	return (
 		<div className="_footerContainer">
 			<div className="_footerContent">
-				<div className="_footerLogoContainer">
+			<div >
 					<Logo className="_footerLogo" />
 				</div>
 
@@ -22,9 +22,9 @@ const Footer = () => {
 					</div>
 
 					<div className="_sectionsRightContainer">
-						<p style={{marginBottom:8}}>Proyectos destacados</p>
-						<p style={{marginBottom:8}} >Marcas Asociadas</p>
-						<p style={{marginBottom:8}} >Classroom</p>
+						<p style={{marginBottom:4}}>Proyectos destacados</p>
+						<p style={{marginBottom:4}} >Marcas Asociadas</p>
+						<p style={{marginBottom:4}} >Classroom</p>
 					</div>
 				</div>
 
