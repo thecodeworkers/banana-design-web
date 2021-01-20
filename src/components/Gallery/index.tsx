@@ -7,16 +7,14 @@ const Gallery = () => {
 	const team = teamData;
 	const [image, setImage] = useState(null);
 
-	const imageChange = (index) => {
-		image == index ?setImage(null) : setImage(index);
-	}
+	const imageChange = (index) =>	image == index ?setImage(null) : setImage(index);
 
 	return (
 		<div className='_generalGallery'>
 			{
 				team.map((item, index) => {
 					return (
-						<div className='_teamPhoto'  onClick={() => imageChange(index)}>
+						<div className='_teamPhoto' style={{backgroundImage: `url(${require('../../../assets/images/team/teamphoto.png')})`}} onClick={() => imageChange(index)}>
 							<div className='_teamDescription'>
 								<ul className='_teamList'>
 									<li className='_teamName'> { item.name } </li>
