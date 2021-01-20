@@ -12,7 +12,7 @@ const Welcome = (props) => {
 
 	const { i18n } = useTranslation();
 	const [language, setLanguage] = useState('en');
-	const { loader, menu, t, action } = props;
+	const { loader, menu, t, action, title } = props;
 
 	useEffect(() => {
 		if (loader.loader) gsapStart();
@@ -55,9 +55,9 @@ const Welcome = (props) => {
 		<div className='_principalContainer'>
 			<div className='_container'>
 				<section className='_concept'>
-					<div className='_whiteBodyText' id='one'> {t("concept&purpose")} </div>
-					<div className='_whiteBodyText' id='two'> {t("beauty&function")} </div>
-					<div className='_whiteBodyText' id='three'> {t("creation&innovation")} </div>
+					{/* <div className='_whiteBodyText' id='one'> {t("concept&purpose")} </div>
+					<div className='_whiteBodyText' id='two'> {t("beauty&function")} </div> */}
+					<div className='_whiteBodyText' id='three'> {t(title)} </div>
 				</section>
 				<ul className='_list'>
 					<li className='_smallBodyText' id='text-1'>{t("concept")} </li>
