@@ -50,7 +50,7 @@ const Home = () => {
 			<NavBar />
 			<Menu />
 			<VerticalBreadcrumb />
-			<Welcome />
+			<Welcome title={"Banana Creative®"} />
 			<Featured />
 			<FeaturedTwo />
 
