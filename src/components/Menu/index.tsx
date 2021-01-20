@@ -27,7 +27,7 @@ const Menu = (props) => {
 			<div className='_mainDivContainer'>
 				<div className={'_blackHeader'}>
 					<div className={'_blackHeaderHover'}></div>
-					<div >
+					<div>
 						<p className={'_addressText'}>Torre Iasa</p>
 						<p className={'_addressText'}>La Castellana</p>
 						<p className={'_addressText'}>Oficina 802</p>
@@ -39,12 +39,10 @@ const Menu = (props) => {
 				</div>
 				<div className={'_blackBody'}>
 
-					<span style={{marginRight:150}} className={'vertical'}> <p data-hover="PORTFOLIO" className={'_blackBodyText'}>PORTFOLIO</p> </span>
-					<span style={{marginRight:100}} className={'vertical'}> <p data-hover="ABOUT US" className={'_blackBodyText'}>ABOUT US</p> </span>
-
-
-					<span style={{marginRight:50}} className={'vertical'}> <p data-hover="RECAP" className={'_blackBodyText'}>RECAP</p> </span>
-					<span className={'vertical'}> <p data-hover="RAW" className={'_blackBodyText'}>RAW</p> </span>
+					{/* <span style={{marginRight:150}} className={'vertical'}> <p data-hover="PORTFOLIO" className={'_blackBodyText'}>PORTFOLIO</p> </span> */}
+					<span style={{marginRight:75}} className={'vertical'}> <p data-hover="ABOUT US" className={'_blackBodyText'}>ABOUT US</p> </span>
+					<span style={{marginRight:55}} className={'vertical'}> <p data-hover="RECAP" className={'_blackBodyText'}>RECAP</p> </span>
+					<span style={{marginRight:40}} className={'vertical'}> <p data-hover="RAW" className={'_blackBodyText'}>RAW</p> </span>
 
 
 				</div>

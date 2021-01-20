@@ -27,11 +27,13 @@ export const gsapExpand = (toggle) => {
 	.to("._smallBodyText", { opacity: 0, duration: 0.05, stagger: { each: 0.05, from: 6 } }, "-=1")
 	.to("._separator", { width: '100%', duration: 1.5, height: 1.5 })
 	.to("._description, ._targetRightContainer, ._contactText, ._languageButton", { opacity: 1, duration: 0.6})
-	.to("._arrow", { opacity: 1, ease: "back", duration: 2.5, y: -150 })
+	.to("._arrow", { ease: "bounce.out", y: -150, duration: 1 }, ">")
+	.to("._arrow", { opacity: 1, ease: "back", duration: 2.5, y: 0 })
+
  	/* .to("#one", { opacity: 1, y: 10, duration: 0.2 }, "-=1.5")
 	.to("#two", { opacity: 1, y: 10, duration: 0.2 }, ">")  */
 	.to("#three", { opacity: 1, y: 10, duration: 0.2 }, "-=1.5")
-	.from("._arrow", { ease: "bounce.out", y: -150, duration: 1 }, ">")
+
 	.eventCallback("onComplete", () => toggle());
 }
 

@@ -76,7 +76,7 @@ $paddingMenu: 4.16%;
   // margin-bottom: -50px;
   flex-direction: column;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-end;
   color: $white;
 	opacity: 0;
@@ -84,7 +84,7 @@ $paddingMenu: 4.16%;
 }
 
 ._blackBodyText{
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   font-family: $helveticaBold;
   line-height: 1.2;
@@ -218,4 +218,6 @@ margin-bottom: 60px;
 ._lh {
   line-height: 1.5;
 }
+
+
 

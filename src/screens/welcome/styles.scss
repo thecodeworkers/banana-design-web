@@ -52,7 +52,7 @@ $textHeight: 0px;
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
-  height: 35%;
+  height: 40%;
 	@include background();
 }
 
@@ -165,14 +165,14 @@ $textHeight: 0px;
 ._list {
 	list-style: none;
 	position: absolute;
-	top: 30%;
+	top: 27%;
 	@include printHeight('#text', 6);
 	@include background();
 
 	._smallBodyText {
 		@include blueText;
 		opacity: 0;
-		font-size: 2rem;
+		font-size: 1.75rem;
 		position: absolute;
 		top: 0;
 		z-index: 2;
@@ -199,5 +199,64 @@ $textHeight: 0px;
 	cursor: none;
 	font-weight: 200;
 }
+
+@include responsive(xxl) {
+
+  ._moreInfo{
+		font-size: 0.8rem !important;
+		bottom: 7% !important;
+	}
+
+	._target{
+		font-size: 0.75rem !important;
+	}
+
+ 	._list{
+		top: 20% !important;
+	}
+
+	._smallBodyText{
+		font-size:1.20rem !important;
+	}
+
+	._descriptionText{
+		font-size: 1.1rem !important
+	}
+
+	._whiteBodyText{
+		font-size: 2.5rem !important;
+	}
+}
+
+
+@include responsive(xl) {
+
+  ._moreInfo{
+		font-size: 0.8rem !important;
+		bottom: 5% !important;
+	}
+
+	._target{
+		font-size: 0.75rem !important;
+	}
+
+	._list{
+		top: 18% !important;
+	}
+
+	 ._smallBodyText{
+		font-size:1.10rem !important;
+	}
+	._descriptionText{
+		font-size: 0.95rem !important
+	}
+	._whiteBodyText{
+		font-size: 2.2rem !important;
+	}
+
+}
+
+
+
 
 
