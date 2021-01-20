@@ -14,7 +14,11 @@ const Gallery = () => {
 			{
 				team.map((item, index) => {
 					return (
-						<div className='_teamPhoto' style={{backgroundImage: `url(${require('../../../assets/images/team/teamphoto.png')})`}} onClick={() => imageChange(index)}>
+						<div className='_teamPhoto'
+							style={{backgroundImage: `url(${require('../../../assets/images/team/teamphoto.png')})`}}
+							onClick={() => imageChange(index)}
+							key={index}
+						>
 							<div className='_teamDescription'>
 								<ul className='_teamList'>
 									<li className='_teamName'> { item.name } </li>
@@ -22,8 +26,8 @@ const Gallery = () => {
 									<li className='_itemRow'> { item.skills[0].title }
 										<div className='_circlesParent'>
 												{
-													item.skills[1].circles.map(skill => {
-														return (<div className={skill}></div>)
+													item.skills[1].circles.map((skill, index) => {
+														return (<div className={skill} key={index}></div>)
 													})
 												}
 										</div>
