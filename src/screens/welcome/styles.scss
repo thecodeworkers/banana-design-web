@@ -49,9 +49,9 @@ $textHeight: 0px;
 ._concept {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
-	height: 40%;
+  height: 35%;
 	@include background();
 }
 
@@ -150,7 +150,10 @@ $textHeight: 0px;
 }
 
 ._whiteBodyText{
-	@include blueText;
+	color: $pureBlack;
+  font-family: $monumentExtended-Regular;
+  line-height: 1.2;
+  opacity: 1;
 	font-size: 3rem;
 	@include background();
 }
