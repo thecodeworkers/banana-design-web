@@ -2,7 +2,7 @@
 
 @mixin minerals {
   color: $white;
-  font-family: $helvetica;
+  font-family: $monumentExtended-Regular;
   font-weight: bold;
   font-size: 3.8rem;
 }
@@ -73,7 +73,6 @@
 
 ._mineralsTwoTitle {
   @include minerals;
-
   @include opacity;
 }
 
