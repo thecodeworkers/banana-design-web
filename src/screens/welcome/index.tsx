@@ -12,7 +12,7 @@ const Welcome = (props) => {
 
 	const { i18n } = useTranslation();
 	const [language, setLanguage] = useState('en');
-	const { loader, menu, t, action } = props;
+	const { loader, menu, t, action, title } = props;
 
 	useEffect(() => {
 		if (loader.loader) gsapStart();
@@ -55,9 +55,9 @@ const Welcome = (props) => {
 		<div className='_principalContainer'>
 			<div className='_container'>
 				<section className='_concept'>
-					<div className='_whiteBodyText' id='one'> {t("concept&purpose")} </div>
-					<div className='_whiteBodyText' id='two'> {t("beauty&function")} </div>
-					<div className='_whiteBodyText' id='three'> {t("creation&innovation")} </div>
+					{/* <div className='_whiteBodyText' id='one'> {t("concept&purpose")} </div>
+					<div className='_whiteBodyText' id='two'> {t("beauty&function")} </div> */}
+					<div className='_whiteBodyText' id='three'> {t(title)} </div>
 				</section>
 				<ul className='_list'>
 					<li className='_smallBodyText' id='text-1'>{t("concept")} </li>
@@ -68,7 +68,7 @@ const Welcome = (props) => {
 					<li className='_smallBodyText' id='text-6'>{t("innovation")}</li>
 				</ul>
 				<section className='_intermediate'>
-					<div className='_target'>BRANDING, UI - UX, ANIMACIÓN & 3D, SOCIAL MEDIA</div>
+					<div className='_target'>BRAND, MOGRAPH, MEDIA, SOCIAL PRODUCTIONS, PROTOTYPE</div>
 					<div className='_targetRightContainer'>
 						<div className='_targetRight'>Lorem ipsum serif avec iditium</div>
 						<div className='_targetRight'>est. 17’</div>
@@ -79,7 +79,7 @@ const Welcome = (props) => {
 					<button className='_languageButton' onClick={changeLang} value={language} >
 						{ (language == 'en' ? 'Español' : 'English') }
 					</button>
-					<div className='_contactText'>contact@bananadsg.com</div>
+					<div className='_contactText'>hello@bananadesign.io</div>
 					<div className='_contactText'>+58 412 222 2222</div>
 					<p className='_moreInfo'>
 						Somos un estudio creativo enfocado en ofrecer soluciones de diseño a nivel de Branding, Diseño Web,
@@ -91,8 +91,8 @@ const Welcome = (props) => {
 				</div>
 				<section className='_description'>
 					<div className='_descriptionText'>
-						BananaDesign es un studio creative enfocado en generar soluciones de diseño lorem ipsum dolor sit amet,
-						con sectetuer adipiscing elit. Aenean ligula eget dolor pretium, dolor sit.
+					BananaDesign es un studio creative enfocado en generar soluciones de diseño lorem ipsum dolor sit amet,
+					con sectetuer adipiscing elit. Aenean ligula eget dolor pretium, dolor sit.
           </div>
 				</section>
 			</div>

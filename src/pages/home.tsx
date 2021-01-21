@@ -1,6 +1,11 @@
 import React, {useState, useEffect} from "react";
+<<<<<<< HEAD
 import { Menu, NavBar, VerticalBreadcrumb, Footer } from "../components";
 import { Featured, FeaturedTwo, Welcome } from '../screens';
+=======
+import { Menu, NavBar, VerticalBreadcrumb } from "../components";
+import { Welcome, AllFeatured } from '../screens';
+>>>>>>> 1a5d756bac77205db4567d82d5bf1e65076822e3
 import { bigCursor, smallCursor, whiteCursor, smallWhiteCursor } from '../utils/cursor';
 import { rgb2hex } from '../utils/hexadecimal';
 
@@ -50,11 +55,9 @@ const Home = () => {
 			<NavBar />
 			<Menu />
 			<VerticalBreadcrumb />
-			<Welcome />
+			<Welcome title={"Banana Creative®"} />
+			<AllFeatured />
 			<Footer />
-			<Featured />
-			<FeaturedTwo />
-
 		</div>
 	)
 

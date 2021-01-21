@@ -8,7 +8,7 @@ $paddingMenu: 4.16%;
 }
 
 ._breadCrumbtextOne{
-  font-family: $montserrat;
+  font-family: $helvetica;
   writing-mode: vertical-lr;
   margin-bottom: 30px;
 	margin-right: 30px;
@@ -63,11 +63,11 @@ $paddingMenu: 4.16%;
 }
 
 ._addressText {
-  font-size: 0.65rem;
+  font-size: 0.70rem;
   color: $white;
   margin: 0;
   line-height: 1.2;
-  font-family: $universLtsTd;
+  font-family: $helvetica;
 }
 
 ._blackBody {
@@ -76,7 +76,7 @@ $paddingMenu: 4.16%;
   // margin-bottom: -50px;
   flex-direction: column;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-end;
   color: $white;
 	opacity: 0;
@@ -84,9 +84,9 @@ $paddingMenu: 4.16%;
 }
 
 ._blackBodyText{
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 800;
-  font-family: $ribes;
+  font-family: $helveticaBold;
   line-height: 1.2;
   cursor: pointer;
   position: relative;
@@ -135,7 +135,7 @@ $paddingMenu: 4.16%;
 ._blackBodyFooterText {
   font-size: 0.75rem;
   font-weight: 400;
-  font-family: $universLtsTd;
+  font-family: $helvetica;
   margin-bottom: 20px;
   cursor: pointer;
   position: relative;
@@ -203,7 +203,7 @@ $paddingMenu: 4.16%;
 }
 ._blackFooterText {
   font-size: 0.875rem;
-  font-family: $universLtsTd;
+  font-family: $helvetica;
 }
 
 ._mt {
@@ -218,4 +218,6 @@ margin-bottom: 60px;
 ._lh {
   line-height: 1.5;
 }
+
+
 

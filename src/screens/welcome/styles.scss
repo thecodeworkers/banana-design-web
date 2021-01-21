@@ -12,9 +12,10 @@ $textHeight: 0px;
 
 @mixin blueText {
 	color: $blue;
-  font-family: $monumentExtended-Regular;
+  font-family: $helvetica;
   line-height: 1.2;
-  opacity: 1;
+	opacity: 1;
+	font-weight: 900;
 }
 
 @mixin printHeight($prefix, $num) {
@@ -26,7 +27,7 @@ $textHeight: 0px;
 }
 
 @function space() {
-	$textHeight: $textHeight + 30px !global;
+	$textHeight: $textHeight + 40px !global;
 	$top: $textHeight;
 
 	@return $top;
@@ -49,9 +50,9 @@ $textHeight: 0px;
 ._concept {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
-	height: 40%;
+  height: 40%;
 	@include background();
 }
 
@@ -65,9 +66,10 @@ $textHeight: 0px;
 	width: 95%;
 
   ._target {
-    font-family: $universLtsTd;
+    font-family: $helvetica;
 		width: 50%;
 		@include background();
+    font-size: 1rem;
   }
 
   ._targetRightContainer {
@@ -77,7 +79,7 @@ $textHeight: 0px;
 		@include background();
 
     ._targetRight {
-      font-family: $universLTSTD-Light;
+			font-family: $helvetica;
 			color: $gray;
 			@include background();
 
@@ -105,7 +107,7 @@ $textHeight: 0px;
 	z-index: 1;
 
   ._contactText {
-    font-family: $universLtsTd;
+    font-family: $helvetica;
 		font-size: 14px;
 		margin-right: 15%;
 		@include background();
@@ -129,8 +131,9 @@ $textHeight: 0px;
 		position: absolute;
 		bottom: var(--bottomMoreInfoPosition);
 		color: $gray;
-		width: 35%;
+		width: 30%;
 		@include background();
+		font-family: $helvetica;
 	}
 }
 
@@ -138,7 +141,8 @@ $textHeight: 0px;
 	@include background();
   width: 50%;
   height: 50%;
-  font-family: $universLTSTD-Light;
+	font-family: $helvetica;
+	font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
 	color: $pureBlack;
@@ -150,7 +154,10 @@ $textHeight: 0px;
 }
 
 ._whiteBodyText{
-	@include blueText;
+	color: $pureBlack;
+  font-family: $monumentExtended-Regular;
+  line-height: 1.2;
+  opacity: 1;
 	font-size: 3rem;
 	@include background();
 }
@@ -158,14 +165,14 @@ $textHeight: 0px;
 ._list {
 	list-style: none;
 	position: absolute;
-	top: 30%;
+	top: 27%;
 	@include printHeight('#text', 6);
 	@include background();
 
 	._smallBodyText {
 		@include blueText;
 		opacity: 0;
-		font-size: 1.2rem;
+		font-size: 1.75rem;
 		position: absolute;
 		top: 0;
 		z-index: 2;
@@ -180,7 +187,7 @@ $textHeight: 0px;
 }
 
 ._languageButton {
-	font-family: $universLtsTd;
+	font-family: $helvetica;
 	font-size: 12px;
 	background-color: $pureBlack;
 	color: $white;
@@ -192,5 +199,64 @@ $textHeight: 0px;
 	cursor: none;
 	font-weight: 200;
 }
+
+@include responsive(xxl) {
+
+  ._moreInfo{
+		font-size: 0.8rem !important;
+		bottom: 7% !important;
+	}
+
+	._target{
+		font-size: 0.75rem !important;
+	}
+
+ 	._list{
+		top: 20% !important;
+	}
+
+	._smallBodyText{
+		font-size:1.20rem !important;
+	}
+
+	._descriptionText{
+		font-size: 1.1rem !important
+	}
+
+	._whiteBodyText{
+		font-size: 2.5rem !important;
+	}
+}
+
+
+@include responsive(xl) {
+
+  ._moreInfo{
+		font-size: 0.8rem !important;
+		bottom: 5% !important;
+	}
+
+	._target{
+		font-size: 0.75rem !important;
+	}
+
+	._list{
+		top: 18% !important;
+	}
+
+	 ._smallBodyText{
+		font-size:1.10rem !important;
+	}
+	._descriptionText{
+		font-size: 0.95rem !important
+	}
+	._whiteBodyText{
+		font-size: 2.2rem !important;
+	}
+
+}
+
+
+
 
 
