@@ -27,20 +27,24 @@ const Menu = (props) => {
 			<div className='_mainDivContainer'>
 				<div className={'_blackHeader'}>
 					<div className={'_blackHeaderHover'}></div>
-					<div >
-						<p className={'_addressText'}>Centro de Artes Integradas,</p>
-						<p className={'_addressText'}>Montaña Creativa</p>
-						<p className={'_addressText'}>Módulo 5 / Oficina 53</p>
-						<p className={'_addressText'}>Caracas 1073</p>
+					<div>
+						<p className={'_addressText'}>Torre Iasa</p>
+						<p className={'_addressText'}>La Castellana</p>
+						<p className={'_addressText'}>Oficina 802</p>
+						<p className={'_addressText'}>Caracas 1060</p>
 					</div>
 					<div className={'_icon'} onClick={closeMenu}>
 						<ToggleButton fill={'#fff'} />
 					</div>
 				</div>
 				<div className={'_blackBody'}>
-					<span className={'vertical'}> <p data-hover="Estudio" className={'_blackBodyText'}>Estudio</p> </span>
-					<span className={'vertical'}> <p data-hover="Creativos" className={'_blackBodyText'}>Creativos</p> </span>
-					<span className={'vertical'}> <p data-hover="Folio" className={'_blackBodyText'}>Folio</p> </span>
+
+					{/* <span style={{marginRight:150}} className={'vertical'}> <p data-hover="PORTFOLIO" className={'_blackBodyText'}>PORTFOLIO</p> </span> */}
+					<span style={{marginRight:75}} className={'vertical'}> <p data-hover="ABOUT US" className={'_blackBodyText'}>ABOUT US</p> </span>
+					<span style={{marginRight:55}} className={'vertical'}> <p data-hover="RECAP" className={'_blackBodyText'}>RECAP</p> </span>
+					<span style={{marginRight:40}} className={'vertical'}> <p data-hover="RAW" className={'_blackBodyText'}>RAW</p> </span>
+
+
 				</div>
 				<div className={'_blackBodyFooter'} >
 					<div className={'_linksContainer'} style={{ display: 'block', marginLeft: 'auto', position: 'relative' }}>
@@ -58,7 +62,7 @@ const Menu = (props) => {
 					<div className={'_blackFooterHover'}>	</div>
 					<div className={'_lh'} >
 						<p className={'_blackFooterText'}>Contacto:</p>
-						<p className={'_blackFooterText _mt '}>contact@bananadsg.com</p>
+						<p className={'_blackFooterText _mt '}>hello@bananadesign.io</p>
 						<p className={'_blackFooterText '}>+58 412 222 2222</p>
 					</div>
 					<div className={'_lh'} >
