@@ -12,7 +12,7 @@
 }
 
 ._main {
-  background-color: $white;
+  background-color: $littleBlack;
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
@@ -27,7 +27,7 @@
   align-items: center;
   padding-top: 10vh;
 	box-sizing: border-box;
-	background-color: #ffffff;
+	background-color: $littleBlack;
 }
 
 ._leftFeaturedContent {
@@ -36,7 +36,23 @@
 
 ._rightFeaturedContent {
   width: 55%;
-  position: relative;
+	position: relative;
+}
+
+._featuredTools {
+	position: absolute;
+	left: -3rem;
+
+	& p {
+		text-align: center;
+		color: $white;
+	}
+}
+
+._toolsParent {
+	width: 2.2rem;
+	height: 2.2rem;
+	margin-top: 0.7rem;
 }
 
 ._keywords {
@@ -67,7 +83,7 @@
 }
 
 ._loremText {
-  color: $lightPurple;
+  color: $white;
   font-size: 1.2rem;
 	font-family: $helveticaBold;
 	font-weight: 600;
@@ -89,13 +105,11 @@
 
 ._zeroOne {
   font-family: $helveticaBold;
-	color: $lightPurple;
+	color: $white;
 	font-weight: 600;
   font-size: 1.7rem;
-  // font-weight: bold;
   @include opacity;
 }
-
 
 ._mineralsTitle {
   @include minerals;
