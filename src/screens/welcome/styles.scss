@@ -27,7 +27,7 @@ $textHeight: 0px;
 }
 
 @function space() {
-	$textHeight: $textHeight + 45px !global;
+	$textHeight: $textHeight + 40px !global;
 	$top: $textHeight;
 
 	@return $top;
