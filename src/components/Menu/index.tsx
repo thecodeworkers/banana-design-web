@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { ToggleButton } from './../../assets/img';
 import { gsapMenuStart, gsapMenuEnd } from './gsap'
 import './style.scss';
-
+import { Link } from "gatsby"
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
 import { unfoldMenu, changeToggle } from '../../store/actions';
@@ -40,7 +40,10 @@ const Menu = (props) => {
 				<div className={'_blackBody'}>
 
 					{/* <span style={{marginRight:150}} className={'vertical'}> <p data-hover="PORTFOLIO" className={'_blackBodyText'}>PORTFOLIO</p> </span> */}
-					<span style={{marginRight:75}} className={'vertical'}> <p data-hover="ABOUT US" className={'_blackBodyText'}>ABOUT US</p> </span>
+
+						<span style={{marginRight:75}} className={'vertical'}> <p data-hover="ABOUT US" className={'_blackBodyText'}>
+							<Link to='about-us' className='_linkStyle'> ABOUT US </Link> </p>
+						</span>
 					<span style={{marginRight:55}} className={'vertical'}> <p data-hover="RECAP" className={'_blackBodyText'}>RECAP</p> </span>
 					<span style={{marginRight:40}} className={'vertical'}> <p data-hover="RAW" className={'_blackBodyText'}>RAW</p> </span>
 

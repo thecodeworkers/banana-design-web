@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Menu, NavBar, VerticalBreadcrumb, Gallery } from "../components";
+import { Menu, NavBar, VerticalBreadcrumb } from "../components";
 import { Welcome, AllFeatured } from '../screens';
 import { bigCursor, smallCursor, whiteCursor, smallWhiteCursor } from '../utils/cursor';
 import { rgb2hex } from '../utils/hexadecimal';
@@ -47,12 +47,11 @@ const Home = () => {
 
 	return (
 		<div >
-			<NavBar />
+			<NavBar colorChange={true} />
 			<Menu />
 			<VerticalBreadcrumb />
 			<Welcome title={"Banana Creative®"} />
 			<AllFeatured />
-			<Gallery />
 		</div>
 	)
 
