@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { unfoldMenu } from '../../store/actions';
 import { gsap } from 'gsap/all';
+import { navigate } from 'gatsby';
 
 
 const NavBar: React.FC<navBarProps> = (props) => {
@@ -52,7 +53,7 @@ const NavBar: React.FC<navBarProps> = (props) => {
 	return (
 		<div className={`_navBar ${theme.theme ? '_dark' : '_light'}`}>
 
-			<div className='_logoParent'>
+			<div className='_logoParent' onClick={ () => navigate('/') }>
 				<Logo className="_navBarLogo" theme={theme}/>
 			</div>
 
