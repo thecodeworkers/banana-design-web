@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Menu, NavBar, VerticalBreadcrumb } from "../components";
 import { Welcome, AllFeatured } from '../screens';
 import { bigCursor, smallCursor, whiteCursor, smallWhiteCursor } from '../utils/cursor';
@@ -7,6 +7,7 @@ import { rgb2hex } from '../utils/hexadecimal';
 const Home = () => {
 
 	const [cursor, setCursor] = useState(1);
+	const featured = useRef();
 
 	useEffect(() => {
 		window.addEventListener('click', () => changeCursorStyles());
@@ -33,13 +34,13 @@ const Home = () => {
 		const styles = getComputedStyle(elements[currentElement]);
 		const background = styles.backgroundColor;
 
-		if(rgb2hex(background) === '#000000' || rgb2hex(background) === '#2c292a' || rgb2hex(background) === '#323031') {
+		if (rgb2hex(background) === '#000000' || rgb2hex(background) === '#2c292a' || rgb2hex(background) === '#323031') {
 			document.body.style.cursor = whiteCursor;
 			setCursor(2);
 			return;
 		}
 
-		if(rgb2hex(background) == '#ffffff') {
+		if (rgb2hex(background) == '#ffffff') {
 			document.body.style.cursor = bigCursor;
 			setCursor(1);
 		}
@@ -48,10 +49,12 @@ const Home = () => {
 	return (
 		<div >
 			<NavBar colorChange={true} />
-			<Menu />
+			<Menu reference={featured} />
 			<VerticalBreadcrumb />
 			<Welcome title={"Banana Creative®"} />
-			<AllFeatured />
+			<div ref={featured}>
+				<AllFeatured />
+			</div>
 		</div>
 	)
 

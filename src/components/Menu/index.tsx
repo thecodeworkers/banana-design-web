@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import { ToggleButton } from './../../assets/img';
 import { gsapMenuStart, gsapMenuEnd } from './gsap'
 import './style.scss';
-import { Link, navigate } from "gatsby"
+import { navigate } from "gatsby"
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
 import { unfoldMenu, changeToggle } from '../../store/actions';
 
 const Menu = (props) => {
 
-	const { menu, action } = props;
+	const { menu, action, reference } = props;
 
 	useEffect(() => {
 		if (menu.opened) gsapMenuStart();
@@ -27,6 +27,14 @@ const Menu = (props) => {
 		navigate(route);
 		if (`/${splitPath[3]}` != route) closeMenu();
 	}
+
+	const scrolling = (ref, path) => {
+    if(ref) {
+      const target = ref.current;
+      window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+		}
+		navigation(path);
+  }
 
 	return (
 		<div className={'_sectionBlack'}>
@@ -60,7 +68,7 @@ const Menu = (props) => {
 					<div className={'_linksContainer'} style={{ display: 'block', marginLeft: 'auto', position: 'relative' }}>
 						<div className={'_blackBodyFooterHover'}></div>
 						<ul style={{ width: '100%', listStyle: 'none', position: 'relative' }}>
-							<li><a className={'_blackBodyFooterText'} >Proyectos Destacados</a></li>
+							<li><a className={'_blackBodyFooterText'} onClick={() => scrolling(reference, '/')}>Proyectos Destacados</a></li>
 							<li><a className={'_blackBodyFooterText'} >Marcas Asociadas</a></li>
 							<li> <a className={'_blackBodyFooterText'} >Classroom</a></li>
 						</ul>
