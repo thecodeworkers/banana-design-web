@@ -5,7 +5,7 @@ interface logoProps {
 	className?: string
 }
 
-const Logo: React.FC<logoProps> = ({ theme }) => (
+const Logo: React.FC<logoProps> = ({ theme = { theme: true }}) => (
 	<svg width="100%" height="100%" viewBox="0 0 204.35 20.674">
 		<g id="Grupo_43" data-name="Grupo 43" transform="translate(-126.718 -132.652)">
 			<path id="Trazado_48" data-name="Trazado 48" d="M831.281,139.071a6.016,6.016,0,0,0-6.085-4.807c-5.252,0-7.475,4.39-7.475,8.725s2.223,8.725,7.475,8.725c3.668,0,6-2.834,6.363-6.363h1.89c-.528,4.863-3.612,7.975-8.253,7.975-6.252,0-9.365-4.918-9.365-10.337s3.112-10.337,9.365-10.337c3.751,0,7.475,2.251,7.975,6.419Z" transform="translate(-584.874)" fill={!theme.theme ? '#161616' : '#ffffff'} />

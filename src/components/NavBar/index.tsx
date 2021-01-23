@@ -13,9 +13,7 @@ import { navigate } from 'gatsby';
 const NavBar: React.FC<navBarProps> = (props) => {
 
 	const { reference, action, toggle, theme, colorChange } = props;
-	const [isDark, setIsDark] = useState( false );
-
-	// const defaultChangeColorsPoint = window.innerHeight * 0.7;
+	const [isDark, setIsDark] = useState(false);
 	const timeline = gsap.timeline();
 
 	const openMenu = () => {
