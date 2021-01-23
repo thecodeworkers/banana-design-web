@@ -2,7 +2,7 @@
 
 @mixin minerals {
   color: $white;
-  font-family: $monumentExtended-Regular;
+	font-family: $monumentExtended-Regular;
   font-weight: bold;
   font-size: 4rem;
 }
@@ -12,7 +12,7 @@
 }
 
 ._main {
-  background-color: $white;
+  background-color: $littleBlack;
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
@@ -27,7 +27,7 @@
   align-items: center;
   padding-top: 10vh;
 	box-sizing: border-box;
-	background-color: #ffffff;
+	background-color: $littleBlack;
 }
 
 ._leftFeaturedContent {
@@ -36,7 +36,24 @@
 
 ._rightFeaturedContent {
   width: 55%;
-  position: relative;
+	position: relative;
+}
+
+._featuredTools {
+	position: absolute;
+	left: -3rem;
+
+	& p {
+		text-align: center;
+		color: $white;
+		font-family: $helvetica;
+	}
+}
+
+._toolsParent {
+	width: 2.2rem;
+	height: 2.2rem;
+	margin-top: 0.7rem;
 }
 
 ._keywords {
@@ -46,30 +63,32 @@
   margin-top: 0.7rem;
 
   & p {
-    font-family: $montserrat;
+    font-family: $helvetica;
     color: $white;
   }
 }
 
 ._caseOfStudy {
-  font-size: 1.1rem;
+	font-size: 1.1rem;
+	font-family: $helvetica;
 }
 
 
 ._textDay, ._keywordText{
-  font-size: 0.9rem;
+	font-size: 0.9rem;
+	font-family: $helvetica;
 }
 
 ._leftDescription {
   width: 75%;
   padding-left: 2.5%;
-  // background-color: blue;
 }
 
 ._loremText {
-  color: $lightPurple;
+  color: $white;
   font-size: 1.2rem;
-  font-family: $montserrat;
+	font-family: $helveticaBold;
+	font-weight: 600;
 }
 
 .test {
@@ -80,20 +99,20 @@
   position: absolute;
 
   & p {
-    font-family: $montserrat;
+    font-family: $helvetica;
     color: $white;
-    font-weight: bold;
+		font-weight: bold;
+
   }
 }
 
 ._zeroOne {
-  font-family: $monumentExtended-Regular;
-  color: $lightPurple;
+  font-family: $helvetica;
+	color: $white;
+	font-weight: 600;
   font-size: 1.7rem;
-  // font-weight: bold;
   @include opacity;
 }
-
 
 ._mineralsTitle {
   @include minerals;
@@ -108,7 +127,8 @@
 }
 
 ._text1, ._text2, ._text3 {
-  @include opacity;
+	@include opacity;
+	font-family: $helvetica;
 }
 
 ._imgParent {

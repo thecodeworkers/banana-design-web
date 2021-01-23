@@ -1,7 +1,7 @@
 import { BREADCRUMB_CHANGE } from "./action-types";
 
 const initialState = {
-	color: '#0853DC',
+	color: '#000000',
 	text: 'Welcome'
 }
 

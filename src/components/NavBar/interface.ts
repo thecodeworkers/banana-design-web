@@ -2,5 +2,6 @@ export default interface navBarProps {
 	reference?: any;
 	action: any;
 	toggle: any;
-	theme: any
+	theme: any,
+	colorChange: boolean
 }
