@@ -35,23 +35,17 @@
     padding-top: 1vh;
 		width: 30px;
 		height: 30px;
-		// height: 20px;
 	}
-
-
 }
 
-// #svg > g > path:nth-of-type(1){
-// 	transform: scaleX(0.5);
-// }
-
 ._toggleChild {
-		// background-color: blueviolet;
 		height: 80%;
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
-		// background-color: chocolate;
+}
 
+._logoParent {
+	width: 9rem;
 }
