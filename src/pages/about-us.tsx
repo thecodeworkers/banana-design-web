@@ -5,7 +5,7 @@ import { Gallery, Footer, NavBar, Menu} from '../components';
 const AboutUs = () => {
 	return (
 		<>
-		<NavBar />
+		<NavBar colorChange={false}/>
 		<Menu />
 		<Welcome title='About us' />
 		<Gallery />

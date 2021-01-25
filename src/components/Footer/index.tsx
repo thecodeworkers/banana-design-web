@@ -7,7 +7,7 @@ const Footer = () => {
 	return (
 		<div className="_footerContainer">
 			<div className="_footerContent">
-			<div >
+			<div className='_logoParent'>
 					<Logo className="_footerLogo" />
 				</div>
 
