@@ -26,6 +26,7 @@ const Menu = (props) => {
 		const splitPath = path.split('/');
 		navigate(route);
 		if (`/${splitPath[3]}` != route) closeMenu();
+		action.changeToggle(3);
 	}
 
 	const scrolling = (ref, path) => {

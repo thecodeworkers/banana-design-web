@@ -3,5 +3,6 @@ export default interface navBarProps {
 	action: any;
 	toggle: any;
 	theme: any,
-	colorChange: boolean
+	colorChange: boolean;
+	loader: any
 }

@@ -1,4 +1,4 @@
-import { LOADER, ANIMATION, MENU_ANIMATION } from './action-types';
+import { LOADER, ANIMATION } from './action-types';
 
 const initialState = {
 	loader: false,
@@ -13,9 +13,6 @@ export default (state = initialState, {type, payload}) => {
 
 		case ANIMATION:
 			return { ...state, animation: payload }
-
-		case MENU_ANIMATION:
-			return { ...state, menuAnimation: payload }
 
 		default:
 			return state

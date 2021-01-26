@@ -8,7 +8,7 @@ const Footer = () => {
 		<div className="_footerContainer">
 			<div className="_footerContent">
 			<div className='_logoParent'>
-					<Logo className="_footerLogo" />
+					<Logo  firstColor='#FFFFFF' secondColor='#FFFFFF'/>
 				</div>
 
 				<div className="_sectionsContainer">

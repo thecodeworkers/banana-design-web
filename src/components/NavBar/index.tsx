@@ -51,10 +51,16 @@ const NavBar: React.FC<navBarProps> = (props) => {
 	}
 
 	return (
-		<div className={`_navBar ${theme.theme ? '_dark' : '_light'}`}>
+		<div className={`_navBar ${theme.theme && colorChange ? '_dark' : '_light'}`}>
 
 			<div className='_logoParent' onClick={ () => navigate('/') }>
-				<Logo className="_navBarLogo" theme={theme}/>
+
+				{
+					!theme.theme
+					?	<Logo firstColor='#161616' secondColor='#231f20'/>
+					: <Logo firstColor={colorChange ? '#FFFFFF' : null} secondColor={colorChange ? '#FFFFFF' : null}/>
+				}
+
 			</div>
 
 			<div className="_navBarToggleWrapper" onClick={outToggle} >

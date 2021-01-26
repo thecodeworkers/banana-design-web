@@ -12,7 +12,7 @@ const Welcome = (props) => {
 
 	const { i18n } = useTranslation();
 	const [language, setLanguage] = useState('en');
-	const { loader, menu, t, action, title } = props;
+	const { loader, menu, t, action, title, toggle } = props;
 
 	useEffect(() => {
 		if (loader.loader && !loader.animation) gsapStart(action.setAnimationState(true));
@@ -20,7 +20,7 @@ const Welcome = (props) => {
 
 	useEffect(() => {
 		if (loader.loader) {
-			menu.opened ? gsapRetract() : gsapExpand(toggleDispatch);
+			menu.opened ? gsapRetract() : gsapExpand(toggleDispatch, toggle);
 		}
 	}, [menu]);
 
@@ -100,7 +100,7 @@ const Welcome = (props) => {
 	);
 }
 
-const mapStateToProps = ({ loader, menu }) => ({ loader, menu });
+const mapStateToProps = ({ loader, menu, toggle }) => ({ loader, menu, toggle });
 
 const mapDispatchToProps = dispatch => {
 	const actions = {

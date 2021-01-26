@@ -1,4 +1,4 @@
-import { LOADER, ANIMATION, MENU_ANIMATION } from './action-types';
+import { LOADER, ANIMATION } from './action-types';
 
 export const setLoader = (param: boolean) => {
 	return {
@@ -10,13 +10,6 @@ export const setLoader = (param: boolean) => {
 export const setAnimationState = (param: boolean) => {
 	return {
 		type: ANIMATION,
-		payload: param
-	}
-}
-
-export const setMenuAnimation = (param: boolean) => {
-	return {
-		type: MENU_ANIMATION,
 		payload: param
 	}
 }
