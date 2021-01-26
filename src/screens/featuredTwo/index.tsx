@@ -69,7 +69,7 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 
 			setTimeout(() => {
 				action.changeBreadcrumb({
-					color: '#0853DC',
+					color: '#000000',
 					text: 'Welcome',
 				});
 			}, 200);

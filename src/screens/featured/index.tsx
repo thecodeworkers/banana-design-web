@@ -64,7 +64,7 @@ const Featured = (props: propsType) => {
 				<div className='_rightFeaturedContent'>
 
 					<div className='_featuredTools'>
-						<p> tools </p>
+						<p className='_toolsText'> tools </p>
 						<div className='_toolsParent'>
 							<Ai />
 						</div>
