@@ -20,7 +20,8 @@ const Welcome = (props) => {
 
 	useEffect(() => {
 		if (loader.loader) {
-			menu.opened ? gsapRetract() : gsapExpand(toggleDispatch, toggle);
+			if(!menu.opened && toggle.toggle == 3) return;
+			menu.opened ? gsapRetract() : gsapExpand(toggleDispatch);
 		}
 	}, [menu]);
 
