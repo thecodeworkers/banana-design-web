@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './styles.scss';
 import { gsapStart, gsapRetract, gsapExpand } from './gsap';
 import { Arrow } from '../../components/Svg';
-import { changeToggle } from '../../store/actions';
+import { changeToggle, setAnimationState } from '../../store/actions';
 import { useTranslation } from 'react-i18next';
 import { withTrans } from '../../i18n/withTrans';
 import { connect } from 'react-redux';
@@ -15,7 +15,7 @@ const Welcome = (props) => {
 	const { loader, menu, t, action, title } = props;
 
 	useEffect(() => {
-		if (loader.loader) gsapStart();
+		if (loader.loader && !loader.animation) gsapStart(action.setAnimationState(true));
 	}, [loader]);
 
 	useEffect(() => {
@@ -104,7 +104,8 @@ const mapStateToProps = ({ loader, menu }) => ({ loader, menu });
 
 const mapDispatchToProps = dispatch => {
 	const actions = {
-		changeToggle
+		changeToggle,
+		setAnimationState
 	}
 
 	return {

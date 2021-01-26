@@ -6,14 +6,9 @@ import { Loader } from '../components';
 
 const IndexPage = ({ loader }) => {
 	return (
-		<>
-			{
-				!loader.loader ?
-					<Loader>
-						<Home />
-					</Loader> : <Home />
-			}
-		</>
+		<Loader>
+			<Home />
+		</Loader>
 	)
 }
 

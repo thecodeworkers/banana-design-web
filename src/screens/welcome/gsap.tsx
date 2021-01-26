@@ -1,11 +1,12 @@
 import { gsap } from 'gsap/all';
 
-export const gsapStart = () => {
+export const gsapStart = ({ action }) => {
   gsap.timeline().delay(1)
 		.from("._description, ._target, ._targetRightContainer, ._contact, ._arrow", { opacity: 0, ease: "back", duration: 2.5 })
 		.from("._whiteBodyText", { opacity: 0, stagger: { each: 0.3, from: 3 } }, "-=0.8")
 		.from("._separator", { scale: 0, duration: 0.8, height: 1.5 }, "-=0.8")
-		.from("._arrow", { ease: "bounce.out", y: -150, duration: 1 }, ">");
+		.from("._arrow", { ease: "bounce.out", y: -150, duration: 1 }, ">")
+		.eventCallback("onComplete", () => action)
 }
 
 export const gsapRetract = () => {
