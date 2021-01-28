@@ -155,10 +155,11 @@ $textHeight: 0px;
 
 ._whiteBodyText{
 	color: $pureBlack;
-  font-family: $monumentExtended-Regular;
+  font-family: $helveticaBold;
   line-height: 1.2;
   opacity: 1;
-	font-size: 3rem;
+	font-size: 3.6rem;
+	font-weight: 900;
 	@include background();
 }
 
@@ -224,7 +225,7 @@ $textHeight: 0px;
 	}
 
 	._whiteBodyText{
-		font-size: 2.5rem !important;
+		font-size: 3.2rem !important;
 	}
 }
 
@@ -251,7 +252,7 @@ $textHeight: 0px;
 		font-size: 0.95rem !important
 	}
 	._whiteBodyText{
-		font-size: 2.2rem !important;
+		font-size: 2.9rem !important;
 	}
 
 }
