@@ -30,8 +30,8 @@ const NavBar: React.FC<navBarProps> = (props) => {
 
 		if (toggle.toggle === 2) {
 			gsap.timeline()
-				.to('#svg > g > path:nth-of-type(1)', 0.5, { transform: 'scaleX(1)' })
-				.to('#svg > g > path:nth-of-type(2)', 0.3, { transform: 'scaleX(1)' })
+				.to('#svg > g > path:nth-of-type(1)', 0.3, { transform: 'scaleX(1)' })
+				.to('#svg > g > path:nth-of-type(2)', 0.2, { transform: 'scaleX(1)' })
 				.to('#svg > g > path:nth-of-type(3)', 0.1, { transform: 'scaleX(1)' })
 		}
 
@@ -39,8 +39,8 @@ const NavBar: React.FC<navBarProps> = (props) => {
 
 	const outToggle = () => {
 		gsap.timeline()
-			.to('#svg > g > path:nth-of-type(3)', 0.5, { transform: 'scaleX(0)' })
-			.to('#svg > g > path:nth-of-type(2)', 0.3, { transform: 'scaleX(0)' })
+			.to('#svg > g > path:nth-of-type(3)', 0.3, { transform: 'scaleX(0)' })
+			.to('#svg > g > path:nth-of-type(2)', 0.2, { transform: 'scaleX(0)' })
 			.to('#svg > g > path:nth-of-type(1)', 0.1, { transform: 'scaleX(0)' })
 			.eventCallback("onComplete", openMenu);
 	}
