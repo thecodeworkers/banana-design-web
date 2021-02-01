@@ -8,7 +8,10 @@ export const dataOne = {
 	keywords: 'Moda y modelado 3D',
 	title: 'STAY UP',
 	number: '01 -',
-	description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsa tenetur reprehenderit excepturi sapiente quam eaque itaque numquam nobis mollitia porro cum a, voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
+	description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+	descriptionTwo: 'Earum ipsa tenetur reprehenderit excepturi sapiente',
+	descriptionThree: 'quam eaque itaque numquam nobis mollitia porro cum a',
+	descriptionFour: 'voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
 	image: <FeaturedThree />
 }
 
@@ -19,7 +22,10 @@ export const dataTwo = {
 	title: 'Banana',
 	subtitle: 'Minerals',
 	number: '02 -',
-	description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsa tenetur reprehenderit excepturi sapiente quam eaque itaque numquam nobis mollitia porro cum a, voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
+	description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+	descriptionTwo: 'Earum ipsa tenetur reprehenderit excepturi sapiente',
+	descriptionThree: 'quam eaque itaque numquam nobis mollitia porro cum a',
+	descriptionFour: 'voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
 	image: <FeaturedOne />
 }
 
@@ -29,7 +35,10 @@ export const dataThree = {
 	keywords: 'keyword1, keyword2',
 	title: 'STAY UP',
 	number: '03 -',
-	description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsa tenetur reprehenderit excepturi sapiente quam eaque itaque numquam nobis mollitia porro cum a, voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
+	description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+	descriptionTwo: 'Earum ipsa tenetur reprehenderit excepturi sapiente',
+	descriptionThree: 'quam eaque itaque numquam nobis mollitia porro cum a',
+	descriptionFour: 'voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
 	image: <FeaturedImageTwo />
 }
 
@@ -40,7 +49,10 @@ export const dataFour = {
 	title: 'STAY UP',
 	subtitle: 'STAY UP',
 	number: '04 -',
-	description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsa tenetur reprehenderit excepturi sapiente quam eaque itaque numquam nobis mollitia porro cum a, voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
+	description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+	descriptionTwo: 'Earum ipsa tenetur reprehenderit excepturi sapiente',
+	descriptionThree: 'quam eaque itaque numquam nobis mollitia porro cum a',
+	descriptionFour: 'voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
 	image: <FeaturedFour />
 }
 
@@ -51,7 +63,10 @@ export const dataFive = {
 	title: 'STAY UP',
 	subtitle: 'STAY UP',
 	number: '05 -',
-	description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsa tenetur reprehenderit excepturi sapiente quam eaque itaque numquam nobis mollitia porro cum a, voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
+	description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+	descriptionTwo: 'Earum ipsa tenetur reprehenderit excepturi sapiente',
+	descriptionThree: 'quam eaque itaque numquam nobis mollitia porro cum a',
+	descriptionFour: 'voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
 	image: <FeaturedFive />
 }
 

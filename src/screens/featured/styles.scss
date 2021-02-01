@@ -11,6 +11,10 @@
   opacity: 1;
 }
 
+@mixin opacity2 {
+  opacity: 0;
+}
+
 ._main {
   background-color: $littleBlack;
   width: 100%;
@@ -126,7 +130,12 @@
   @include opacity;
 }
 
-._text1, ._text2, ._text3 {
+._text2, ._text3 {
+	@include opacity;
+	font-family: $helvetica;
+}
+
+._textDescription1, ._textDescription2, ._textDescription3, ._textDescription4 {
 	@include opacity;
 	font-family: $helvetica;
 }

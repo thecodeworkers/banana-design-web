@@ -83,8 +83,13 @@
   @include opacity;
 }
 
-._textOne, ._textTwo, ._textThree {
-  @include opacity;
+._textTwo, ._textThree {
+	@include opacity;
+
+}
+._textDescriptionOne, ._textDescriptionTwo, ._textDescriptionThree, ._textDescriptionFour {
+	opacity: 0;
+
 }
 
 ._loremTextTwo {

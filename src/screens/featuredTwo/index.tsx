@@ -8,13 +8,16 @@ import { changeBreadcrumb, setTheme } from '../../store/actions';
 import { bigCursor, smallCursor } from '../../utils/cursor';
 import { propsType } from './types';
 
-const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, subtitle, description, number, image, action, transition = false}) => {
+const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, subtitle, description, descriptionTwo, descriptionThree, descriptionFour, number, image, action, transition = false}) => {
 
 	const [show, setShow] = useState(false);
 	const [flag, setFlag] = useState(false);
 
 	const texts: Array<any> = [
-		{ class: '._textOne', duration: 0.3, delay: 0.5 },
+		{ class: '._textDescriptionOne', duration: 0.3, delay: 0.5 },
+		{ class: '._textDescriptionTwo', duration: 0.3, delay: 0.5 },
+		{ class: '._textDescriptionThree', duration: 0.3, delay: 0.5 },
+		{ class: '._textDescriptionFour', duration: 0.3, delay: 0.5 },
 		{ class: '._textTwo', duration: 0.3, delay: 0.7 },
 		{ class: '._textThree', duration: 0.3, delay: 0.9 },
 	];
@@ -34,7 +37,7 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 		const play = timeline.play();
 		if (!show && !flag) {
 			play
-				.to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle', '._textOne', '._textTwo', '._textThree'], { opacity: 0 }, 0);
+				.to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle', '._textTwo', '._textThree'], { opacity: 0 }, 0);
 			timeline.eventCallback("onComplete", () => setFlag(true));
 			return
 		}
@@ -51,7 +54,10 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 		if(transition) {
 			action.setTheme(true);
 			tl.to(['._principal', '._featuredTwoChild'], { backgroundColor: '#2C292A' });
-
+			tl.staggerTo('._textDescriptionOne', 1, {opacity: 1}, 0.010);
+			tl.staggerTo('._textDescriptionTwo', 1, {opacity: 1}, 0.011);
+			tl.staggerTo('._textDescriptionThree', 1, {opacity: 1}, 0.12);
+			tl.staggerTo('._textDescriptionFour', 1, {opacity: 1}, 0.13);
 			setTimeout(() => {
 				action.changeBreadcrumb({
 					color: '#FFFFFF',
@@ -82,6 +88,7 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 				trigger: '._principal',
 				start: '-=300',
 				end: 'bottom',
+				markers:true,
 				onEnter: () => enterSection(tl),
 				onEnterBack: () => tl.to(['._principal', '._featuredTwoChild'], { backgroundColor: '#2C292A' }),
 				onLeaveBack: () => outSection(tl)
@@ -124,7 +131,10 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 							<p className='_zeroTwo'> { number } </p>
 							<p className='_mineralsTwoTitle'> { title }</p>
 							<div className='_loremTextTwo'>
-								<p className='_textOne'> { description } </p>
+								<p className='_textDescriptionOne'> { description } </p>
+								<p className='_textDescriptionTwo'> { descriptionTwo } </p>
+								<p className='_textDescriptionThree'> { descriptionThree } </p>
+								<p className='_textDescriptionFour'> { descriptionFour } </p>
 							</div>
 						</div>
 					</div>
