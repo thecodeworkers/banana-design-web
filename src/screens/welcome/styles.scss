@@ -12,7 +12,7 @@ $textHeight: 0px;
 
 @mixin blueText {
 	color: $blue;
-  font-family: $helvetica;
+  font-family: $helveticaBold;
   line-height: 1.2;
 	opacity: 1;
 	font-weight: 900;
@@ -165,7 +165,7 @@ $textHeight: 0px;
 ._list {
 	list-style: none;
 	position: absolute;
-	top: 27%;
+	top: 37%;
 	@include printHeight('#text', 6);
 	@include background();
 
@@ -175,6 +175,7 @@ $textHeight: 0px;
 		font-size: 1.75rem;
 		position: absolute;
 		top: 0;
+
 		z-index: 2;
 	}
 }
@@ -212,7 +213,7 @@ $textHeight: 0px;
 	}
 
  	._list{
-		top: 20% !important;
+		top: 32% !important;
 	}
 
 	._smallBodyText{
@@ -241,7 +242,7 @@ $textHeight: 0px;
 	}
 
 	._list{
-		top: 18% !important;
+		top: 26% !important;
 	}
 
 	 ._smallBodyText{
