@@ -14,13 +14,17 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 	const [flag, setFlag] = useState(false);
 
 	const texts: Array<any> = [
-		{ class: '._textDescriptionOne', duration: 0.3, delay: 0.5 },
-		{ class: '._textDescriptionTwo', duration: 0.3, delay: 0.5 },
-		{ class: '._textDescriptionThree', duration: 0.3, delay: 0.5 },
-		{ class: '._textDescriptionFour', duration: 0.3, delay: 0.5 },
+		{ class: '._textDescriptionOne', duration: 0.6, delay: 0.5 },
+		{ class: '._textDescriptionTwo', duration: 0.6, delay: 0.6 },
+		{ class: '._textDescriptionThree', duration: 0.6, delay: 0.7 },
+		{ class: '._textDescriptionFour', duration: 0.6, delay: 0.8 },
 		{ class: '._textTwo', duration: 0.3, delay: 0.7 },
 		{ class: '._textThree', duration: 0.3, delay: 0.9 },
+		{ class: '._mineralsTwoTitle', duration: 0.3, delay: 0.9 },
+		{ class: '._mineralsTwoSubTitle', duration: 0.3, delay: 0.9  },
+		{ class: '._zeroTwo', duration: 0.3, delay: 0.9  }
 	];
+
 
 	useEffect(() => {
 		triggerAction();
@@ -28,36 +32,30 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 
 	const timeline = gsap.timeline();
 
-	const imageChange = (param: string) => {
-		param == 'in' ? setShow(true) : setShow(false);
-		inAnimation();
-	}
+	const inAnimation = (param) => {
+		let timeline = gsap.timeline();
 
-	const inAnimation = () => {
-		const play = timeline.play();
-		if (!show && !flag) {
-			play
-				.to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle', '._textTwo', '._textThree'], { opacity: 0 }, 0);
-			timeline.eventCallback("onComplete", () => setFlag(true));
-			return
+
+		if(param) {
+			timeline.play()
+			texts.forEach(res => { timeline.to(res.class, 0.1, { opacity: 0 }, 0.1) })
 		}
 
-		if (flag) {
-			play
-				.to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 1 }, 0.3);
-			texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay) })
-			timeline.eventCallback("onComplete", () => setFlag(false));
+		if (!param) {
+			timeline.play()
+				.to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 1 }, 0.5);
+			texts.forEach(res => { timeline.to(res.class, res?.duration, { opacity: 1 }, res?.delay) })
 		}
 	}
 
 	const enterSection = (tl: any) => {
+
+		console.log('ENTEEEEEEEEEEEEER')
+;
+		inAnimation(false);
 		if(transition) {
 			action.setTheme(true);
 			tl.to(['._principal', '._featuredTwoChild'], { backgroundColor: '#2C292A' });
-			tl.staggerTo('._textDescriptionOne', 1, {opacity: 1}, 0.010);
-			tl.staggerTo('._textDescriptionTwo', 1, {opacity: 1}, 0.011);
-			tl.staggerTo('._textDescriptionThree', 1, {opacity: 1}, 0.12);
-			tl.staggerTo('._textDescriptionFour', 1, {opacity: 1}, 0.13);
 			setTimeout(() => {
 				action.changeBreadcrumb({
 					color: '#FFFFFF',
@@ -67,8 +65,7 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 		}
 	}
 
-	const outSection = (tl: any) => {
-
+	const outBackSection = (tl: any) => {
 		if(transition) {
 			action.setTheme(false);
 			tl.to(['._principal', '._featuredTwoChild'], { backgroundColor: '#FFFFFF' })
@@ -82,16 +79,25 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 		}
 	}
 
+	const enterBackSection = (tl: any) => {
+		tl.to(['._principal', '._featuredTwoChild'], { backgroundColor: '#2C292A' })
+		inAnimation(false);
+	}
+
+	const outSection = () => {
+		inAnimation(true);
+	};
+
 	const triggerAction = () => {
-		const tl = gsap.timeline({
+		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '._principal',
 				start: '-=300',
 				end: 'bottom',
-				markers:true,
 				onEnter: () => enterSection(tl),
-				onEnterBack: () => tl.to(['._principal', '._featuredTwoChild'], { backgroundColor: '#2C292A' }),
-				onLeaveBack: () => outSection(tl)
+				onEnterBack: () => enterBackSection(tl),
+				onLeaveBack: () => outBackSection(tl),
+				onLeave: () => outSection()
 			}
 		})
 	}

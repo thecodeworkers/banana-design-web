@@ -41,6 +41,7 @@ const AllFeatured = () => (
 			descriptionThree={dataThree.descriptionThree}
 			descriptionFour={dataThree.descriptionFour}
 			image={dataThree.image}
+			transition={true}
 		/>
 		<Featured
 			imageDescription={dataFour.imageDescription}
