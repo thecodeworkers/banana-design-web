@@ -13,4 +13,5 @@ export type propsType = {
 	action: any,
 	theme: boolean,
 	transition?: boolean
+	id?: string
 }

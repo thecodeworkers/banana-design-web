@@ -12,5 +12,6 @@ export type propsType = {
 	image: any,
 	action: () => {},
 	theme: boolean,
-	transition?: boolean
+	transition?: boolean,
+	id: string
 }

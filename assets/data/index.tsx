@@ -12,7 +12,9 @@ export const dataOne = {
 	descriptionTwo: 'Earum ipsa tenetur reprehenderit excepturi sapiente',
 	descriptionThree: 'quam eaque itaque numquam nobis mollitia porro cum a',
 	descriptionFour: 'voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
-	image: <FeaturedThree />
+	image: <FeaturedThree />,
+	id: 'featuredOne',
+	transition: true
 }
 
 export const dataTwo = {
@@ -26,7 +28,8 @@ export const dataTwo = {
 	descriptionTwo: 'Earum ipsa tenetur reprehenderit excepturi sapiente',
 	descriptionThree: 'quam eaque itaque numquam nobis mollitia porro cum a',
 	descriptionFour: 'voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
-	image: <FeaturedOne />
+	image: <FeaturedOne />,
+	id:'featuredTwo'
 }
 
 export const dataThree = {
@@ -39,7 +42,9 @@ export const dataThree = {
 	descriptionTwo: 'Earum ipsa tenetur reprehenderit excepturi sapiente',
 	descriptionThree: 'quam eaque itaque numquam nobis mollitia porro cum a',
 	descriptionFour: 'voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
-	image: <FeaturedImageTwo />
+	image: <FeaturedImageTwo />,
+	id:'featuredThree'
+
 }
 
 export const dataFour = {
@@ -53,7 +58,9 @@ export const dataFour = {
 	descriptionTwo: 'Earum ipsa tenetur reprehenderit excepturi sapiente',
 	descriptionThree: 'quam eaque itaque numquam nobis mollitia porro cum a',
 	descriptionFour: 'voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
-	image: <FeaturedFour />
+	image: <FeaturedFour />,
+	id:'featuredFour'
+
 }
 
 export const dataFive = {
@@ -67,6 +74,8 @@ export const dataFive = {
 	descriptionTwo: 'Earum ipsa tenetur reprehenderit excepturi sapiente',
 	descriptionThree: 'quam eaque itaque numquam nobis mollitia porro cum a',
 	descriptionFour: 'voluptate distinctio voluptates aliquid repellat soluta? Ipsa.',
-	image: <FeaturedFive />
+	image: <FeaturedFive />,
+	id:'featuredFive'
+
 }
 

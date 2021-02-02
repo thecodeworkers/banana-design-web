@@ -8,33 +8,24 @@ import { changeBreadcrumb, setTheme } from '../../store/actions';
 import { bigCursor, smallCursor } from '../../utils/cursor';
 import { propsType } from './types';
 
-const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, subtitle, description, descriptionTwo, descriptionThree, descriptionFour, number, image, action, transition = false}) => {
-
-	const [show, setShow] = useState(false);
-	const [flag, setFlag] = useState(false);
+const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, subtitle, description, descriptionTwo, descriptionThree, descriptionFour, number, image, action, transition = false, id}) => {
 
 	const texts: Array<any> = [
 		{ class: '._textDescriptionOne', duration: 0.6, delay: 0.5 },
 		{ class: '._textDescriptionTwo', duration: 0.6, delay: 0.6 },
 		{ class: '._textDescriptionThree', duration: 0.6, delay: 0.7 },
 		{ class: '._textDescriptionFour', duration: 0.6, delay: 0.8 },
-		{ class: '._textTwo', duration: 0.3, delay: 0.7 },
-		{ class: '._textThree', duration: 0.3, delay: 0.9 },
 		{ class: '._mineralsTwoTitle', duration: 0.3, delay: 0.9 },
 		{ class: '._mineralsTwoSubTitle', duration: 0.3, delay: 0.9  },
 		{ class: '._zeroTwo', duration: 0.3, delay: 0.9  }
 	];
 
-
 	useEffect(() => {
 		triggerAction();
 	}, []);
 
-	const timeline = gsap.timeline();
-
 	const inAnimation = (param) => {
 		let timeline = gsap.timeline();
-
 
 		if(param) {
 			timeline.play()
@@ -49,9 +40,6 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 	}
 
 	const enterSection = (tl: any) => {
-
-		console.log('ENTEEEEEEEEEEEEER')
-;
 		inAnimation(false);
 		if(transition) {
 			action.setTheme(true);
@@ -66,6 +54,7 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 	}
 
 	const outBackSection = (tl: any) => {
+		inAnimation(true);
 		if(transition) {
 			action.setTheme(false);
 			tl.to(['._principal', '._featuredTwoChild'], { backgroundColor: '#FFFFFF' })
@@ -91,7 +80,7 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 	const triggerAction = () => {
 		let tl = gsap.timeline({
 			scrollTrigger: {
-				trigger: '._principal',
+				trigger: `#${id}`,
 				start: '-=300',
 				end: 'bottom',
 				onEnter: () => enterSection(tl),
@@ -103,7 +92,7 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 	}
 
 	return (
-		<div className='_principal'>
+		<div className='_principal' id={id}>
 			<div className='_featuredTwoChild'>
 				<div className='_leftDivFeatured'>
 					<div className='_featuredToolsTwo'>
@@ -164,11 +153,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeaturedTwo);
-
-
-// onMouseOver={() => imageChange('in')} onMouseOut={() => imageChange('out')}
-{/* <div className='_loremTextTwo'>
-	<p className='_textOne'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores</p>
-	<p className='_textTwo'>corporis, rerum provident optio molestiae quae amet officia tempora reiciendis</p>
-	<p className='_textThree'>fuga deserunt excepturi sequi vitae tempora reiciendis officia.</p>
-</div> */}

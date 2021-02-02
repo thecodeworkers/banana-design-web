@@ -8,98 +8,61 @@ import { gsap, ScrollTrigger } from 'gsap/all';
 import { propsType } from './types';
 
 const texts: Array<any> = [
-	{ class: '._textDescription1', duration: 0.3, delay: 0.1 },
-	{ class: '._textDescription2', duration: 0.3, delay: 0.2 },
-	{ class: '._textDescription3', duration: 0.3, delay: 0.3 },
-	{ class: '._textDescription4', duration: 0.3, delay: 0.4 },
-	{ class: '._text2', duration: 0.3, delay: 0.7 },
-	{ class: '._text3', duration: 0.3, delay: 0.9 },
+	{ class: '._textDescription1', duration: 0.6, delay: 0.5 },
+	{ class: '._textDescription2', duration: 0.6, delay: 0.6 },
+	{ class: '._textDescription3', duration: 0.6, delay: 0.7 },
+	{ class: '._textDescription4', duration: 0.6, delay: 0.8 },
+	{ class: '._zeroOne', duration: 0.3, delay: 0.7 },
+	{ class: '._mineralsTitle', duration: 0.3, delay: 0.9 },
+	{ class: '._mineralsSubTitle', duration: 0.3, delay: 0.9 },
 ];
 
 const Featured = (props: propsType) => {
 
-	const { action, theme, imageDescription, date,	keywords, title, subtitle, description, descriptionTwo, descriptionThree, descriptionFour, number, image, transition } = props;
-	const [show, setShow] = useState(false);
-	const [flag, setFlag] = useState(false);
+	const { imageDescription, date,	keywords, title, subtitle, description, descriptionTwo, descriptionThree, descriptionFour, number, image, id } = props;
 
 	gsap.registerPlugin(ScrollTrigger);
-	const timeline = gsap.timeline();
 
-	const imageChange = (param: string) => {
-		param == 'in' ? setShow(true) : setShow(false);
-		inAnimation();
-	}
+	useEffect(() => {
+		triggerAction();
+	}, []);
 
-	const inAnimation = () => {
-		const play = timeline.play();
-		if (!show && !flag) {
-			play
-				.to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle', '._text2', '._text3'], { opacity: 0 }, 0);
-			timeline.eventCallback("onComplete", () => setFlag(true));
-			return
+	const inAnimation = (param) => {
+		let timeline = gsap.timeline();
+
+		if(param) {
+			timeline.play()
+			texts.forEach(res => { timeline.to(res.class, 0.1, { opacity: 0 }, 0.1) })
 		}
 
-		if (flag) {
-			play
-				.to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 1 }, 0.3);
-				timeline.staggerTo('._textDescription1', 1, {backgroundColor: 'red'}, 0.010);
-				timeline.staggerTo('._textDescription2', 1, {backgroundColor: 'red'}, 0.011);
-				timeline.staggerTo('._textDescription3', 1, {backgroundColor: 'red'}, 0.12);
-				timeline.staggerTo('._textDescription4', 1, {backgroundColor: 'red'}, 0.13);
-			texts.forEach(res => { timeline.to(res.class, res.duration, { opacity: 1 }, res.delay) })
-			timeline.eventCallback("onComplete", () => setFlag(false));
-			return
+		if (!param) {
+			timeline.play()
+				.to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 1 }, 0.5);
+			texts.forEach(res => { timeline.to(res.class, res?.duration, { opacity: 1 }, res?.delay) })
 		}
 	}
 
-	const enterSection = (tl: any) => {
-		if(transition) {
-			/* action.setTheme(true); */
-			/* tl.to(['._principal', '._featuredTwoChild'], { backgroundColor: '#2C292A' }); */
-			tl.staggerTo('._textDescriptionOne', 1, {opacity: 1}, 0.010);
-			tl.staggerTo('._textDescriptionTwo', 1, {opacity: 1}, 0.011);
-			tl.staggerTo('._textDescriptionThree', 1, {opacity: 1}, 0.12);
-			tl.staggerTo('._textDescriptionFour', 1, {opacity: 1}, 0.13);
-		/* 	setTimeout(() => {
-				action.changeBreadcrumb({
-					color: '#FFFFFF',
-					text: 'Destacados',
-				});
-			}, 200); */
-		}
-	}
-
-	const outSection = (tl: any) => {
-
-		if(transition) {
-			/* action.setTheme(false); */
-			tl.to(['._textDescriptionOne'], { backgroundColor: '#FFFFFF' })
-
-			/* setTimeout(() => {
-				action.changeBreadcrumb({
-					color: '#000000',
-					text: 'Welcome',
-				});
-			}, 200); */
-		}
-	}
+	const enterBackSection = () =>	inAnimation(false);
+	const outSection = () => inAnimation(true);
+	const enterSection = () => inAnimation(false);
+	const outBackSection = () => inAnimation(true);
 
 	const triggerAction = () => {
-		const tl = gsap.timeline({
+		let tl = gsap.timeline({
 			scrollTrigger: {
-				trigger: '._principal',
+				trigger: `#${id}`,
 				start: '-=300',
 				end: 'bottom',
-				markers:true,
-				onEnter: () => enterSection(tl),
-				onEnterBack: () => tl.to(['._principal', '._featuredTwoChild'], { backgroundColor: '#2C292A' }),
-				onLeaveBack: () => outSection(tl)
+				onEnter: () => enterSection(),
+				onEnterBack: () => enterBackSection(),
+				onLeaveBack: () => outBackSection(),
+				onLeave: () => outSection()
 			}
 		})
 	}
 
 	return (
-		<div className='_main'>
+		<div className='_main' id={id}>
 			<div className='_featuredContent'>
 				<div className='_leftFeaturedContent'>
 					<div className='_leftDescription'>
