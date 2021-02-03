@@ -1,11 +1,10 @@
-import React, { useState, useEffect, FC} from 'react';
+import React, { useEffect, FC} from 'react';
 import './styles.scss';
-import { DistortionTwo, FeaturedImageTwo, Ai } from '../../components/Svg';
+import { Ai } from '../../components/Svg';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { gsap, ScrollTrigger } from 'gsap/all';
+import { gsap } from 'gsap/all';
 import { changeBreadcrumb, setTheme } from '../../store/actions';
-import { bigCursor, smallCursor } from '../../utils/cursor';
 import { propsType } from './types';
 
 const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, subtitle, description, descriptionTwo, descriptionThree, descriptionFour, number, image, action, transition = false, id}) => {
@@ -106,10 +105,7 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 						</div>
 					</div>
 					<div className='_imageDad'>
-						{
-							true ? image : <DistortionTwo />
-						}
-
+						{image}
 						<div className='_keywordsTwo'>
 							<p className='_caseOfStudyTwo'> { imageDescription } </p>
 							<p className='_textDayTwo'> { date } </p>

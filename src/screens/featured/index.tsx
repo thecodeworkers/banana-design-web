@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.scss';
-import { FeaturedOne, DistortionOne, Ai } from '../../components/Svg';
+import { Ai } from '../../components/Svg';
 import { changeBreadcrumb, setTheme } from '../../store/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -19,7 +19,7 @@ const texts: Array<any> = [
 
 const Featured = (props: propsType) => {
 
-	const { imageDescription, date,	keywords, title, subtitle, description, descriptionTwo, descriptionThree, descriptionFour, number, image, id } = props;
+	const { imageDescription, date, keywords, title, subtitle, description, descriptionTwo, descriptionThree, descriptionFour, number, image, id } = props;
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -30,7 +30,7 @@ const Featured = (props: propsType) => {
 	const inAnimation = (param) => {
 		let timeline = gsap.timeline();
 
-		if(param) {
+		if (param) {
 			timeline.play()
 			texts.forEach(res => { timeline.to(res.class, 0.1, { opacity: 0 }, 0.1) })
 		}
@@ -42,7 +42,7 @@ const Featured = (props: propsType) => {
 		}
 	}
 
-	const enterBackSection = () =>	inAnimation(false);
+	const enterBackSection = () => inAnimation(false);
 	const outSection = () => inAnimation(true);
 	const enterSection = () => inAnimation(false);
 	const outBackSection = () => inAnimation(true);
@@ -67,14 +67,14 @@ const Featured = (props: propsType) => {
 				<div className='_leftFeaturedContent'>
 					<div className='_leftDescription'>
 						<div>
-							<p className='_zeroOne'> { number } </p>
-							<p className='_mineralsTitle'> { title } </p>
-							<p className='_mineralsSubTitle'> { subtitle } </p>
+							<p className='_zeroOne'> {number} </p>
+							<p className='_mineralsTitle'> {title} </p>
+							<p className='_mineralsSubTitle'> {subtitle} </p>
 							<div className='_loremText'>
-								<p className='_textDescription1'> { description } </p>
-								<p className='_textDescription2'> { descriptionTwo } </p>
-								<p className='_textDescription3'> { descriptionThree } </p>
-								<p className='_textDescription4'> { descriptionFour } </p>
+								<p className='_textDescription1'> {description} </p>
+								<p className='_textDescription2'> {descriptionTwo} </p>
+								<p className='_textDescription3'> {descriptionThree} </p>
+								<p className='_textDescription4'> {descriptionFour} </p>
 							</div>
 						</div>
 					</div>
@@ -93,17 +93,13 @@ const Featured = (props: propsType) => {
 						</div>
 					</div>
 					<div className='_imgParent'>
-						{
-							true ? image : <DistortionOne />
-						}
-
+						{image}
 						<div className='_keywords'>
-							<p className='_caseOfStudy'> { imageDescription } </p>
-							<p className='_textDay'> { date } </p>
-							<p className='_keywordText'> { keywords } </p>
+							<p className='_caseOfStudy'> {imageDescription} </p>
+							<p className='_textDay'> {date} </p>
+							<p className='_keywordText'> {keywords} </p>
 						</div>
 					</div>
-
 					<div>
 					</div>
 				</div>
@@ -128,10 +124,3 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Featured);
 
-
-// onMouseEnter={() => imageChange('in')} onMouseLeave={() => imageChange('out')}
-{/* <div className='_loremText'>
-	<p className='_text1'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores</p>
-	<p className='_text2'>corporis, rerum provident optio molestiae quae amet officia tempora reiciendis</p>
-	<p className='_text3'>fuga deserunt excepturi sequi vitae tempora reiciendis officia.</p>
-</div> */}
