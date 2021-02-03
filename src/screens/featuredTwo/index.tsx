@@ -11,10 +11,10 @@ import { propsType } from './types';
 const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, subtitle, description, descriptionTwo, descriptionThree, descriptionFour, number, image, action, transition = false, id}) => {
 
 	const texts: Array<any> = [
-		{ class: '._textDescriptionOne', duration: 0.6, delay: 0.5 },
+		{ class: '._textDescriptionOne', duration: 0.6, delay: 0.4 },
 		{ class: '._textDescriptionTwo', duration: 0.6, delay: 0.6 },
-		{ class: '._textDescriptionThree', duration: 0.6, delay: 0.7 },
-		{ class: '._textDescriptionFour', duration: 0.6, delay: 0.8 },
+		{ class: '._textDescriptionThree', duration: 0.6, delay: 0.8 },
+		{ class: '._textDescriptionFour', duration: 0.6, delay: 1},
 		{ class: '._mineralsTwoTitle', duration: 0.3, delay: 0.9 },
 		{ class: '._mineralsTwoSubTitle', duration: 0.3, delay: 0.9  },
 		{ class: '._zeroTwo', duration: 0.3, delay: 0.9  }
@@ -34,7 +34,7 @@ const FeaturedTwo: FC<propsType> = ({ imageDescription, date,	keywords, title, s
 
 		if (!param) {
 			timeline.play()
-				.to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 1 }, 0.5);
+				.to(['._zeroTwo', '._mineralsTwoTitle', '._mineralsTwoSubTitle'], { opacity: 1 }, 0.4);
 			texts.forEach(res => { timeline.to(res.class, res?.duration, { opacity: 1 }, res?.delay) })
 		}
 	}

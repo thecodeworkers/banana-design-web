@@ -8,10 +8,10 @@ import { gsap, ScrollTrigger } from 'gsap/all';
 import { propsType } from './types';
 
 const texts: Array<any> = [
-	{ class: '._textDescription1', duration: 0.6, delay: 0.5 },
+	{ class: '._textDescription1', duration: 0.6, delay: 0.4 },
 	{ class: '._textDescription2', duration: 0.6, delay: 0.6 },
-	{ class: '._textDescription3', duration: 0.6, delay: 0.7 },
-	{ class: '._textDescription4', duration: 0.6, delay: 0.8 },
+	{ class: '._textDescription3', duration: 0.6, delay: 0.8 },
+	{ class: '._textDescription4', duration: 0.6, delay: 1 },
 	{ class: '._zeroOne', duration: 0.3, delay: 0.7 },
 	{ class: '._mineralsTitle', duration: 0.3, delay: 0.9 },
 	{ class: '._mineralsSubTitle', duration: 0.3, delay: 0.9 },
@@ -37,7 +37,7 @@ const Featured = (props: propsType) => {
 
 		if (!param) {
 			timeline.play()
-				.to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 1 }, 0.5);
+				.to(['._zeroOne', '._mineralsTitle', '._mineralsSubTitle'], { opacity: 1 }, 0.4);
 			texts.forEach(res => { timeline.to(res.class, res?.duration, { opacity: 1 }, res?.delay) })
 		}
 	}
