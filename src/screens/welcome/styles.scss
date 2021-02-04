@@ -137,6 +137,10 @@ $textHeight: 0px;
 	}
 }
 
+._logoParentWelcome {
+	width: 40%;
+}
+
 ._description {
 	@include background();
   width: 50%;
@@ -155,10 +159,11 @@ $textHeight: 0px;
 
 ._whiteBodyText{
 	color: $pureBlack;
-  font-family: $monumentExtended-Regular;
+	font-family: $helveticaBold;
+	font-weight: bold;
   line-height: 1.2;
   opacity: 1;
-	font-size: 3rem;
+	font-size: 5rem;
 	@include background();
 }
 

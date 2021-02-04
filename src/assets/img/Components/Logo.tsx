@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface logoProps {
-	firstColor: string,
-	secondColor: string
+	firstColor?: string,
+	secondColor?: string,
 }
 
 const Logo: React.FC<logoProps> = ({firstColor = '#161616', secondColor = '#231f20'}) => (
