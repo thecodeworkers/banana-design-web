@@ -50,10 +50,15 @@ const NavBar: React.FC<navBarProps> = (props) => {
 			.to(['#svg > g > path:nth-of-type(3)', '#svg > g > path:nth-of-type(2)', '#svg > g > path:nth-of-type(1)'], 0, { transform: 'scaleX(1)' }, 0.5)
 	}
 
+	const navigateToHome = () => {
+		navigate('/')
+		action.changeToggle(3);
+	}
+
 	return (
 		<div className={`_navBar ${theme.theme && colorChange ? '_dark' : '_light'}`}>
 
-			<div className='_logoParent' onClick={ () => navigate('/') }>
+			<div className='_logoParent' onClick={navigateToHome}>
 
 				{
 					!theme.theme
