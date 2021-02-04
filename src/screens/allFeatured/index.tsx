@@ -11,8 +11,12 @@ const AllFeatured = () => (
 			title={dataOne.title}
 			number={dataOne.number}
 			description={dataOne.description}
+			descriptionTwo={dataOne.descriptionTwo}
+			descriptionThree={dataOne.descriptionThree}
+			descriptionFour={dataOne.descriptionFour}
 			image={dataOne.image}
 			transition={true}
+			id={dataOne.id}
 		/>
 		<Featured
 			imageDescription={dataTwo.imageDescription}
@@ -22,7 +26,11 @@ const AllFeatured = () => (
 			subtitle={dataTwo.subtitle}
 			number={dataTwo.number}
 			description={dataTwo.description}
+			descriptionTwo={dataTwo.descriptionTwo}
+			descriptionThree={dataTwo.descriptionThree}
+			descriptionFour={dataTwo.descriptionFour}
 			image={dataTwo.image}
+			id={dataTwo.id}
 		/>
 		<FeaturedTwo
 			imageDescription={dataThree.imageDescription}
@@ -31,7 +39,11 @@ const AllFeatured = () => (
 			title={dataThree.title}
 			number={dataThree.number}
 			description={dataThree.description}
+			descriptionTwo={dataThree.descriptionTwo}
+			descriptionThree={dataThree.descriptionThree}
+			descriptionFour={dataThree.descriptionFour}
 			image={dataThree.image}
+			id={dataThree.id}
 		/>
 		<Featured
 			imageDescription={dataFour.imageDescription}
@@ -41,7 +53,11 @@ const AllFeatured = () => (
 			subtitle={dataFour.subtitle}
 			number={dataFour.number}
 			description={dataFour.description}
+			descriptionTwo={dataFour.descriptionTwo}
+			descriptionThree={dataFour.descriptionThree}
+			descriptionFour={dataFour.descriptionFour}
 			image={dataFour.image}
+			id={dataFour.id}
 		/>
 		<FeaturedTwo
 			imageDescription={dataFive.imageDescription}
@@ -50,7 +66,11 @@ const AllFeatured = () => (
 			title={dataFive.title}
 			number={dataFive.number}
 			description={dataFive.description}
+			descriptionTwo={dataFive.descriptionTwo}
+			descriptionThree={dataFive.descriptionThree}
+			descriptionFour={dataFive.descriptionFour}
 			image={dataFive.image}
+			id={dataFive.id}
 		/>
 	</>
 );
