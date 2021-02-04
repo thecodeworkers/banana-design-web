@@ -6,7 +6,12 @@ export type propsType = {
 	subtitle?: string,
 	number: string,
 	description: string,
+	descriptionTwo: string,
+	descriptionThree: string,
+	descriptionFour: string,
 	image: any,
 	action: () => {},
-	theme: boolean
+	theme: boolean,
+	transition?: boolean,
+	id: string
 }

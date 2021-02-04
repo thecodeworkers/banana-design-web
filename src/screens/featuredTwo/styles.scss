@@ -72,20 +72,26 @@
 }
 
 ._mineralsTwoTitle {
-  @include minerals;
-  @include opacity;
+	@include minerals;
+	opacity: 0;
+  // @include opacity;
 }
 
 ._mineralsTwoSubTitle {
   @include minerals;
   margin-left: 20%;
-  margin-top: -0.8rem;
-  @include opacity;
+	margin-top: -0.8rem;
+	opacity: 0;
+  // @include opacity;
 }
 
-._textOne, ._textTwo, ._textThree {
-	font-family: $helvetica;
-  @include opacity;
+._textTwo, ._textThree {
+	@include opacity;
+
+}
+._textDescriptionOne, ._textDescriptionTwo, ._textDescriptionThree, ._textDescriptionFour {
+	opacity: 0;
+
 }
 
 ._loremTextTwo {
@@ -100,8 +106,7 @@
   font-family: $helvetica;
   color: $white;
   font-size: 1.7rem;
-  // font-weight: bold;
-	@include opacity;
+  opacity: 0;
 	font-weight: 600;
 }
 

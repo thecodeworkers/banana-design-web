@@ -11,6 +11,10 @@
   opacity: 1;
 }
 
+@mixin opacity2 {
+  opacity: 0;
+}
+
 ._main {
   background-color: $littleBlack;
   width: 100%;
@@ -111,23 +115,28 @@
 	color: $white;
 	font-weight: 600;
   font-size: 1.7rem;
-  @include opacity;
+  opacity: 0;
 }
 
 ._mineralsTitle {
   @include minerals;
-  @include opacity;
+  opacity: 0;
 }
 
 ._mineralsSubTitle {
   @include minerals;
   margin-left: 23.5%;
   margin-top: -0.8rem;
-  @include opacity;
+  opacity: 0;
 }
 
-._text1, ._text2, ._text3 {
-	@include opacity;
+._text2, ._text3 {
+	opacity: 0;
+	font-family: $helvetica;
+}
+
+._textDescription1, ._textDescription2, ._textDescription3, ._textDescription4 {
+	opacity: 0;
 	font-family: $helvetica;
 }
 
